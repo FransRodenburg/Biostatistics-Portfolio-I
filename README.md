@@ -1,2 +1,0 @@
-# Biostatistics
-Biostatistics Portfolio
