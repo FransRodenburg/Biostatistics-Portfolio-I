@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Biostatistics Portfolio I</title>
-  <meta name="description" content="Biostatistics Portfolio I" />
+  <title>Chapter 7 Introduction | Biostatistics Portfolio I</title>
+  <meta name="description" content="Chapter 7 Introduction | Biostatistics Portfolio I" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Biostatistics Portfolio I" />
+  <meta property="og:title" content="Chapter 7 Introduction | Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Biostatistics Portfolio I" />
+  <meta name="twitter:title" content="Chapter 7 Introduction | Biostatistics Portfolio I" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="installation.html"/>
+<link rel="prev" href="microbiology-experiment.html"/>
+<link rel="next" href="experimental-design.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,19 +49,14 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -70,16 +65,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -88,9 +81,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -152,15 +145,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html#learnr-optional"><i class="fa fa-check"></i><b>2.2</b> <code>learnr</code> (optional)</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html"><i class="fa fa-check"></i><b>3</b> Adding Figures in R Markdown</a><ul>
-<li class="chapter" data-level="3.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-simple"><i class="fa fa-check"></i><b>3.1</b> Image from a File (simple)</a><ul>
+<li class="chapter" data-level="3.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#an-image-from-a-file-simple"><i class="fa fa-check"></i><b>3.1</b> An image from a file (simple)</a><ul>
 <li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-advanced"><i class="fa fa-check"></i><b>3.2</b> Image from a File (advanced)</a><ul>
+<li class="chapter" data-level="3.2" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#an-image-from-a-file-advanced"><i class="fa fa-check"></i><b>3.2</b> An image from a file (advanced)</a><ul>
 <li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#plots-drawn-in-r"><i class="fa fa-check"></i><b>3.3</b> Plots Drawn in R</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#simple-example-linear-relationship"><i class="fa fa-check"></i><b>3.3.1</b> Simple Example (Linear Relationship)</a></li>
-<li class="chapter" data-level="3.3.2" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#multplot"><i class="fa fa-check"></i><b>3.3.2</b> Multiple Plots in One Area</a></li>
+<li class="chapter" data-level="3.3" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#plots-drawn-in-r"><i class="fa fa-check"></i><b>3.3</b> Plots drawn in R</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#simple-example-linear-relationship"><i class="fa fa-check"></i><b>3.3.1</b> Simple example (linear relationship)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#multplot"><i class="fa fa-check"></i><b>3.3.2</b> Multiple plots in one area</a></li>
 <li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-3"><i class="fa fa-check"></i>Exercise 3</a></li>
 <li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-4-optional"><i class="fa fa-check"></i>Exercise 4 (optional)</a></li>
 <li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-5-optional"><i class="fa fa-check"></i>Exercise 5 (optional)</a></li>
@@ -183,20 +176,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="probability-theory-i.html"><a href="probability-theory-i.html#exercise-3-optional-1"><i class="fa fa-check"></i>Exercise 3 (optional)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html"><i class="fa fa-check"></i><b>6</b> Microbiology Experiment</a><ul>
-<li class="chapter" data-level="6.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#study-design"><i class="fa fa-check"></i><b>6.2</b> Study Design</a></li>
-<li class="chapter" data-level="6.3" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#why-use-a-statistical-test"><i class="fa fa-check"></i><b>6.3</b> Why Use a Statistical Test?</a></li>
-<li class="chapter" data-level="6.4" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#how-do-statistical-tests-work"><i class="fa fa-check"></i><b>6.4</b> How Do Statistical Tests Work?</a></li>
-<li class="chapter" data-level="6.5" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#chi-squared"><i class="fa fa-check"></i><b>6.5</b> The Chi-Squared Test</a><ul>
-<li class="chapter" data-level="6.5.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#how-does-the-chi-squared-test-work"><i class="fa fa-check"></i><b>6.5.1</b> How Does the Chi-Squared Test Work?</a></li>
-<li class="chapter" data-level="6.5.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#chisq"><i class="fa fa-check"></i><b>6.5.2</b> Chi-Squared Test in R</a></li>
+<li class="chapter" data-level="6" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html"><i class="fa fa-check"></i><b>6</b> Microbiology Experiment</a></li>
+<li class="chapter" data-level="7" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>7</b> Introduction</a></li>
+<li class="chapter" data-level="8" data-path="experimental-design.html"><a href="experimental-design.html"><i class="fa fa-check"></i><b>8</b> Experimental Design</a></li>
+<li class="chapter" data-level="9" data-path="achtergrond-waarom-een-statistische-test.html"><a href="achtergrond-waarom-een-statistische-test.html"><i class="fa fa-check"></i><b>9</b> Achtergrond: Waarom een statistische test?</a></li>
+<li class="chapter" data-level="10" data-path="achtergrond-hoe-werkt-een-statistische-test.html"><a href="achtergrond-hoe-werkt-een-statistische-test.html"><i class="fa fa-check"></i><b>10</b> Achtergrond: Hoe werkt een statistische test?</a></li>
+<li class="chapter" data-level="11" data-path="voorbeeld-een-chi-kwadraat-test.html"><a href="voorbeeld-een-chi-kwadraat-test.html"><i class="fa fa-check"></i><b>11</b> Voorbeeld: Een chi-kwadraat test</a><ul>
+<li class="chapter" data-level="11.1" data-path="voorbeeld-een-chi-kwadraat-test.html"><a href="voorbeeld-een-chi-kwadraat-test.html#hoe-werkt-een-chi-kwadraat-test"><i class="fa fa-check"></i><b>11.1</b> Hoe werkt een chi-kwadraat test?</a></li>
+<li class="chapter" data-level="11.2" data-path="voorbeeld-een-chi-kwadraat-test.html"><a href="voorbeeld-een-chi-kwadraat-test.html#chisq"><i class="fa fa-check"></i><b>11.2</b> Chi-kwadraat test in R</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#microbiologyex"><i class="fa fa-check"></i><b>6.6</b> Exercises</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#performing-a-chi-squared-test"><i class="fa fa-check"></i><b>6.6.1</b> Performing a Chi-Squared Test</a></li>
-<li class="chapter" data-level="6.6.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#compare2"><i class="fa fa-check"></i><b>6.6.2</b> Comparing Two Students</a></li>
-<li class="chapter" data-level="6.6.3" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#comparing-two-other-students"><i class="fa fa-check"></i><b>6.6.3</b> Comparing Two Other Students</a></li>
-</ul></li>
+<li class="chapter" data-level="12" data-path="microbiologyex.html"><a href="microbiologyex.html"><i class="fa fa-check"></i><b>12</b> Opdrachten</a><ul>
+<li class="chapter" data-level="12.1" data-path="microbiologyex.html"><a href="microbiologyex.html#zelf-een-chi-kwadraat-test-uitvoeren-met-andere-waardes"><i class="fa fa-check"></i><b>12.1</b> Zelf een chi-kwadraat test uitvoeren met andere waardes</a></li>
+<li class="chapter" data-level="12.2" data-path="microbiologyex.html"><a href="microbiologyex.html#compare2"><i class="fa fa-check"></i><b>12.2</b> Vergelijken van twee studenten</a></li>
+<li class="chapter" data-level="12.3" data-path="microbiologyex.html"><a href="microbiologyex.html#vergelijken-van-twee-andere-studenten"><i class="fa fa-check"></i><b>12.3</b> Vergelijken van twee andere studenten</a></li>
+<li class="chapter" data-level="12.4" data-path="microbiologyex.html"><a href="microbiologyex.html#analyse-van-je-eigen-data"><i class="fa fa-check"></i><b>12.4</b> Analyse van je eigen data</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -216,42 +209,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Biostatistics Portfolio I</h1>
-<p class="author"><em>© 2020 Dr. F.J. Rodenburg</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p>Teaching statistics to students of the life sciences is a challenge:</p>
-<ul>
-<li>The courses are usually too short, with too much time in between them;</li>
-<li>Too many skills are introduced at once (math, programming <em>and</em> statistics);</li>
-<li>The connection to other courses is not clear enough.</li>
-</ul>
-<p>This is what I aim to address through this portfolio. You should complete the chapters leading up to your first statistics course. Part II will then pick up where your first course (presumably) left off and is meant to bridge the gap between your first statistics course and the next.</p>
-<div class="figure"><span id="fig:learninggoals"></span>
-<img src="figures/LearningGoalsTreeRoots.png" alt="The knowledge that is usually either assumed to be known already, or introduced briefly at that start of your first statistics course, will be introduced gradually throughout this portfolio.^[&lt;small&gt;Expert knowledge is what you learn during your other courses. Many choices in statistics are driven by knowledge of the subject area (e.g. biology). This holds especially true for study design and model selection.&lt;/small&gt;]" width="100%" />
-<p class="caption">
-Figure 0.1: The knowledge that is usually either assumed to be known already, or introduced briefly at that start of your first statistics course, will be introduced gradually throughout this portfolio.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
-</p>
-</div>
-<p>Chapters are short, have overlap with each other, and are accompanied with explanatory videos. This is not meant to be a cumbersome addition to your already intensive education, it is merely meant to reduce the difficulty of statistics courses.</p>
-<p>For those seeking an extra challenge, there are optional exercises that go more in-depth.</p>
-
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p><small>Expert knowledge is what you learn during your other courses. Many choices in statistics are driven by knowledge of the subject area (e.g. biology). This holds especially true for study design and model selection.</small><a href="index.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Introduction</h1>
+<p>This is the explanation for first year biology students taking the microbiology course at Leiden University. The exercise itself is described <a href="microbiologyex.html#microbiologyex">all the way at the end</a>. The first exercise uses an example data set. In the second exercise, you are to use your own experimental data.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="installation.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="microbiology-experiment.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="experimental-design.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

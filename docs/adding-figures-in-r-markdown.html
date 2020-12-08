@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Adding Figures in R Markdown | Biostatistics Portfolio I</title>
+  <meta name="description" content="Chapter 3 Adding Figures in R Markdown | Biostatistics Portfolio I" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Adding Figures in R Markdown | Biostatistics Portfolio I" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Adding Figures in R Markdown | Biostatistics Portfolio I" />
+  
+  
+  
+
+<meta name="author" content="© 2020 Dr. F.J. Rodenburg" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="learning-the-basics-of-r.html"/>
+<link rel="next" href="adding-tables-in-r-markdown.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Biostatistics Portfolio I</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>1</b> Installation</a><ul>
+<li class="chapter" data-level="1.1" data-path="installation.html"><a href="installation.html#installation-guide"><i class="fa fa-check"></i><b>1.1</b> Installation Guide</a><ul>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#note-about-tinytex"><i class="fa fa-check"></i>Note about TinyTeX</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#note-about-installation-problems-in-general"><i class="fa fa-check"></i>Note about installation problems in general</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="installation.html"><a href="installation.html#the-rstudio-interface"><i class="fa fa-check"></i><b>1.2</b> The RStudio interface</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html"><i class="fa fa-check"></i><b>2</b> Learning the Basics of R</a><ul>
+<li class="chapter" data-level="2.1" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html#swirl"><i class="fa fa-check"></i><b>2.1</b> <code>swirl</code></a></li>
+<li class="chapter" data-level="2.2" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html#learnr-optional"><i class="fa fa-check"></i><b>2.2</b> <code>learnr</code> (optional)</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html"><i class="fa fa-check"></i><b>3</b> Adding Figures in R Markdown</a><ul>
+<li class="chapter" data-level="3.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-simple"><i class="fa fa-check"></i><b>3.1</b> Image from a File (simple)</a><ul>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-advanced"><i class="fa fa-check"></i><b>3.2</b> Image from a File (advanced)</a><ul>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#plots-drawn-in-r"><i class="fa fa-check"></i><b>3.3</b> Plots Drawn in R</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#simple-example-linear-relationship"><i class="fa fa-check"></i><b>3.3.1</b> Simple Example (Linear Relationship)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#multplot"><i class="fa fa-check"></i><b>3.3.2</b> Multiple Plots in One Area</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-3"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-4-optional"><i class="fa fa-check"></i>Exercise 4 (optional)</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-5-optional"><i class="fa fa-check"></i>Exercise 5 (optional)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html"><i class="fa fa-check"></i><b>4</b> Adding Tables in R Markdown</a><ul>
+<li class="chapter" data-level="4.1" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#the-user-friendly-way-kable"><i class="fa fa-check"></i><b>4.1</b> The User-Friendly Way: <code>kable</code></a><ul>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-1-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#ex4.2"><i class="fa fa-check"></i>Exercise 2 (optional)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#advanced-xtable-optional"><i class="fa fa-check"></i><b>4.2</b> Advanced: <code>xtable</code> (optional)</a><ul>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-3-optional"><i class="fa fa-check"></i>Exercise 3 (optional)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability-theory-i.html"><a href="probability-theory-i.html"><i class="fa fa-check"></i><b>5</b> Probability Theory I</a><ul>
+<li class="chapter" data-level="5.1" data-path="probability-theory-i.html"><a href="probability-theory-i.html#what-is-probability-theory"><i class="fa fa-check"></i><b>5.1</b> What is Probability Theory?</a></li>
+<li class="chapter" data-level="5.2" data-path="probability-theory-i.html"><a href="probability-theory-i.html#sample-spaces"><i class="fa fa-check"></i><b>5.2</b> Sample Spaces</a><ul>
+<li class="chapter" data-level="" data-path="probability-theory-i.html"><a href="probability-theory-i.html#exercise-1-2"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="probability-theory-i.html"><a href="probability-theory-i.html#exercise-2-1"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="probability-theory-i.html"><a href="probability-theory-i.html#exercise-3-optional-1"><i class="fa fa-check"></i>Exercise 3 (optional)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html"><i class="fa fa-check"></i><b>6</b> Microbiology Experiment</a><ul>
+<li class="chapter" data-level="6.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#study-design"><i class="fa fa-check"></i><b>6.2</b> Study Design</a></li>
+<li class="chapter" data-level="6.3" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#why-use-a-statistical-test"><i class="fa fa-check"></i><b>6.3</b> Why Use a Statistical Test?</a></li>
+<li class="chapter" data-level="6.4" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#how-do-statistical-tests-work"><i class="fa fa-check"></i><b>6.4</b> How Do Statistical Tests Work?</a></li>
+<li class="chapter" data-level="6.5" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#chi-squared"><i class="fa fa-check"></i><b>6.5</b> The Chi-Squared Test</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#how-does-the-chi-squared-test-work"><i class="fa fa-check"></i><b>6.5.1</b> How Does the Chi-Squared Test Work?</a></li>
+<li class="chapter" data-level="6.5.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#chisq"><i class="fa fa-check"></i><b>6.5.2</b> Chi-Squared Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#microbiologyex"><i class="fa fa-check"></i><b>6.6</b> Exercises</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#performing-a-chi-squared-test"><i class="fa fa-check"></i><b>6.6.1</b> Performing a Chi-Squared Test</a></li>
+<li class="chapter" data-level="6.6.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#compare2"><i class="fa fa-check"></i><b>6.6.2</b> Comparing Two Students</a></li>
+<li class="chapter" data-level="6.6.3" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#comparing-two-other-students"><i class="fa fa-check"></i><b>6.6.3</b> Comparing Two Other Students</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biostatistics Portfolio I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="adding-figures-in-r-markdown" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Adding Figures in R Markdown</h1>
+<p><small><b><i>Skills learned in this chapter:</b> R Markdown, R Programming</i></small></p>
+<hr />
+<p>In this chapter you will learn how to insert a figure in an R markdown (.Rmd) file. You can use this chapter as future reference for when you want to include figures in later chapters.</p>
+<div id="image-from-a-file-simple" class="section level2">
+<h2><span class="header-section-number">3.1</span> Image from a File (simple)</h2>
+<p>The simplest way to include a figure is by writing anywhere outside code chunks (in the white space):</p>
+<p><code>![description](path/to/image.extension)</code></p>
+<p>In case the image is saved in the same folder as your R markdown file, this simplifies to:</p>
+<p><code>![description](image.extension)</code></p>
+<p><small><em>(Replace <code>image</code> by the name of your file. Replace <code>extention</code> by whatever file extension your image has, like JPG, PNG or BMP.)</em></small></p>
+<p>This method is fine when you just want to include an image as is and don’t care about anything else.</p>
+<p>For example, in the folder of my R markdown file, I have a subfolder <code>figures</code> with an example image called <code>pollenSEM.jpg</code>.
+Writing <code>![Some description](figures/pollenSEM.jpg)</code> will include this image with a caption:</p>
+<div class="figure">
+<img src="figures/pollenSEM.jpg" alt="" />
+<p class="caption">An image of pollen under an SEM. From: <a href="https://w.wiki/gv8" class="uri">https://w.wiki/gv8</a></p>
+</div>
+<div id="exercise-1" class="section level3 unnumbered">
+<h3>Exercise 1</h3>
+<p>Include an image of your liking to your R markdown file using the method described above. For your own convenience, I recommend saving both the Rmd file and the image in the same folder. Knit your file to see if the image renders correctly.</p>
+<p>If you want to resize the image, check the next section.</p>
+</div>
+</div>
+<div id="image-from-a-file-advanced" class="section level2">
+<h2><span class="header-section-number">3.2</span> Image from a File (advanced)</h2>
+<p>For greater flexibility, include figures using <code>include_graphics()</code>. To use this function, you have to place it in a code chunk. For example:</p>
+<p><small></p>
+<pre><code>```{r  label = pollen, echo = TRUE, fig.cap = &quot;Image of pollen under an SEM. From: https://w.wiki/gv8&quot;, out.width = &#39;20%&#39;}
+knitr::include_graphics(&quot;figures/pollenSEM.jpg&quot;)
+```</code></pre>
+<div class="figure"><span id="fig:pollen"></span>
+<img src="figures/pollenSEM.jpg" alt="Image of pollen under an SEM. From: https://w.wiki/gv8" width="20%" />
+<p class="caption">
+Figure 3.1: Image of pollen under an SEM. From: <a href="https://w.wiki/gv8" class="uri">https://w.wiki/gv8</a>
+</p>
+</div>
+<p></small></p>
+<p>Here I have set <code>echo = TRUE</code>, so that you can see the code that produced the figure. Usually, you will want to hide this code in a report. You can set <code>echo = FALSE</code> to suppress code in the output.</p>
+<p><small><em>(For those interested, a comprehensive list of chunk options is described <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">here</a>.)</em></small></p>
+<p>Adding a caption with the <code>fig.cap</code> argument automatically numbers the image. In addition, it allows for cross-referencing, using <code>\@ref(fig:...)</code>. Simply replace <code>...</code> with the label you wrote for the chunk containing the image. For example, if I write <code>\@ref(fig:pollen)</code>, you will see: Figure <a href="adding-figures-in-r-markdown.html#fig:pollen">3.1</a>. The 3 here refers to the chapter number and .1 refers to the first image in this chapter.</p>
+<div id="exercise-2" class="section level3 unnumbered">
+<h3>Exercise 2</h3>
+<p>Using the advanced method, insert your figure from exercise 1 with a smaller size, using a <a href="https://youtu.be/AHAR7j-IUOw?t=357">new code chunk</a>. Then, add a sentence below the chunk referencing the image using <code>\@ref(fig:...)</code>.</p>
+</div>
+</div>
+<div id="plots-drawn-in-r" class="section level2">
+<h2><span class="header-section-number">3.3</span> Plots Drawn in R</h2>
+<p>Of course, you can also include plots generated by R code. Below are some examples.</p>
+<div id="simple-example-linear-relationship" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Simple Example (Linear Relationship)</h3>
+<p><small></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="adding-figures-in-r-markdown.html#cb2-1"></a>x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">10</span></span>
+<span id="cb2-2"><a href="adding-figures-in-r-markdown.html#cb2-2"></a>y &lt;-<span class="st"> </span><span class="dv">-5</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>x</span>
+<span id="cb2-3"><a href="adding-figures-in-r-markdown.html#cb2-3"></a><span class="kw">plot</span>(y <span class="op">~</span><span class="st"> </span>x, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Linear Relationship&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:linearRelationship"></span>
+<img src="Biostatistics_files/figure-html/linearRelationship-1.png" alt="A linear relationship" width="672" />
+<p class="caption">
+Figure 3.2: A linear relationship
+</p>
+</div>
+<p></small></p>
+<p>You can change the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> axis range by using <code>xlim</code> and <code>ylim</code>, respectively:</p>
+<p><small></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="adding-figures-in-r-markdown.html#cb3-1"></a>x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">10</span></span>
+<span id="cb3-2"><a href="adding-figures-in-r-markdown.html#cb3-2"></a>y &lt;-<span class="st"> </span><span class="dv">-5</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>x</span>
+<span id="cb3-3"><a href="adding-figures-in-r-markdown.html#cb3-3"></a><span class="kw">plot</span>(y <span class="op">~</span><span class="st"> </span>x, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Linear Relationship&quot;</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">7.5</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</span></code></pre></div>
+<div class="figure"><span id="fig:xlimylim"></span>
+<img src="Biostatistics_files/figure-html/xlimylim-1.png" alt="A linear relationship" width="672" />
+<p class="caption">
+Figure 3.3: A linear relationship
+</p>
+</div>
+<p></small></p>
+<p>In fact, you can change virtually anything about the plot. You may <a href="adding-figures-in-r-markdown.html#multplot">skip this part</a> if that doesn’t interest you. We will go into detail about this later in the portfolio, but here is a quick example:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="adding-figures-in-r-markdown.html#cb4-1"></a>x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">10</span></span>
+<span id="cb4-2"><a href="adding-figures-in-r-markdown.html#cb4-2"></a>y &lt;-<span class="st"> </span><span class="dv">-5</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>x</span>
+<span id="cb4-3"><a href="adding-figures-in-r-markdown.html#cb4-3"></a><span class="kw">plot</span>(</span>
+<span id="cb4-4"><a href="adding-figures-in-r-markdown.html#cb4-4"></a>  y <span class="op">~</span><span class="st"> </span>x,                  <span class="co"># Where to plot</span></span>
+<span id="cb4-5"><a href="adding-figures-in-r-markdown.html#cb4-5"></a>  <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>,             <span class="co"># What to plot (both points and linepieces) </span></span>
+<span id="cb4-6"><a href="adding-figures-in-r-markdown.html#cb4-6"></a>  <span class="dt">main =</span> <span class="st">&quot;Custom plot&quot;</span>,   <span class="co"># Title</span></span>
+<span id="cb4-7"><a href="adding-figures-in-r-markdown.html#cb4-7"></a>  <span class="dt">ylab =</span> <span class="st">&quot;y-values&quot;</span>,      <span class="co"># Y-label</span></span>
+<span id="cb4-8"><a href="adding-figures-in-r-markdown.html#cb4-8"></a>  <span class="dt">xlab =</span> <span class="st">&quot;x-values&quot;</span>,      <span class="co"># X-label</span></span>
+<span id="cb4-9"><a href="adding-figures-in-r-markdown.html#cb4-9"></a>  <span class="dt">font =</span> <span class="dv">2</span>,               <span class="co"># Axis font (bold)</span></span>
+<span id="cb4-10"><a href="adding-figures-in-r-markdown.html#cb4-10"></a>  <span class="dt">pch  =</span> <span class="dv">19</span>,              <span class="co"># Point character (solid)</span></span>
+<span id="cb4-11"><a href="adding-figures-in-r-markdown.html#cb4-11"></a>  <span class="dt">cex  =</span> <span class="dv">2</span>,               <span class="co"># Character expansion factor</span></span>
+<span id="cb4-12"><a href="adding-figures-in-r-markdown.html#cb4-12"></a>  <span class="dt">lty  =</span> <span class="st">&quot;dashed&quot;</span>,        <span class="co"># Line type</span></span>
+<span id="cb4-13"><a href="adding-figures-in-r-markdown.html#cb4-13"></a>  <span class="dt">lwd  =</span> <span class="dv">3</span>,               <span class="co"># Line width</span></span>
+<span id="cb4-14"><a href="adding-figures-in-r-markdown.html#cb4-14"></a>  <span class="dt">las  =</span> <span class="dv">1</span>,               <span class="co"># Perpendicular axes</span></span>
+<span id="cb4-15"><a href="adding-figures-in-r-markdown.html#cb4-15"></a>  <span class="dt">bty  =</span> <span class="st">&quot;n&quot;</span>,             <span class="co"># No box around the plot</span></span>
+<span id="cb4-16"><a href="adding-figures-in-r-markdown.html#cb4-16"></a>  <span class="dt">col  =</span> <span class="st">&quot;steelblue&quot;</span>,     <span class="co"># Change the color of what is plotted</span></span>
+<span id="cb4-17"><a href="adding-figures-in-r-markdown.html#cb4-17"></a>  <span class="dt">col.main =</span> <span class="st">&quot;darkblue&quot;</span>,  <span class="co"># Color of the title</span></span>
+<span id="cb4-18"><a href="adding-figures-in-r-markdown.html#cb4-18"></a>  <span class="dt">col.lab  =</span> <span class="st">&quot;gray&quot;</span>,      <span class="co"># Color of the labels</span></span>
+<span id="cb4-19"><a href="adding-figures-in-r-markdown.html#cb4-19"></a>  <span class="dt">col.axis =</span> <span class="st">&quot;darkgray&quot;</span>,  <span class="co"># Color of the axes</span></span>
+<span id="cb4-20"><a href="adding-figures-in-r-markdown.html#cb4-20"></a>)</span></code></pre></div>
+<div class="figure"><span id="fig:coolPlot"></span>
+<img src="Biostatistics_files/figure-html/coolPlot-1.png" alt="A linear relationship" width="672" />
+<p class="caption">
+Figure 3.4: A linear relationship
+</p>
+</div>
+<p>If you like changing plots, you can find many more settings in the <a href="https://youtu.be/nTvdC91EyDI">help page</a> for <code>par</code>.</p>
+</div>
+<div id="multplot" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Multiple Plots in One Area</h3>
+<p>You can also add multiple plots to a single plotting area, using <code>par</code>:</p>
+<p><small></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="adding-figures-in-r-markdown.html#cb5-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)) <span class="co"># Two rows and three columns (6 plots)</span></span>
+<span id="cb5-2"><a href="adding-figures-in-r-markdown.html#cb5-2"></a><span class="kw">plot</span>(Sepal.Length <span class="op">~</span><span class="st"> </span>Sepal.Width,  <span class="dt">data =</span> iris, <span class="dt">main =</span> <span class="st">&quot;Sepal Length vs Sepal Width&quot;</span>)</span>
+<span id="cb5-3"><a href="adding-figures-in-r-markdown.html#cb5-3"></a><span class="kw">plot</span>(Sepal.Length <span class="op">~</span><span class="st"> </span>Petal.Length, <span class="dt">data =</span> iris, <span class="dt">main =</span> <span class="st">&quot;Sepal Length vs Petal Length&quot;</span>)</span>
+<span id="cb5-4"><a href="adding-figures-in-r-markdown.html#cb5-4"></a><span class="kw">plot</span>(Sepal.Length <span class="op">~</span><span class="st"> </span>Petal.Width,  <span class="dt">data =</span> iris, <span class="dt">main =</span> <span class="st">&quot;Sepal Length vs Petal Width&quot;</span>)</span>
+<span id="cb5-5"><a href="adding-figures-in-r-markdown.html#cb5-5"></a><span class="kw">plot</span>(Sepal.Width  <span class="op">~</span><span class="st"> </span>Petal.Length, <span class="dt">data =</span> iris, <span class="dt">main =</span> <span class="st">&quot;Sepal Width vs Petal Length&quot;</span>)</span>
+<span id="cb5-6"><a href="adding-figures-in-r-markdown.html#cb5-6"></a><span class="kw">plot</span>(Sepal.Width  <span class="op">~</span><span class="st"> </span>Petal.Width,  <span class="dt">data =</span> iris, <span class="dt">main =</span> <span class="st">&quot;Sepal Width vs Petal Width&quot;</span>)</span>
+<span id="cb5-7"><a href="adding-figures-in-r-markdown.html#cb5-7"></a><span class="kw">plot</span>(Petal.Length <span class="op">~</span><span class="st"> </span>Petal.Width,  <span class="dt">data =</span> iris, <span class="dt">main =</span> <span class="st">&quot;Petal Length vs Petal Width&quot;</span>)</span>
+<span id="cb5-8"><a href="adding-figures-in-r-markdown.html#cb5-8"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default (1 plot)</span></span></code></pre></div>
+<div class="figure"><span id="fig:sixPlotsActual"></span>
+<img src="Biostatistics_files/figure-html/sixPlotsActual-1.png" alt="Four variables in the iris data set plotted against each other." width="672" />
+<p class="caption">
+Figure 3.5: Four variables in the iris data set plotted against each other.
+</p>
+</div>
+<p></small></p>
+<p>Here I used <code>par(mfrow = c(2, 3))</code> to create a grid of 2 by 3 plots. I had to include the <code>data</code> argument to tell R where to retrieve these variables (a standard data set in R). I included the last line to restore the default settings. If you ever change a setting and forget the default, either look at the <code>par</code> <a href="https://youtu.be/nTvdC91EyDI">help page</a>, or just restart RStudio.</p>
+</div>
+<div id="exercise-3" class="section level3 unnumbered">
+<h3>Exercise 3</h3>
+<p>The code below generates data for a logarithmic, exponential and quadratic relationship.</p>
+<p><small></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="adding-figures-in-r-markdown.html#cb6-1"></a>x  &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="fl">0.01</span>)</span>
+<span id="cb6-2"><a href="adding-figures-in-r-markdown.html#cb6-2"></a>y1 &lt;-<span class="st"> </span><span class="dv">-5</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">log</span>(x)</span>
+<span id="cb6-3"><a href="adding-figures-in-r-markdown.html#cb6-3"></a>y2 &lt;-<span class="st"> </span><span class="dv">-5</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(x)</span>
+<span id="cb6-4"><a href="adding-figures-in-r-markdown.html#cb6-4"></a>y3 &lt;-<span class="st"> </span><span class="dv">-5</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>x<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
+<p></small></p>
+<p>Copy the code above to a <a href="https://youtu.be/AHAR7j-IUOw?t=357">new chunk</a> in your Rmd file and plot <code>x</code> against <code>y1</code>.<span class="math inline">\(^\dagger\)</span> Then create two more plots, where you plot <code>x</code> against <code>y2</code> and <code>x</code> against <code>y3</code>. Use <code>par(mfrow = c(..., ...))</code> to arrange these plots side by side. Within each call to <code>plot</code>, use the <code>main</code> argument to give each plot a title. Feel free to try and adjust other graphical parameters!</p>
+<p><span class="math inline">\(^\dagger:\)</span> <small>You don’t need the <code>data</code> argument here, because if you run the code above, the objects will be stored in the workspace.</small></p>
+</div>
+<div id="exercise-4-optional" class="section level3 unnumbered">
+<h3>Exercise 4 (optional)</h3>
+<p>For those seeking an extra challenge, let’s create a plot of a bacterial growth curve:</p>
+<ul>
+<li>First, there is a lag phase where no growth is observed;</li>
+<li>Then, growth enters an exponential phase;</li>
+<li>At some point, space and resource scarcity kick in and growth slows down to a stationary phase (no growth);</li>
+<li>Finally, resources are slowly, but surely exhausted and a negative growth takes place (death phase).</li>
+</ul>
+<p>Create a plot that shows each of the four phases. You can use the function <code>lines</code> to draw separate pieces of the curve, if you find that easier.</p>
+</div>
+<div id="exercise-5-optional" class="section level3 unnumbered">
+<h3>Exercise 5 (optional)</h3>
+<p>Use the function <code>text</code> to add the name of each phase above the plot. Adjust <code>ylim</code> if you have insufficient space for text, and set the <code>cex</code> argument in the <code>text</code> function to something smaller than <code>1</code> if the text does not fit.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="learning-the-basics-of-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="adding-tables-in-r-markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Biostatistics.pdf", "Biostatistics.epub"],
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

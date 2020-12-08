@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="section-2.html"/>
+<link rel="prev" href="microbiology-experiment.html"/>
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,6 +52,10 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -141,22 +145,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#note-about-tinytex"><i class="fa fa-check"></i>Note about TinyTeX</a></li>
 <li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#note-about-installation-problems-in-general"><i class="fa fa-check"></i>Note about installation problems in general</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="installation.html"><a href="installation.html#understanding-the-rstudio-interface"><i class="fa fa-check"></i><b>1.2</b> Understanding the RStudio interface</a></li>
+<li class="chapter" data-level="1.2" data-path="installation.html"><a href="installation.html#the-rstudio-interface"><i class="fa fa-check"></i><b>1.2</b> The RStudio interface</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="figures-placeholder.html"><a href="figures-placeholder.html"><i class="fa fa-check"></i><b>2</b> Figures (placeholder)</a><ul>
-<li class="chapter" data-level="2.1" data-path="figures-placeholder.html"><a href="figures-placeholder.html#inserting-an-image-from-a-file"><i class="fa fa-check"></i><b>2.1</b> Inserting an image from a file</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="figures-placeholder.html"><a href="figures-placeholder.html#exercise-1"><i class="fa fa-check"></i><b>2.1.1</b> Exercise 1</a></li>
-<li class="chapter" data-level="2.1.2" data-path="figures-placeholder.html"><a href="figures-placeholder.html#exercise-2"><i class="fa fa-check"></i><b>2.1.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="2" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html"><i class="fa fa-check"></i><b>2</b> Learning the Basics of R</a><ul>
+<li class="chapter" data-level="2.1" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html#swirl"><i class="fa fa-check"></i><b>2.1</b> <code>swirl</code></a></li>
+<li class="chapter" data-level="2.2" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html#learnr-optional"><i class="fa fa-check"></i><b>2.2</b> <code>learnr</code> (optional)</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="figures-placeholder.html"><a href="figures-placeholder.html#adding-plots"><i class="fa fa-check"></i><b>2.2</b> Adding plots</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="figures-placeholder.html"><a href="figures-placeholder.html#simple-example-plot-of-a-linear-relationship"><i class="fa fa-check"></i><b>2.2.1</b> Simple example (plot of a linear relationship)</a></li>
-<li class="chapter" data-level="2.2.2" data-path="figures-placeholder.html"><a href="figures-placeholder.html#multiple-plots-in-one-area"><i class="fa fa-check"></i><b>2.2.2</b> Multiple plots in one area</a></li>
-<li class="chapter" data-level="2.2.3" data-path="figures-placeholder.html"><a href="figures-placeholder.html#exercise-3"><i class="fa fa-check"></i><b>2.2.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="3" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html"><i class="fa fa-check"></i><b>3</b> Adding Figures in R Markdown</a><ul>
+<li class="chapter" data-level="3.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-simple"><i class="fa fa-check"></i><b>3.1</b> Image from a File (simple)</a><ul>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-advanced"><i class="fa fa-check"></i><b>3.2</b> Image from a File (advanced)</a><ul>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#plots-drawn-in-r"><i class="fa fa-check"></i><b>3.3</b> Plots Drawn in R</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#simple-example-linear-relationship"><i class="fa fa-check"></i><b>3.3.1</b> Simple Example (Linear Relationship)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#multplot"><i class="fa fa-check"></i><b>3.3.2</b> Multiple Plots in One Area</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-3"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-4-optional"><i class="fa fa-check"></i>Exercise 4 (optional)</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-5-optional"><i class="fa fa-check"></i>Exercise 5 (optional)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i><b>3</b> …</a></li>
-<li class="chapter" data-level="4" data-path="section-1.html"><a href="section-1.html"><i class="fa fa-check"></i><b>4</b> …</a></li>
-<li class="chapter" data-level="5" data-path="section-2.html"><a href="section-2.html"><i class="fa fa-check"></i><b>5</b> …</a></li>
+<li class="chapter" data-level="4" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html"><i class="fa fa-check"></i><b>4</b> Adding Tables in R Markdown</a><ul>
+<li class="chapter" data-level="4.1" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#the-user-friendly-way-kable"><i class="fa fa-check"></i><b>4.1</b> The User-Friendly Way: <code>kable</code></a><ul>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-1-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#ex4.2"><i class="fa fa-check"></i>Exercise 2 (optional)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#advanced-xtable-optional"><i class="fa fa-check"></i><b>4.2</b> Advanced: <code>xtable</code> (optional)</a><ul>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-3-optional"><i class="fa fa-check"></i>Exercise 3 (optional)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability-theory-i.html"><a href="probability-theory-i.html"><i class="fa fa-check"></i><b>5</b> Probability Theory I</a><ul>
+<li class="chapter" data-level="5.1" data-path="probability-theory-i.html"><a href="probability-theory-i.html#what-is-probability-theory"><i class="fa fa-check"></i><b>5.1</b> What is Probability Theory?</a></li>
+<li class="chapter" data-level="5.2" data-path="probability-theory-i.html"><a href="probability-theory-i.html#sample-spaces"><i class="fa fa-check"></i><b>5.2</b> Sample Spaces</a><ul>
+<li class="chapter" data-level="" data-path="probability-theory-i.html"><a href="probability-theory-i.html#exercise-1-2"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="probability-theory-i.html"><a href="probability-theory-i.html#exercise-2-1"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="probability-theory-i.html"><a href="probability-theory-i.html#exercise-3-optional-1"><i class="fa fa-check"></i>Exercise 3 (optional)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html"><i class="fa fa-check"></i><b>6</b> Microbiology Experiment</a><ul>
+<li class="chapter" data-level="6.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#study-design"><i class="fa fa-check"></i><b>6.2</b> Study Design</a></li>
+<li class="chapter" data-level="6.3" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#why-use-a-statistical-test"><i class="fa fa-check"></i><b>6.3</b> Why Use a Statistical Test?</a></li>
+<li class="chapter" data-level="6.4" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#how-do-statistical-tests-work"><i class="fa fa-check"></i><b>6.4</b> How Do Statistical Tests Work?</a></li>
+<li class="chapter" data-level="6.5" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#chi-squared"><i class="fa fa-check"></i><b>6.5</b> The Chi-Squared Test</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#how-does-the-chi-squared-test-work"><i class="fa fa-check"></i><b>6.5.1</b> How Does the Chi-Squared Test Work?</a></li>
+<li class="chapter" data-level="6.5.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#chisq"><i class="fa fa-check"></i><b>6.5.2</b> Chi-Squared Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#microbiologyex"><i class="fa fa-check"></i><b>6.6</b> Exercises</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#performing-a-chi-squared-test"><i class="fa fa-check"></i><b>6.6.1</b> Performing a Chi-Squared Test</a></li>
+<li class="chapter" data-level="6.6.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#compare2"><i class="fa fa-check"></i><b>6.6.2</b> Comparing Two Students</a></li>
+<li class="chapter" data-level="6.6.3" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#comparing-two-other-students"><i class="fa fa-check"></i><b>6.6.3</b> Comparing Two Other Students</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -185,12 +226,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="section-2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="microbiology-experiment.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -242,6 +287,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
