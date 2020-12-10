@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Installation | Biostatistics Portfolio I</title>
-  <meta name="description" content="Chapter 1 Installation | Biostatistics Portfolio I" />
+  <title>Chapter 3 Mendelian Genetics | Biostatistics Portfolio I</title>
+  <meta name="description" content="Chapter 3 Mendelian Genetics | Biostatistics Portfolio I" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Installation | Biostatistics Portfolio I" />
+  <meta property="og:title" content="Chapter 3 Mendelian Genetics | Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Installation | Biostatistics Portfolio I" />
+  <meta name="twitter:title" content="Chapter 3 Mendelian Genetics | Biostatistics Portfolio I" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="learning-the-basics-of-r.html"/>
+<link rel="prev" href="learning-the-basics-of-r.html"/>
+<link rel="next" href="adding-figures-in-r-markdown.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -227,55 +227,127 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="installation" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Installation</h1>
-<p>Throughout this portfolio, we will use RStudio. To use RStudio, you need to install <strong>both</strong> R and RStudio.</p>
-<p><small><i>(Even if you have an existing version, I recommend getting the latest version using the guide below.)</i></small></p>
-<div id="installation-guide" class="section level2">
-<h2><span class="header-section-number">1.1</span> Installation Guide</h2>
-<iframe src="https://www.youtube.com/embed/2Sovzf6lVRo" width="672" height="400px">
+<div id="mendelian-genetics" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Mendelian Genetics</h1>
+<p><small><b><i>Skills learned in this chapter:</b> Probability Theory, Hypothesis Testing</i></small></p>
+<hr />
+<p>In this chapter you will learn how to compare observed to expected frequencies using a chi-squared test.</p>
+<iframe src="https://www.youtube.com/embed/PDl7mhpY4PI" width="672" height="400px">
 </iframe>
-<p>If you’re comfortable with computer software, it boils down to:</p>
-<ul>
-<li>Install R;</li>
-<li>Install RStudio;</li>
-<li>Open RStudio and try to knit a template R markdown file.</li>
-</ul>
-<p>If you can’t knit to PDF, see the note below and try knitting to HTML instead.</p>
-<div id="note-about-tinytex" class="section level3 unnumbered">
-<h3>Note about TinyTeX</h3>
-<ul>
-<li><strong>TinyTeX is not required for this portfolio</strong>. If you want to knit to PDF, you have to install TinyTeX. This has several advantages over HTML and Word, which are explained in the second video. For the portfolio, <strong>all you need is a working version of RStudio, and to be able to knit to HTML</strong>.</li>
-</ul>
+<div id="corn-example" class="section level2">
+<h2><span class="header-section-number">3.1</span> Corn Example</h2>
+<p>In the basic practicals you will count the number of differently colored corn kernels.</p>
+<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<img src="figures/cornkernelcount.png" alt="A cob of corn with differently colored kernels." width="100%" />
+<p class="caption">
+Figure 3.1: A cob of corn with differently colored kernels.
+</p>
 </div>
-<div id="note-about-installation-problems-in-general" class="section level3 unnumbered">
-<h3>Note about installation problems in general</h3>
-<p>To ensure a smooth experience while using this portfolio, <strong>address installation issues early on</strong>. If you’re following this portfolio in the context of your biology education at Leiden University, you can always contact Dr. H.G.J. van Mil or me about installation issues.</p>
-<p>Otherwise, see the general tips below, or try asking a question on <a href="https://stackoverflow.com/tour">Stackoverflow</a>.</p>
-<p>Some general tips that will save you a lot of headaches with software during your education:</p>
+<p>According to Mendelian genetics, if both parents were heterozygous for one color-causing gene, then we would expect a <span class="math inline">\(3 : 1\)</span> ratio of kernels with dominant to recessive trait. For example, consider heterozygous parents for the red color-causing gene <b>R</b>:</p>
+<table style="width:50%;">
+<caption>
+<span id="tab:unnamed-chunk-6">Table 3.1: </span>Crossing of two heterozygous parents.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+R
+</th>
+<th style="text-align:center;">
+r
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+R
+</td>
+<td style="text-align:center;">
+RR (red)
+</td>
+<td style="text-align:center;">
+Rr (red)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+r
+</td>
+<td style="text-align:center;">
+Rr (red)
+</td>
+<td style="text-align:center;">
+rr (yellow)
+</td>
+</tr>
+</tbody>
+</table>
+<p>If both parents were indeed <b>Rr</b>, then we would expected <span class="math inline">\(\text{red} : \text{yellow} = 3 : 1\)</span> in the offspring.</p>
+<p>A statistical test works by taking on a statement of no difference and then collecting evidence against it. For the chi-squared test, that means that we compare the observed frequencies to the frequencies we would get under a <span class="math inline">\(3:1\)</span> ratio. You can calculate these expected frequencies simply by multiplying the total kernels counted with the expected proportion. <em>(Take care to convert the ratio to a proportion first.)</em></p>
+<div id="cornex1" class="section level3 unnumbered">
+<h3>Exercise 1</h3>
+<p>Suppose you count <span class="math inline">\(361\)</span> red kernels and <span class="math inline">\(139\)</span> yellow ones. What are the expected number of red and yellow kernels under the null-hypothesis of a <span class="math inline">\(3 : 1\)</span> ratio?</p>
+</div>
+<div id="exercise-2" class="section level3 unnumbered">
+<h3>Exercise 2</h3>
+<p>The chi-squared test is defined as follows:</p>
+<p><span class="math inline">\(\displaystyle\chi^2 = \sum_{i = 1}^k \frac{(\text{observed}_i - \text{expected}_i)^2}{\text{expected}_i}\)</span></p>
+<p>Where <span class="math inline">\(k\)</span> is the number of groups. Since there are only two groups (red, yellow), this becomes:</p>
+<p><span class="math inline">\(\displaystyle\chi^2 = \frac{(\text{observed}_\text{red} - \text{expected}_\text{red})^2}{\text{expected}_\text{red}} + \frac{(\text{observed}_\text{yellow} - \text{expected}_\text{yellow})^2}{\text{expected}_\text{yellow}}\)</span></p>
+<p>Calculate <span class="math inline">\(\chi^2\)</span> using the observed and expected numbers from exercise 1. Show your calculation.</p>
+</div>
+</div>
+<div id="cornchisq" class="section level2">
+<h2><span class="header-section-number">3.2</span> Chi-Squared Test for Known Probabilities</h2>
+<p>In R you can compare observed to expected frequencies using <code>chisq.test</code>:</p>
+<p><small></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="mendelian-genetics.html#cb1-1"></a>example &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">361</span>, <span class="dv">139</span>)</span>
+<span id="cb1-2"><a href="mendelian-genetics.html#cb1-2"></a><span class="kw">chisq.test</span>(example, <span class="dt">p =</span> <span class="kw">c</span>(<span class="dv">3</span><span class="op">/</span><span class="dv">4</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">4</span>)) <span class="co"># Test against a 3:1 ratio</span></span></code></pre></div>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  example
+## X-squared = 2.0907, df = 1, p-value = 0.1482</code></pre>
+<p></small></p>
+<p>This test calculates <span class="math inline">\(\chi^2\)</span> and computes a corresponding <span class="math inline">\(p\)</span>-value that has the following meaning:</p>
 <ul>
-<li>Setting your system language to English (<a href="https://support.microsoft.com/en-us/windows/manage-display-language-settings-in-windows-10-219f28b0-9881-cd4c-75ca-dba919c52321">Windows</a>, <a href="https://support.apple.com/en-gb/guide/mac-help/mh26684/mac">Mac</a>) makes everything a lot easier to find;</li>
-<li>If you store data in Excel, <a href="https://support.microsoft.com/en-us/office/change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e">setting the decimal separator to a dot (.) instead of a comma (,)</a> will also save you a lot of extra effort;</li>
-<li>If you are on Windows, I highly recommend working on an account with <a href="https://support.microsoft.com/en-us/windows/create-a-local-user-or-administrator-account-in-windows-10-20de74e0-ac7f-3502-a866-32915af2a34d">administrator rights</a> and setting <a href="https://support.microsoft.com/en-us/help/975787/guided-help-adjust-user-account-control-settings-in-windows-7-and-wind">user account control</a> to “Never notify”. <small><i>(Link says Windows 7 &amp; 8, but it works the same for Windows 10.)</i></small></li>
+<li>If the population has a <span class="math inline">\(3 : 1\)</span> ratio of red to yellow kernels, what is the chance of observing at least this large a deviation?<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
 </ul>
+<p>If this chance is very small, then perhaps the null-hypothesis of a <span class="math inline">\(3 : 1\)</span> ratio is not realistic and we reject it. If it is large, then this corn cob might as well have arisen from parents that yield a <span class="math inline">\(3 : 1\)</span> ratio, and we don’t reject the null-hypothesis.</p>
+<p>So what is small and large? That is a matter of opinion, but in biology a value of <span class="math inline">\(0.05\)</span> is often used as a boundary. That means there is a <span class="math inline">\(\frac{1}{20}\)</span> chance of incorrectly concluding a significant deviation from <span class="math inline">\(3 : 1\)</span>.</p>
+<div id="exercise-3" class="section level3 unnumbered">
+<h3>Exercise 3</h3>
+<p>Look at <a href="mendelian-genetics.html#cornchisq">the output from the chi-squared test</a>. With a threshold of <span class="math inline">\(0.05\)</span>, would you reject the null-hypothesis? What do you conclude?</p>
 </div>
+<div id="exercise-4" class="section level3 unnumbered">
+<h3>Exercise 4</h3>
+<p>Perform the same <span class="math inline">\(\chi^2\)</span>-test for your own counts of a corn cob and report the conclusion. Use the <a href="mendelian-genetics.html#cornchisq">code from the example</a> and adapt it for your own counts.</p>
 </div>
-<div id="the-rstudio-interface" class="section level2">
-<h2><span class="header-section-number">1.2</span> The RStudio interface</h2>
-<p>Watch the video on the RStudio interface below.</p>
-<iframe src="https://www.youtube.com/embed/AHAR7j-IUOw" width="672" height="400px">
-</iframe>
-<p>From here on I will assume basic familiarity with the RStudio interface.</p>
+<div id="exercise-5-optional" class="section level3 unnumbered">
+<h3>Exercise 5 (optional)</h3>
+<p>In the basic practicals, it was explained that each of four different dominant mutations is required for there to be red kernels: <b>C</b>, <b>R</b>, <b>A1</b> and <b>A2</b>.</p>
+<p>Since these are all dominant mutations, let’s assume that each mutant protein has a <span class="math inline">\(\frac{3}{4}\)</span> chance of being present in the offspring (due to a <span class="math inline">\(3 : 1\)</span> ratio). What is then the chance of a red kernel?</p>
+<p><small><em>(For simplicity, ignore the possibility of C-inhibitor.)</em></small></p>
 
 </div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p><small>Population here does not refer to a biological population, but a statistical population. It is the population of all possible red and yellow corn kernels that could have formed from a <span class="math inline">\(3 : 1\)</span> ratio.</small><a href="mendelian-genetics.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="learning-the-basics-of-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="learning-the-basics-of-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="adding-figures-in-r-markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
