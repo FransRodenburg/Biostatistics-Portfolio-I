@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Mendelian Genetics | Biostatistics Portfolio I</title>
+  <meta name="description" content="Chapter 3 Mendelian Genetics | Biostatistics Portfolio I" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Mendelian Genetics | Biostatistics Portfolio I" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Mendelian Genetics | Biostatistics Portfolio I" />
+  
+  
+  
+
+<meta name="author" content="© 2020 Dr. F.J. Rodenburg" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="learning-the-basics-of-r.html"/>
+<link rel="next" href="adding-figures-in-r-markdown.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Biostatistics Portfolio I</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>1</b> Installation</a><ul>
+<li class="chapter" data-level="1.1" data-path="installation.html"><a href="installation.html#installation-guide"><i class="fa fa-check"></i><b>1.1</b> Installation Guide</a><ul>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#note-about-tinytex"><i class="fa fa-check"></i>Note about TinyTeX</a></li>
+<li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#note-about-installation-problems-in-general"><i class="fa fa-check"></i>Note about installation problems in general</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="installation.html"><a href="installation.html#the-rstudio-interface"><i class="fa fa-check"></i><b>1.2</b> The RStudio interface</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html"><i class="fa fa-check"></i><b>2</b> Learning the Basics of R</a><ul>
+<li class="chapter" data-level="2.1" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html#swirl"><i class="fa fa-check"></i><b>2.1</b> <code>swirl</code></a></li>
+<li class="chapter" data-level="2.2" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html#learnr-optional"><i class="fa fa-check"></i><b>2.2</b> <code>learnr</code> (optional)</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html"><i class="fa fa-check"></i><b>3</b> Mendelian Genetics</a><ul>
+<li class="chapter" data-level="3.1" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#corn-example"><i class="fa fa-check"></i><b>3.1</b> Corn Example</a><ul>
+<li class="chapter" data-level="" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#cornex1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#cornchisq"><i class="fa fa-check"></i><b>3.2</b> Chi-Squared Test for Known Probabilities</a><ul>
+<li class="chapter" data-level="" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#exercise-3"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#exercise-4"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#exercise-5-optional"><i class="fa fa-check"></i>Exercise 5 (optional)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html"><i class="fa fa-check"></i><b>4</b> Adding Figures in R Markdown</a><ul>
+<li class="chapter" data-level="4.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-simple"><i class="fa fa-check"></i><b>4.1</b> Image from a File (simple)</a><ul>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-advanced"><i class="fa fa-check"></i><b>4.2</b> Image from a File (advanced)</a><ul>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-2-1"><i class="fa fa-check"></i>Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#plots-drawn-in-r"><i class="fa fa-check"></i><b>4.3</b> Plots Drawn in R</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#simple-example-linear-relationship"><i class="fa fa-check"></i><b>4.3.1</b> Simple Example (Linear Relationship)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#multplot"><i class="fa fa-check"></i><b>4.3.2</b> Multiple Plots in One Area</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-3-1"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-4-optional"><i class="fa fa-check"></i>Exercise 4 (optional)</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-5-optional-1"><i class="fa fa-check"></i>Exercise 5 (optional)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html"><i class="fa fa-check"></i><b>5</b> Adding Tables in R Markdown</a><ul>
+<li class="chapter" data-level="5.1" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#the-user-friendly-way-kable"><i class="fa fa-check"></i><b>5.1</b> The User-Friendly Way: <code>kable</code></a><ul>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-1-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#ex4.2"><i class="fa fa-check"></i>Exercise 2 (optional)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#advanced-xtable-optional"><i class="fa fa-check"></i><b>5.2</b> Advanced: <code>xtable</code> (optional)</a><ul>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-3-optional"><i class="fa fa-check"></i>Exercise 3 (optional)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="probability-theory-i.html"><a href="probability-theory-i.html"><i class="fa fa-check"></i><b>6</b> Probability Theory I</a><ul>
+<li class="chapter" data-level="6.1" data-path="probability-theory-i.html"><a href="probability-theory-i.html#what-is-probability-theory"><i class="fa fa-check"></i><b>6.1</b> What is Probability Theory?</a></li>
+<li class="chapter" data-level="6.2" data-path="probability-theory-i.html"><a href="probability-theory-i.html#sample-spaces"><i class="fa fa-check"></i><b>6.2</b> Sample Spaces</a><ul>
+<li class="chapter" data-level="" data-path="probability-theory-i.html"><a href="probability-theory-i.html#exercise-1-2"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="probability-theory-i.html"><a href="probability-theory-i.html#exercise-2-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="probability-theory-i.html"><a href="probability-theory-i.html#exercise-3-optional-1"><i class="fa fa-check"></i>Exercise 3 (optional)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html"><i class="fa fa-check"></i><b>7</b> Microbiology Experiment</a><ul>
+<li class="chapter" data-level="7.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#introduction"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#study-design"><i class="fa fa-check"></i><b>7.2</b> Study Design</a></li>
+<li class="chapter" data-level="7.3" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#why-use-a-statistical-test"><i class="fa fa-check"></i><b>7.3</b> Why Use a Statistical Test?</a></li>
+<li class="chapter" data-level="7.4" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#how-do-statistical-tests-work"><i class="fa fa-check"></i><b>7.4</b> How Do Statistical Tests Work?</a></li>
+<li class="chapter" data-level="7.5" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#chi-squared"><i class="fa fa-check"></i><b>7.5</b> The Chi-Squared Test</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#how-does-the-chi-squared-test-work"><i class="fa fa-check"></i><b>7.5.1</b> How Does the Chi-Squared Test Work?</a></li>
+<li class="chapter" data-level="7.5.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#chisq"><i class="fa fa-check"></i><b>7.5.2</b> Chi-Squared Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#microbiologyex"><i class="fa fa-check"></i><b>7.6</b> Exercises</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#performing-a-chi-squared-test"><i class="fa fa-check"></i><b>7.6.1</b> Performing a Chi-Squared Test</a></li>
+<li class="chapter" data-level="7.6.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#compare2"><i class="fa fa-check"></i><b>7.6.2</b> Comparing Two Students</a></li>
+<li class="chapter" data-level="7.6.3" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#comparing-two-other-students"><i class="fa fa-check"></i><b>7.6.3</b> Comparing Two Other Students</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biostatistics Portfolio I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="mendelian-genetics" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Mendelian Genetics</h1>
+<p><small><b><i>Skills learned in this chapter:</b> Probability Theory, Hypothesis Testing</i></small></p>
+<hr />
+<p>In this chapter you will learn how to compare observed to expected frequencies using a chi-squared test.</p>
+<iframe src="https://www.youtube.com/embed/PDl7mhpY4PI" width="672" height="400px">
+</iframe>
+<div id="corn-example" class="section level2">
+<h2><span class="header-section-number">3.1</span> Corn Example</h2>
+<p>In the basic practicals you will count the number of differently colored corn kernels.</p>
+<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<img src="figures/cornkernelcount.png" alt="A cob of corn with differently colored kernels." width="100%" />
+<p class="caption">
+Figure 3.1: A cob of corn with differently colored kernels.
+</p>
+</div>
+<p>According to Mendelian genetics, if both parents were heterozygous for one color-causing gene, then we would expect a <span class="math inline">\(3 : 1\)</span> ratio of kernels with dominant to recessive trait. For example, consider heterozygous parents for the red color-causing gene <b>R</b>:</p>
+<table style="width:50%;">
+<caption>
+<span id="tab:unnamed-chunk-6">Table 3.1: </span>Crossing of two heterozygous parents.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+R
+</th>
+<th style="text-align:center;">
+r
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+R
+</td>
+<td style="text-align:center;">
+RR (red)
+</td>
+<td style="text-align:center;">
+Rr (red)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+r
+</td>
+<td style="text-align:center;">
+Rr (red)
+</td>
+<td style="text-align:center;">
+rr (yellow)
+</td>
+</tr>
+</tbody>
+</table>
+<p>If both parents were indeed <b>Rr</b>, then we would expected <span class="math inline">\(\text{red} : \text{yellow} = 3 : 1\)</span> in the offspring.</p>
+<p>A statistical test works by taking on a statement of no difference and then collecting evidence against it. For the chi-squared test, that means that we compare the observed frequencies to the frequencies we would get under a <span class="math inline">\(3:1\)</span> ratio. You can calculate these expected frequencies simply by multiplying the total kernels counted with the expected proportion. <em>(Take care to convert the ratio to a proportion first.)</em></p>
+<div id="cornex1" class="section level3 unnumbered">
+<h3>Exercise 1</h3>
+<p>Suppose you count <span class="math inline">\(361\)</span> red kernels and <span class="math inline">\(139\)</span> yellow ones. What are the expected number of red and yellow kernels under the null-hypothesis of a <span class="math inline">\(3 : 1\)</span> ratio?</p>
+</div>
+<div id="exercise-2" class="section level3 unnumbered">
+<h3>Exercise 2</h3>
+<p>The chi-squared test is defined as follows:</p>
+<p><span class="math inline">\(\displaystyle\chi^2 = \sum_{i = 1}^k \frac{(\text{observed}_i - \text{expected}_i)^2}{\text{expected}_i}\)</span></p>
+<p>Where <span class="math inline">\(k\)</span> is the number of groups. Since there are only two groups (red, yellow), this becomes:</p>
+<p><span class="math inline">\(\displaystyle\chi^2 = \frac{(\text{observed}_\text{red} - \text{expected}_\text{red})^2}{\text{expected}_\text{red}} + \frac{(\text{observed}_\text{yellow} - \text{expected}_\text{yellow})^2}{\text{expected}_\text{yellow}}\)</span></p>
+<p>Calculate <span class="math inline">\(\chi^2\)</span> using the observed and expected numbers from exercise 1. Show your calculation.</p>
+</div>
+</div>
+<div id="cornchisq" class="section level2">
+<h2><span class="header-section-number">3.2</span> Chi-Squared Test for Known Probabilities</h2>
+<p>In R you can compare observed to expected frequencies using <code>chisq.test</code>:</p>
+<p><small></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="mendelian-genetics.html#cb1-1"></a>example &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">361</span>, <span class="dv">139</span>)</span>
+<span id="cb1-2"><a href="mendelian-genetics.html#cb1-2"></a><span class="kw">chisq.test</span>(example, <span class="dt">p =</span> <span class="kw">c</span>(<span class="dv">3</span><span class="op">/</span><span class="dv">4</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">4</span>)) <span class="co"># Test against a 3:1 ratio</span></span></code></pre></div>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  example
+## X-squared = 2.0907, df = 1, p-value = 0.1482</code></pre>
+<p></small></p>
+<p>This test calculates <span class="math inline">\(\chi^2\)</span> and computes a corresponding <span class="math inline">\(p\)</span>-value that has the following meaning:</p>
+<ul>
+<li>If the population has a <span class="math inline">\(3 : 1\)</span> ratio of red to yellow kernels, what is the chance of observing at least this large a deviation?<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
+</ul>
+<p>If this chance is very small, then perhaps the null-hypothesis of a <span class="math inline">\(3 : 1\)</span> ratio is not realistic and we reject it. If it is large, then this corn cob might as well have arisen from parents that yield a <span class="math inline">\(3 : 1\)</span> ratio, and we don’t reject the null-hypothesis.</p>
+<p>So what is small and large? That is a matter of opinion, but in biology a value of <span class="math inline">\(0.05\)</span> is often used as a boundary. That means there is a <span class="math inline">\(\frac{1}{20}\)</span> chance of incorrectly concluding a significant deviation from <span class="math inline">\(3 : 1\)</span>.</p>
+<div id="exercise-3" class="section level3 unnumbered">
+<h3>Exercise 3</h3>
+<p>Look at <a href="mendelian-genetics.html#cornchisq">the output from the chi-squared test</a>. With a threshold of <span class="math inline">\(0.05\)</span>, would you reject the null-hypothesis? What do you conclude?</p>
+</div>
+<div id="exercise-4" class="section level3 unnumbered">
+<h3>Exercise 4</h3>
+<p>Perform the same <span class="math inline">\(\chi^2\)</span>-test for your own counts of a corn cob and report the conclusion. Use the <a href="mendelian-genetics.html#cornchisq">code from the example</a> and adapt it for your own counts.</p>
+</div>
+<div id="exercise-5-optional" class="section level3 unnumbered">
+<h3>Exercise 5 (optional)</h3>
+<p>In the basic practicals, it was explained that each of four different dominant mutations is required for there to be red kernels: <b>C</b>, <b>R</b>, <b>A1</b> and <b>A2</b>.</p>
+<p>Since these are all dominant mutations, let’s assume that each mutant protein has a <span class="math inline">\(\frac{3}{4}\)</span> chance of being present in the offspring (due to a <span class="math inline">\(3 : 1\)</span> ratio). What is then the chance of a red kernel?</p>
+<p><small><em>(For simplicity, ignore the possibility of C-inhibitor.)</em></small></p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p><small>Population here does not refer to a biological population, but a statistical population. It is the population of all possible red and yellow corn kernels that could have formed from a <span class="math inline">\(3 : 1\)</span> ratio.</small><a href="mendelian-genetics.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="learning-the-basics-of-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="adding-figures-in-r-markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Biostatistics.pdf", "Biostatistics.epub"],
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
