@@ -320,10 +320,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(\chi^2 = \displaystyle\sum_{i = 1}^k \frac{(\text{obs.} - \text{exp.})^2}{\text{exp.}} = \frac{(\text{21} - \text{18})^2}{\text{18}} + \frac{(\text{15} - \text{18})^2}{\text{18}} = \frac{1}{2} + \frac{1}{2} = 1\)</span></li>
 </ul>
 <p>You don’t have to know how to estimate a <span class="math inline">\(p\)</span>-value from that number, but I can easily show it in a figure:</p>
-<p><img src="Biostatistics_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <p>That is the chi-squared distribution with one degree of freedom (because we have two groups and calculated one value). This figure shows the distribution of values of <span class="math inline">\(\chi^2\)</span> that you would expect to find if the null-hypothesis were true. De largest chance is a value of <span class="math inline">\(\chi^2 = 0\)</span>, and after that, the probability density decreases. <strong>The <span class="math inline">\(p\)</span>-value answers the question: If the null-hypothesis is true, what is the chance of our <span class="math inline">\(\chi^2 = 1\)</span> or higher?</strong>.</p>
 <p>The <span class="math inline">\(p\)</span>-value for <span class="math inline">\(\chi^2=1\)</span> is the surface area under the probability distribution from <span class="math inline">\(1\)</span> on:</p>
-<p><img src="Biostatistics_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <p>That is <span class="math inline">\(31.7\%\)</span>, almost one third of the entire surface area, so we don’t have very convincing evidence against the null-hypothesis:</p>
 <ul>
 <li>If there is no difference in the population, the chance of <span class="math inline">\(\chi^2 \geq 1\)</span> is <span class="math inline">\(p = 0.317\)</span>.</li>
@@ -374,7 +374,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><small></p>
 <table style="width:50%; margin-left: auto; margin-right: auto;" class="table">
 <caption>
-<span id="tab:unnamed-chunk-22">Table 7.1: </span><span class="math inline">\(2 \times 2\)</span> contingency table of student 1 and 2.
+<span id="tab:unnamed-chunk-23">Table 7.1: </span><span class="math inline">\(2 \times 2\)</span> contingency table of student 1 and 2.
 </caption>
 <thead>
 <tr>
@@ -444,7 +444,7 @@ Student 2
 <p><span class="math inline">\(^\dagger:\)</span> <small>For a contingency table, the expected counts are what you would expect if the relative counts of student 1 did not differ from student 2, proportional to their total counts:</p>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-25">Table 7.2: </span>Observed and expected frequencies for a <span class="math inline">\(2 \times 2\)</span> contingency table.
+<span id="tab:unnamed-chunk-26">Table 7.2: </span>Observed and expected frequencies for a <span class="math inline">\(2 \times 2\)</span> contingency table.
 </caption>
 <thead>
 <tr>
