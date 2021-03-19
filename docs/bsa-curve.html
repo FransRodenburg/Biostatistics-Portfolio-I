@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Biostatistics Portfolio I</title>
-  <meta name="description" content="References | Biostatistics Portfolio I" />
+  <title>Chapter 4 BSA Curve | Biostatistics Portfolio I</title>
+  <meta name="description" content="Chapter 4 BSA Curve | Biostatistics Portfolio I" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Biostatistics Portfolio I" />
+  <meta property="og:title" content="Chapter 4 BSA Curve | Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Biostatistics Portfolio I" />
+  <meta name="twitter:title" content="Chapter 4 BSA Curve | Biostatistics Portfolio I" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="grasshoppers.html"/>
-
+<link rel="prev" href="mendelian-genetics.html"/>
+<link rel="next" href="adding-figures-in-r-markdown.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -243,30 +243,135 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
+<div id="bsa-curve" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> BSA Curve</h1>
+<p><small><b><i>Skills learned in this chapter:</b> Estimation, Prediction</i></small></p>
+<hr />
+<p>In this chapter you will learn how to construct a BSA-curve for estimating the amount of protein present in a sample.</p>
+<pre><code>## Here will be a video on BSA curves</code></pre>
+<div id="what-is-a-bsa-curve" class="section level2">
+<h2><span class="header-section-number">4.1</span> What Is a BSA Curve?</h2>
+<p>In the basic practicals you will use a spectrophotometer to measure the light passing through a sample with a known protein concentration. By doing so for various concentrations of protein, you can construct a curve for the amount of protein present in a sample, given the amount of light passing through. This is a basic tool in biological experimentation.</p>
+<div id="what-is-bsa" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> What Is BSA?</h3>
+<p>Bovine Serum Albumin (BSA) is the protein used as a reference to construct the curve.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<table style="width:50%;">
+<caption>
+<span id="tab:unnamed-chunk-10">Table 4.1: </span>Example data of a BSA experiment. As more protein is present in the sample, less light passes through and so the <span class="math inline">\(\text{A}_{595}\)</span> increases.
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+BSA <span class="math inline">\((\mu\text{g})\)</span>
+</th>
+<th style="text-align:center;">
+Absorption <span class="math inline">\((\text{A}_{595})\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+0
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+1
+</td>
+<td style="text-align:center;">
+0.135
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+2
+</td>
+<td style="text-align:center;">
+0.235
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+3
+</td>
+<td style="text-align:center;">
+0.328
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+4
+</td>
+<td style="text-align:center;">
+0.409
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+5
+</td>
+<td style="text-align:center;">
+0.495
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:unnamed-chunk-11"></span>
+<img src="Biostatistics_files/figure-html/unnamed-chunk-11-1.png" alt="BSA curve of the data from table \ref{tab:ExampleBSA}." width="100%" />
+<p class="caption">
+Figure 4.1: BSA curve of the data from table .
+</p>
+</div>
+<p>In the first part of this assignment, you will construct a BSA-curve based on your experimental data. In the second half, we are going use a statistical model to express the uncertainty of the estimation.</p>
+</div>
+</div>
+<div id="how-to-contruct-a-bsa-curve" class="section level2">
+<h2><span class="header-section-number">4.2</span> How to Contruct a BSA-Curve</h2>
+<p>…:</p>
+<pre><code>## Continuation using the example from before.</code></pre>
+<p>…</p>
+</div>
+<div id="how-precise-is-the-amount-of-protein" class="section level2">
+<h2><span class="header-section-number">4.3</span> How Precise Is the Amount of Protein?</h2>
+</div>
+<div id="extra" class="section level2">
+<h2><span class="header-section-number">4.4</span> Extra (*)</h2>
+<div id="improving-your-figure" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Improving your figure</h3>
+</div>
+<div id="biological-limitations-of-bsa-curves" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Biological limitations of BSA-curves</h3>
+<blockquote>
+<p>This is a long ongoing discussion because of various reasons. I list a few. Everybody who is using Bradford has long forgotten how it really works (when was it first described?). Actually it binds aromatic amino acids, mainly tryptophane. So proteins with low numbers of these amino acids will react poorly in a Bradford assays. A good example is RNaseT1 which will practically show no reaction at all. Statistically this problem gets smaller as your protein gets bigger or if you’re measuring mixtures of proteins. This also means that for purified protein the best standard is the protein itself or a very similar one. This holds for every assay with speciific binding or reaction characteristics. In any case if you compare results from different colorometric assays using different standards you will practically never get the same results and differences can be very big. Also look at temperature in the lab or incubator, matrix effects, buffers used, …. By the way, You can use Bradford calibration lines for a longer time if you control your assay strictly, including reaction time. —<a href="https://www.researchgate.net/post/How_to_get_the_correct_standard_BSA_curve_for_my_protein_estimation2">Freddy Dardenne</a></p>
+</blockquote>
+</div>
+<div id="statistical-limitations-of-bsa-curves" class="section level3">
+<h3><span class="header-section-number">4.4.3</span> Statistical limitations of BSA-curves</h3>
+<ul>
+<li>Linear or not;</li>
+<li>Interpolation vs extrapolation.</li>
+</ul>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p><small>Bradford, Marion (1976): “A Rapid and Sensitive Method for the Quantification of Microgram Quantities of Protein Utilizing the Principle of Protein-Dye Binding”. <em>Analytical Biochemistry</em>. <strong>72</strong> (1–2): 248–254. <a href="doi:%5B10.1006/abio.1976.9999" class="uri">doi:[10.1006/abio.1976.9999</a>](<a href="https://doi.org/10.1006%2Fabio.1976.9999" class="uri">https://doi.org/10.1006%2Fabio.1976.9999</a>). PMID <a href="https://pubmed.ncbi.nlm.nih.gov/942051/">942051</a></small><a href="bsa-curve.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="grasshoppers.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="mendelian-genetics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="adding-figures-in-r-markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

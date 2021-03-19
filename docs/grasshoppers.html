@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Biostatistics Portfolio I</title>
-  <meta name="description" content="References | Biostatistics Portfolio I" />
+  <title>Chapter 9 Grasshoppers | Biostatistics Portfolio I</title>
+  <meta name="description" content="Chapter 9 Grasshoppers | Biostatistics Portfolio I" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Biostatistics Portfolio I" />
+  <meta property="og:title" content="Chapter 9 Grasshoppers | Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Biostatistics Portfolio I" />
+  <meta name="twitter:title" content="Chapter 9 Grasshoppers | Biostatistics Portfolio I" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="grasshoppers.html"/>
-
+<link rel="prev" href="microbiology-experiment.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -243,30 +243,126 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
+<div id="grasshoppers" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Grasshoppers</h1>
+<p><small><i>In this chapter you will <b>compare two means using a <span class="math inline">\(t\)</span>-test</b>.</i></small></p>
+<hr />
+<p><img src="figures/grasshopper.png" width="788" /></p>
+<div id="getting-started" class="section level2">
+<h2><span class="header-section-number">9.1</span> Getting Started</h2>
+<p>In this assignment, you will compare the mean thorax length and wingspan of male and female grasshoppers.</p>
+<ol style="list-style-type: decimal">
+<li>If you haven’t already, <a href="installation.html#installation">install RStudio</a>;</li>
+<li>Download the data from the Google Sheets file as comma separated values (.csv);</li>
+<li>Open RStudio and <a href="https://youtu.be/2Sovzf6lVRo?t=280">create a new R markdown file</a>. <strong>Save this file to the same folder as the data!</strong>;</li>
+<li>Go to <strong>Session</strong> &gt; <strong>Set Working Directory</strong> &gt; <strong>To Source File Location</strong>. R now knows where to look for your data;</li>
+<li><a href="https://youtu.be/AHAR7j-IUOw?t=357">Create a new code chunk</a> and run the following code:</li>
+</ol>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="grasshoppers.html#cb27-1"></a>grasshopper &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/grasshoppers.csv&quot;</span>)</span></code></pre></div>
+<p>From here on out, just read the text, run the code in R, and answer the questions.</p>
+<p><font color = "red"><b>Note</b></font>: For the sake of privacy, this page uses a version of your data with scrambled names. I have also not linked the actual Google Drive file. Please ask an assistant if you can’t find it.</p>
+<hr />
+<p>If the code ran successfully, you will have an object called <code>grasshoppers</code> in your workspace. You can view it by clicking it, or by running:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="grasshoppers.html#cb28-1"></a><span class="kw">View</span>(grasshopper)</span></code></pre></div>
+<p>You probably have better things to do today than type long names, so let’s make the variable names a bit shorter:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="grasshoppers.html#cb29-1"></a><span class="kw">colnames</span>(grasshopper) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Affix&quot;</span>, <span class="st">&quot;Surname&quot;</span>, <span class="st">&quot;Group&quot;</span>, <span class="st">&quot;Thorax&quot;</span>, <span class="st">&quot;Wingspan&quot;</span>, <span class="st">&quot;Sex&quot;</span>)</span></code></pre></div>
+<p>Does R understand which variables are numbers and which are something else? Let’s check:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="grasshoppers.html#cb30-1"></a><span class="kw">str</span>(grasshopper)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    200 obs. of  7 variables:
+##  $ Name    : chr  &quot;naFan&quot; &quot;llEl&quot; &quot;MeMe&quot; &quot;eueort&quot; ...
+##  $ Affix   : chr  &quot;van&quot; &quot;&quot; &quot;&quot; &quot;de&quot; ...
+##  $ Surname : chr  &quot;RmesoasR&quot; &quot;aBBa&quot; &quot;Kunenn&quot; &quot;yuyyn&quot; ...
+##  $ Group   : chr  &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; ...
+##  $ Thorax  : int  13 10 13 15 11 13 15 10 12 15 ...
+##  $ Wingspan: int  94 79 78 80 84 68 100 75 87 90 ...
+##  $ Sex     : chr  &quot;man&quot; &quot;man&quot; &quot;man&quot; &quot;vrouw&quot; ...</code></pre>
+<p><strong>Question</strong>:</p>
+<ul>
+<li>Is the data read correctly into R?</li>
+<li>What do you think <code>chr</code> and <code>int</code> mean?</li>
+</ul>
+</div>
+<div id="plotting-the-data" class="section level2">
+<h2><span class="header-section-number">9.2</span> Plotting the Data</h2>
+<p>Just looking at code and numbers is a bit stale. So let’s start off by making some relevant plots:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="grasshoppers.html#cb32-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># Plot in a 2x2 grid</span></span>
+<span id="cb32-2"><a href="grasshoppers.html#cb32-2"></a><span class="kw">hist</span>(grasshopper<span class="op">$</span>Thorax, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb32-3"><a href="grasshoppers.html#cb32-3"></a><span class="kw">hist</span>(grasshopper<span class="op">$</span>Wingspan, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb32-4"><a href="grasshoppers.html#cb32-4"></a><span class="kw">plot</span>(Thorax <span class="op">~</span><span class="st"> </span>Wingspan, <span class="dt">data =</span> grasshopper, <span class="dt">col =</span> <span class="kw">factor</span>(Sex))</span>
+<span id="cb32-5"><a href="grasshoppers.html#cb32-5"></a><span class="kw">boxplot</span>(Wingspan <span class="op">~</span><span class="st"> </span>Sex, <span class="dt">data =</span> grasshopper, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
+<span id="cb32-6"><a href="grasshoppers.html#cb32-6"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default</span></span></code></pre></div>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p><strong>Question</strong>:</p>
+<ul>
+<li>What does each plot show?</li>
+<li>Can you change the code to make different plots? <em>(You can try changing the variable names, or change the graphical parameters.)</em></li>
+</ul>
+</div>
+<div id="subsetting" class="section level2">
+<h2><span class="header-section-number">9.3</span> Subsetting</h2>
+<p>We just read the whole data set. It contains the data from all groups Let’s make a <em>subset</em> of the measurements performed by group A:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="grasshoppers.html#cb33-1"></a>Subset &lt;-<span class="st"> </span>grasshopper[grasshopper<span class="op">$</span>Group <span class="op">==</span><span class="st"> &quot;A&quot;</span>, ]</span></code></pre></div>
+<p>What does this code do?</p>
+<ul>
+<li><code>subset &lt;-</code>: Create a variable named <code>Subset</code>;</li>
+<li><code>grasshopper[x, y]</code>: From the data set <code>grasshopper</code>, select only rows <code>x</code> and columns <code>y</code>. If <code>y</code> is left blank, it selects all columns;</li>
+<li><code>grasshopper$Groep == "A"</code>: From the data set <code>grasshopper</code>, select the variable <code>Group</code> and check if it is equal to the value <code>A</code> (<code>TRUE</code>) or not (<code>FALSE</code>).</li>
+</ul>
+<p><strong>Question</strong>:</p>
+<ul>
+<li>Can you change the code to make a subset of your own group? <em>(Skip this if you happen to be in A.)</em></li>
+<li>Make two more subsets called <code>Male</code> and <code>Female</code>, which contain only the measurements of their respective sex.</li>
+<li>(Optional) Using R code, can you make a subset that contains only the male measurements, and only of your group?</li>
+</ul>
+</div>
+<div id="t-test" class="section level2">
+<h2><span class="header-section-number">9.4</span> <span class="math inline">\(T\)</span>-Test</h2>
+<p>Below is an example of a <span class="math inline">\(t\)</span>-test, using some standard data in R:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="grasshoppers.html#cb34-1"></a><span class="kw">t.test</span>(extra <span class="op">~</span><span class="st"> </span>group, <span class="dt">data =</span> sleep, <span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="dt">var.equal =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Two Sample t-test
+## 
+## data:  extra by group
+## t = -1.8608, df = 18, p-value = 0.03959
+## alternative hypothesis: true difference in means is less than 0
+## 95 percent confidence interval:
+##        -Inf -0.1076222
+## sample estimates:
+## mean in group 1 mean in group 2 
+##            0.75            2.33</code></pre>
+<p>This particular <span class="math inline">\(t\)</span>-test is a one-sided <span class="math inline">\(t\)</span>-test for equal variance. The output shows that the mean of group 1 is <span class="math inline">\(0.75\)</span> hours of extra sleep, while the mean of group 2 is <span class="math inline">\(2.33\)</span>. The <span class="math inline">\(p\)</span>-value for this test is <span class="math inline">\(0.0396\)</span>. If we use a level of significance of <span class="math inline">\(\alpha = 0.05\)</span>, then group 2 is has a significantly larger mean than group 1, because <span class="math inline">\(0.0396 &lt; 0.05\)</span>.</p>
+<p><strong>Question</strong>:</p>
+<p>Watch the video below and choose a <span class="math inline">\(t\)</span>-test you deem appropriate for:</p>
+<ol style="list-style-type: decimal">
+<li>Comparing male and female thorax length;</li>
+<li>Comparing male and female wingspan length.</li>
+</ol>
+<p><em>(They could be the same, just explain briefly why you chose that test.)</em></p>
+<iframe src="https://www.youtube.com/embed/qJA3CvFt_pc" width="672" height="400px">
+</iframe>
+<p><strong>Question</strong>:</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Perform the tests you chose for (1) and (2) in R and draw a conclusion. This is no matter of life or death, just a comparison of grasshoppers. The consequence of a false positive<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> is not that severe, so you may use a more liberal value of <span class="math inline">\(\alpha = 0.10\)</span>.</li>
+<li>Compare your results with at least one other group. If your conclusion differs, can you explain why?</li>
+<li>(Optional) You performed two tests. That means that both can result in a false positive. With <span class="math inline">\(\alpha = 0.10\)</span>, what is the chance of at least one false positive when performing two tests?</li>
+<li>(Optional) Did we now prove that grasshopper males and females (don’t) differ in physical dimensions? What are some of the limitations of this comparison?</li>
+</ol>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p><small>Concluding a significant difference in the <em>sample</em>, even though the <em>population</em> of grasshoppers do not differ on average.</small><a href="grasshoppers.html#fnref8" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="grasshoppers.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="microbiology-experiment.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
