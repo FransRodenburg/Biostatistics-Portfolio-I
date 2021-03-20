@@ -56,5 +56,5 @@ comparing-two-other-students
 grasshoppers
 getting-started
 plotting-the-data
-subsetting
-t-test
+creating-a-subset
+comparing-means-with-a-t-test

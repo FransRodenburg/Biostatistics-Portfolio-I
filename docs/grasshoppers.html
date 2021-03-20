@@ -222,8 +222,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="grasshoppers.html"><a href="grasshoppers.html"><i class="fa fa-check"></i><b>9</b> Grasshoppers</a><ul>
 <li class="chapter" data-level="9.1" data-path="grasshoppers.html"><a href="grasshoppers.html#getting-started"><i class="fa fa-check"></i><b>9.1</b> Getting Started</a></li>
 <li class="chapter" data-level="9.2" data-path="grasshoppers.html"><a href="grasshoppers.html#plotting-the-data"><i class="fa fa-check"></i><b>9.2</b> Plotting the Data</a></li>
-<li class="chapter" data-level="9.3" data-path="grasshoppers.html"><a href="grasshoppers.html#subsetting"><i class="fa fa-check"></i><b>9.3</b> Subsetting</a></li>
-<li class="chapter" data-level="9.4" data-path="grasshoppers.html"><a href="grasshoppers.html#t-test"><i class="fa fa-check"></i><b>9.4</b> <span class="math inline">\(T\)</span>-Test</a></li>
+<li class="chapter" data-level="9.3" data-path="grasshoppers.html"><a href="grasshoppers.html#creating-a-subset"><i class="fa fa-check"></i><b>9.3</b> Creating a Subset</a></li>
+<li class="chapter" data-level="9.4" data-path="grasshoppers.html"><a href="grasshoppers.html#comparing-means-with-a-t-test"><i class="fa fa-check"></i><b>9.4</b> Comparing Means with a <span class="math inline">\(T\)</span>-Test</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -250,16 +250,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="figures/grasshopper.png" width="788" /></p>
 <div id="getting-started" class="section level2">
 <h2><span class="header-section-number">9.1</span> Getting Started</h2>
-<p>In this assignment, you will compare the mean thorax length and wingspan of male and female grasshoppers.</p>
+<p>We are going to compare the mean thorax length and wingspan of male and female grasshoppers.</p>
 <ol style="list-style-type: decimal">
 <li>If you haven’t already, <a href="installation.html#installation">install RStudio</a>;</li>
-<li>Download the data from the Google Sheets file as comma separated values (.csv);</li>
-<li>Open RStudio and <a href="https://youtu.be/2Sovzf6lVRo?t=280">create a new R markdown file</a>. <strong>Save this file to the same folder as the data!</strong>;</li>
+<li>Download the data from the Google Sheets file as comma separated values (.csv) and rename it “grasshoppers”;</li>
+<li>Open RStudio and <a href="https://youtu.be/2Sovzf6lVRo?t=280">create a new R markdown file</a>. <strong>Save this file to the same folder as the data!</strong></li>
 <li>Go to <strong>Session</strong> &gt; <strong>Set Working Directory</strong> &gt; <strong>To Source File Location</strong>. R now knows where to look for your data;</li>
 <li><a href="https://youtu.be/AHAR7j-IUOw?t=357">Create a new code chunk</a> and run the following code:</li>
 </ol>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="grasshoppers.html#cb27-1"></a>grasshopper &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/grasshoppers.csv&quot;</span>)</span></code></pre></div>
-<p>From here on out, just read the text, run the code in R, and answer the questions.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="grasshoppers.html#cb27-1"></a>grasshopper &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;grasshoppers.csv&quot;</span>)</span></code></pre></div>
+<p>From here on out, just read the text, run the code in R, adjust the R code if needed, and answer the questions.</p>
 <p><font color = "red"><b>Note</b></font>: For the sake of privacy, this page uses a version of your data with scrambled names. I have also not linked the actual Google Drive file. Please ask an assistant if you can’t find it.</p>
 <hr />
 <p>If the code ran successfully, you will have an object called <code>grasshoppers</code> in your workspace. You can view it by clicking it, or by running:</p>
@@ -298,14 +298,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Can you change the code to make different plots? <em>(You can try changing the variable names, or change the graphical parameters.)</em></li>
 </ul>
 </div>
-<div id="subsetting" class="section level2">
-<h2><span class="header-section-number">9.3</span> Subsetting</h2>
+<div id="creating-a-subset" class="section level2">
+<h2><span class="header-section-number">9.3</span> Creating a Subset</h2>
 <p>We just read the whole data set. It contains the data from all groups Let’s make a <em>subset</em> of the measurements performed by group A:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="grasshoppers.html#cb33-1"></a>Subset &lt;-<span class="st"> </span>grasshopper[grasshopper<span class="op">$</span>Group <span class="op">==</span><span class="st"> &quot;A&quot;</span>, ]</span></code></pre></div>
 <p>What does this code do?</p>
 <ul>
-<li><code>subset &lt;-</code>: Create a variable named <code>Subset</code>;</li>
-<li><code>grasshopper[x, y]</code>: From the data set <code>grasshopper</code>, select only rows <code>x</code> and columns <code>y</code>. If <code>y</code> is left blank, it selects all columns;</li>
+<li><code>Subset &lt;-</code>: Create a variable named <code>Subset</code>;</li>
+<li><code>grasshopper[x, y]</code>: From the data set <code>grasshopper</code>, select only rows <code>x</code> and columns <code>y</code>. If <code>y</code> is left blank, it selects all columns;<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></li>
 <li><code>grasshopper$Groep == "A"</code>: From the data set <code>grasshopper</code>, select the variable <code>Group</code> and check if it is equal to the value <code>A</code> (<code>TRUE</code>) or not (<code>FALSE</code>).</li>
 </ul>
 <p><strong>Question</strong>:</p>
@@ -315,8 +315,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>(Optional) Using R code, can you make a subset that contains only the male measurements, and only of your group?</li>
 </ul>
 </div>
-<div id="t-test" class="section level2">
-<h2><span class="header-section-number">9.4</span> <span class="math inline">\(T\)</span>-Test</h2>
+<div id="comparing-means-with-a-t-test" class="section level2">
+<h2><span class="header-section-number">9.4</span> Comparing Means with a <span class="math inline">\(T\)</span>-Test</h2>
 <p>Below is an example of a <span class="math inline">\(t\)</span>-test, using some standard data in R:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="grasshoppers.html#cb34-1"></a><span class="kw">t.test</span>(extra <span class="op">~</span><span class="st"> </span>group, <span class="dt">data =</span> sleep, <span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="dt">var.equal =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
@@ -342,7 +342,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 <p><strong>Question</strong>:</p>
 <ol start="3" style="list-style-type: decimal">
-<li>Perform the tests you chose for (1) and (2) in R and draw a conclusion. This is no matter of life or death, just a comparison of grasshoppers. The consequence of a false positive<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> is not that severe, so you may use a more liberal value of <span class="math inline">\(\alpha = 0.10\)</span>.</li>
+<li>Perform the tests you chose for (1) and (2) in R and draw a conclusion. This is no matter of life or death, just a comparison of grasshoppers. The consequence of a false positive<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> is not that severe, so you may use a more liberal value of <span class="math inline">\(\alpha = 0.10\)</span>.</li>
 <li>Compare your results with at least one other group. If your conclusion differs, can you explain why?</li>
 <li>(Optional) You performed two tests. That means that both can result in a false positive. With <span class="math inline">\(\alpha = 0.10\)</span>, what is the chance of at least one false positive when performing two tests?</li>
 <li>(Optional) Did we now prove that grasshopper males and females (don’t) differ in physical dimensions? What are some of the limitations of this comparison?</li>
@@ -353,7 +353,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="footnotes">
 <hr />
 <ol start="8">
-<li id="fn8"><p><small>Concluding a significant difference in the <em>sample</em>, even though the <em>population</em> of grasshoppers do not differ on average.</small><a href="grasshoppers.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p><small>Whenever you see square brackets in R, just think of them as “where”. In a data frame, there are both rows and columns, so you need to place the condition before a comma to indicate that you want to search the <em>rows</em>, and not the columns.</small><a href="grasshoppers.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p><small>Concluding a significant difference in the <em>sample</em>, even though the <em>population</em> of grasshoppers do not differ on average.</small><a href="grasshoppers.html#fnref9" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
