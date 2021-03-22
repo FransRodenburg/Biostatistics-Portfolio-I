@@ -57,4 +57,4 @@ grasshoppers
 getting-started
 plotting-the-data
 creating-a-subset
-comparing-means-with-a-t-test
+grasshoppertest
