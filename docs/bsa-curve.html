@@ -161,15 +161,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="bsa-curve.html"><a href="bsa-curve.html"><i class="fa fa-check"></i><b>4</b> BSA Curve</a><ul>
-<li class="chapter" data-level="4.1" data-path="bsa-curve.html"><a href="bsa-curve.html#what-is-a-bsa-curve"><i class="fa fa-check"></i><b>4.1</b> What Is a BSA Curve?</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="bsa-curve.html"><a href="bsa-curve.html#what-is-bsa"><i class="fa fa-check"></i><b>4.1.1</b> What Is BSA?</a></li>
+<li class="chapter" data-level="4.1" data-path="bsa-curve.html"><a href="bsa-curve.html#what-is-a-bsa-curve"><i class="fa fa-check"></i><b>4.1</b> What Is a BSA Curve?</a></li>
+<li class="chapter" data-level="4.2" data-path="bsa-curve.html"><a href="bsa-curve.html#how-to-contruct-a-bsa-curve-in-r"><i class="fa fa-check"></i><b>4.2</b> How to Contruct a BSA-Curve in R</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="bsa-curve.html"><a href="bsa-curve.html#enter-your-data"><i class="fa fa-check"></i><b>4.2.1</b> Enter your data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="bsa-curve.html"><a href="bsa-curve.html#fit-a-simple-linear-model"><i class="fa fa-check"></i><b>4.2.2</b> Fit a Simple Linear Model</a></li>
+<li class="chapter" data-level="4.2.3" data-path="bsa-curve.html"><a href="bsa-curve.html#plot-your-data-draw-a-line"><i class="fa fa-check"></i><b>4.2.3</b> Plot your data &amp; draw a line</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="bsa-curve.html"><a href="bsa-curve.html#how-to-contruct-a-bsa-curve"><i class="fa fa-check"></i><b>4.2</b> How to Contruct a BSA-Curve</a></li>
-<li class="chapter" data-level="4.3" data-path="bsa-curve.html"><a href="bsa-curve.html#how-precise-is-the-amount-of-protein"><i class="fa fa-check"></i><b>4.3</b> How Precise Is the Amount of Protein?</a></li>
-<li class="chapter" data-level="4.4" data-path="bsa-curve.html"><a href="bsa-curve.html#extra"><i class="fa fa-check"></i><b>4.4</b> Extra (*)</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="bsa-curve.html"><a href="bsa-curve.html#improving-your-figure"><i class="fa fa-check"></i><b>4.4.1</b> Improving your figure</a></li>
-<li class="chapter" data-level="4.4.2" data-path="bsa-curve.html"><a href="bsa-curve.html#biological-limitations-of-bsa-curves"><i class="fa fa-check"></i><b>4.4.2</b> Biological limitations of BSA-curves</a></li>
-<li class="chapter" data-level="4.4.3" data-path="bsa-curve.html"><a href="bsa-curve.html#statistical-limitations-of-bsa-curves"><i class="fa fa-check"></i><b>4.4.3</b> Statistical limitations of BSA-curves</a></li>
+<li class="chapter" data-level="4.3" data-path="bsa-curve.html"><a href="bsa-curve.html#using-a-bsa-curve-for-estimation"><i class="fa fa-check"></i><b>4.3</b> Using a BSA Curve for Estimation</a></li>
+<li class="chapter" data-level="4.4" data-path="bsa-curve.html"><a href="bsa-curve.html#howprecise"><i class="fa fa-check"></i><b>4.4</b> How Precise Is the Estimate?</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="bsa-curve.html"><a href="bsa-curve.html#r-squared"><i class="fa fa-check"></i><b>4.4.1</b> R-squared</a></li>
+<li class="chapter" data-level="4.4.2" data-path="bsa-curve.html"><a href="bsa-curve.html#prediction-interval"><i class="fa fa-check"></i><b>4.4.2</b> Prediction interval</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="bsa-curve.html"><a href="bsa-curve.html#improveyourfigure"><i class="fa fa-check"></i><b>4.5</b> Improving your figure (*)</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="bsa-curve.html"><a href="bsa-curve.html#improving-the-main-plot"><i class="fa fa-check"></i><b>4.5.1</b> Improving the main plot</a></li>
+<li class="chapter" data-level="4.5.2" data-path="bsa-curve.html"><a href="bsa-curve.html#highlighting-the-line"><i class="fa fa-check"></i><b>4.5.2</b> Highlighting the line</a></li>
+<li class="chapter" data-level="4.5.3" data-path="bsa-curve.html"><a href="bsa-curve.html#adding-a-grid"><i class="fa fa-check"></i><b>4.5.3</b> Adding a grid</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html"><i class="fa fa-check"></i><b>5</b> Adding Figures in R Markdown</a><ul>
@@ -251,13 +257,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## Here will be a video on BSA curves</code></pre>
 <div id="what-is-a-bsa-curve" class="section level2">
 <h2><span class="header-section-number">4.1</span> What Is a BSA Curve?</h2>
-<p>In the basic practicals you will use a spectrophotometer to measure the light passing through a sample with a known protein concentration. By doing so for various concentrations of protein, you can construct a curve for the amount of protein present in a sample, given the amount of light passing through. This is a basic tool in biological experimentation.</p>
-<div id="what-is-bsa" class="section level3">
-<h3><span class="header-section-number">4.1.1</span> What Is BSA?</h3>
-<p>Bovine Serum Albumin (BSA) is the protein used as a reference to construct the curve.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p>In the basic practicals you will use a spectrophotometer to measure light passing through a sample with a known protein concentration. By doing so for various concentrations of protein, you can construct a curve for the amount of protein present in a sample, given the amount of light passing through. This is a basic tool in biological experimentation. The protein used as a reference to construct the curve is called Bovine Serum Albumin (BSA).<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Hence the name: <em>BSA curve</em>.</p>
+<p><small></p>
 <table style="width:50%;">
 <caption>
-<span id="tab:unnamed-chunk-10">Table 4.1: </span>Example data of a BSA experiment. As more protein is present in the sample, less light passes through and so the <span class="math inline">\(\text{A}_{595}\)</span> increases.
+<span id="tab:ExampleBSA">Table 4.1: </span>Example data of a BSA experiment. As more protein is present in the sample, less light passes through and so the <span class="math inline">\(\text{A}_{595}\)</span> increases.
 </caption>
 <thead>
 <tr>
@@ -320,49 +324,206 @@ Absorption <span class="math inline">\((\text{A}_{595})\)</span>
 </tr>
 </tbody>
 </table>
-<div class="figure"><span id="fig:unnamed-chunk-11"></span>
-<img src="Biostatistics_files/figure-html/unnamed-chunk-11-1.png" alt="BSA curve of the data from table \ref{tab:ExampleBSA}." width="100%" />
+<p></small></p>
+<div class="figure"><span id="fig:typicalBSA"></span>
+<img src="Biostatistics_files/figure-html/typicalBSA-1.png" alt="A typical BSA curve, constructed from the data in table \@ref(tab:ExampleBSA)." width="100%" />
 <p class="caption">
-Figure 4.1: BSA curve of the data from table .
+Figure 4.1: A typical BSA curve, constructed from the data in table <a href="bsa-curve.html#tab:ExampleBSA">4.1</a>.
 </p>
 </div>
-<p>In the first part of this assignment, you will construct a BSA-curve based on your experimental data. In the second half, we are going use a statistical model to express the uncertainty of the estimation.</p>
+<p>In the first part of this assignment, you will construct a BSA-curve based on your experimental data. In the second half, we are going to express the uncertainty of the estimation.</p>
 </div>
+<div id="how-to-contruct-a-bsa-curve-in-r" class="section level2">
+<h2><span class="header-section-number">4.2</span> How to Contruct a BSA-Curve in R</h2>
+<p>As an example, I will show you how to construct a BSA curve from the example data shown in table <a href="bsa-curve.html#tab:ExampleBSA">4.1</a>.</p>
+<div id="enter-your-data" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Enter your data</h3>
+<p>First we create a data frame containing the BSA amounts and the observed <span class="math inline">\(\text{A}_{595}\)</span> values.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="bsa-curve.html#cb2-1"></a>BSA  &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">5</span></span>
+<span id="cb2-2"><a href="bsa-curve.html#cb2-2"></a>A595 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.135</span>, <span class="fl">0.235</span>, <span class="fl">0.328</span>, <span class="fl">0.409</span>, <span class="fl">0.495</span>)</span>
+<span id="cb2-3"><a href="bsa-curve.html#cb2-3"></a>DF   &lt;-<span class="st"> </span><span class="kw">data.frame</span>(BSA, A595)</span></code></pre></div>
+<p>This will create an object <code>DF</code> in the object space. You can view it by clicking on it in the environment tab of the upper-right pane in RStudio.</p>
 </div>
-<div id="how-to-contruct-a-bsa-curve" class="section level2">
-<h2><span class="header-section-number">4.2</span> How to Contruct a BSA-Curve</h2>
-<p>…:</p>
-<pre><code>## Continuation using the example from before.</code></pre>
-<p>…</p>
-</div>
-<div id="how-precise-is-the-amount-of-protein" class="section level2">
-<h2><span class="header-section-number">4.3</span> How Precise Is the Amount of Protein?</h2>
-</div>
-<div id="extra" class="section level2">
-<h2><span class="header-section-number">4.4</span> Extra (*)</h2>
-<div id="improving-your-figure" class="section level3">
-<h3><span class="header-section-number">4.4.1</span> Improving your figure</h3>
-</div>
-<div id="biological-limitations-of-bsa-curves" class="section level3">
-<h3><span class="header-section-number">4.4.2</span> Biological limitations of BSA-curves</h3>
-<blockquote>
-<p>This is a long ongoing discussion because of various reasons. I list a few. Everybody who is using Bradford has long forgotten how it really works (when was it first described?). Actually it binds aromatic amino acids, mainly tryptophane. So proteins with low numbers of these amino acids will react poorly in a Bradford assays. A good example is RNaseT1 which will practically show no reaction at all. Statistically this problem gets smaller as your protein gets bigger or if you’re measuring mixtures of proteins. This also means that for purified protein the best standard is the protein itself or a very similar one. This holds for every assay with speciific binding or reaction characteristics. In any case if you compare results from different colorometric assays using different standards you will practically never get the same results and differences can be very big. Also look at temperature in the lab or incubator, matrix effects, buffers used, …. By the way, You can use Bradford calibration lines for a longer time if you control your assay strictly, including reaction time. —<a href="https://www.researchgate.net/post/How_to_get_the_correct_standard_BSA_curve_for_my_protein_estimation2">Freddy Dardenne</a></p>
-</blockquote>
-</div>
-<div id="statistical-limitations-of-bsa-curves" class="section level3">
-<h3><span class="header-section-number">4.4.3</span> Statistical limitations of BSA-curves</h3>
+<div id="fit-a-simple-linear-model" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Fit a Simple Linear Model</h3>
+<p>Watch the first two minutes of <a href="https://youtu.be/3PAAB3VDmFQ">this video</a> on simple linear regression. For now, if you understand the following terms, you can continue:</p>
 <ul>
-<li>Linear or not;</li>
-<li>Interpolation vs extrapolation.</li>
+<li>Positive/negative linear relationship;</li>
+<li>Intercept &amp; slope.</li>
 </ul>
+<p>In R, you can estimate the intercept and slope as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="bsa-curve.html#cb3-1"></a>model &lt;-<span class="st"> </span><span class="kw">lm</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF)</span></code></pre></div>
+<p>How that works will be explained in the statistics course. For now, let’s extract the intercept and slope from this model:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="bsa-curve.html#cb4-1"></a><span class="kw">coef</span>(model)</span></code></pre></div>
+<pre><code>## (Intercept)         BSA 
+##  0.02485714  0.09685714</code></pre>
+<p>The estimated line pretty much goes through the origin,<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> with an intercept of about 0.02. We can also see that there is a positive linear relationship between the amount of BSA and the absorbance: For every microgram of BSA added, the absorbance increases by about 0.1.</p>
+</div>
+<div id="plot-your-data-draw-a-line" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Plot your data &amp; draw a line</h3>
+<p>Finally we create a plot and add a line as follows:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="bsa-curve.html#cb6-1"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF)</span>
+<span id="cb6-2"><a href="bsa-curve.html#cb6-2"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span></code></pre></div>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>It looks a bit basic, but this is all you need to produce a BSA curve. Of course you can <a href="bsa-curve.html#improveyourfigure">improve your figure</a> if you want, by using more advanced plotting routines.</p>
+</div>
+</div>
+<div id="using-a-bsa-curve-for-estimation" class="section level2">
+<h2><span class="header-section-number">4.3</span> Using a BSA Curve for Estimation</h2>
+<p>Let’s say you measured the absorbance of the sample of interest and ended up with a value of <span class="math inline">\(\text{A}_{595} = 0.264\)</span>. Using the BSA curve, you can estimate the amount of protein as shown in the figure below:</p>
+<div class="figure"><span id="fig:estimateBSA"></span>
+<img src="Biostatistics_files/figure-html/estimateBSA-1.png" alt="\label{fig:estimateBSA}To estimate the amount of protein, look at the $\text{A}_{595}$ on the y-axis, then see which position it corresponds to on the x-axis." width="672" />
+<p class="caption">
+Figure 4.2: To estimate the amount of protein, look at the <span class="math inline">\(\text{A}_{595}\)</span> on the y-axis, then see which position it corresponds to on the x-axis.
+</p>
+</div>
+<p>Apparently the sample of interest has the same absorbance as a BSA sample of about <span class="math inline">\(2.5\)</span> microgram.</p>
+<p>If you want a more precise estimate, you have to use the equation of the model we just fitted:</p>
+<p><span class="math display" id="eq:BSAlinear">\[\begin{equation}
+\text{A}_{595} = \text{intercept} + \text{slope}\times\text{BSA}
+\tag{4.1}
+\end{equation}\]</span></p>
+<p>If we fill in the example, we get:</p>
+<p><span class="math display">\[
+\begin{aligned}
+0.264 &amp;= 0.02485714 + 0.09685714 \times \text{BSA} + 0 \\
+\\
+\text{BSA} &amp;= \frac{0.264 - 0.02485714}{0.09685714} \approx 2.47
+\end{aligned}
+\]</span></p>
+<p>Which is approximately equal to the <span class="math inline">\(2.5\)</span> we read from figure <a href="bsa-curve.html#fig:estimateBSA">4.2</a>.</p>
+<p><strong>Question</strong>:</p>
+<ul>
+<li>Can you read from your own figure the amount of protein in the sample of interest?</li>
+<li>Perform the estimation using eq. <a href="bsa-curve.html#eq:BSAlinear">(4.1)</a> with your own BSA curve and your own observed absorbance:
+<ul>
+<li>If you have performed the experiment twice or more, you can average the absorbance for a more precise answer;</li>
+<li>Make sure to adjust for any dilution you applied to the sample.</li>
+</ul></li>
+</ul>
+</div>
+<div id="howprecise" class="section level2">
+<h2><span class="header-section-number">4.4</span> How Precise Is the Estimate?</h2>
+<p>I’m sure you’ve noticed that the observations do not exactly fall on the line. The regression model is but an approximation of the true relationship. This is caused by many things:</p>
+<ul>
+<li>No matter how careful you are, the amount of BSA cannot be weighed <em>exactly</em>;</li>
+<li>The spectrophotometer does not have infinite precision;</li>
+<li>Any dilutions applied can introduce small errors;</li>
+<li>The true relationship is probably not <em>perfectly</em> linear.</li>
+</ul>
+<p>It is more than likely that if you perform the experiment again, you will obtain slightly different values. Even if you take great care, <strong>there is <em>always</em> uncertainty</strong>. At best, you can keep that uncertainty low.</p>
+<p>So how much uncertainty is there? How do we express that? Below I will discuss a simple measure to include in your plot, and a great way to visualize the uncertainty.</p>
+<div id="r-squared" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> R-squared</h3>
+<p><span class="math inline">\(R^2\)</span> is the amount of variance explained by the model. In other words: How much of the total variance in <span class="math inline">\(\text{A}_{595}\)</span> can be explained by the line?</p>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>The red segments on the right represent the original spread in <span class="math inline">\(\text{A}_{595}\)</span>,<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> and on the right we see the spread that is left after accounting for our model. You can clearly see that the distances on the right are <em>much</em> smaller than on the left. If you square these segments and sum them, that is called the <em>variance</em>. <span class="math inline">\(R^2\)</span> is then calculated as:</p>
+<p><span class="math display">\[R^2 = 1 - \frac{\text{remaining variance}}{\text{total variance}}\]</span></p>
+<p>R includes this value in the <code>summary</code> of a linear model by default. You can obtain it as follows:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="bsa-curve.html#cb7-1"></a><span class="kw">summary</span>(model)<span class="op">$</span>r.squared</span></code></pre></div>
+<pre><code>## [1] 0.9913461</code></pre>
+<p>Apparently the BSA curve explains around <span class="math inline">\(99.1\%\)</span> of the total variance in absorbance. This is quite a large amount: Only <span class="math inline">\(0.9\%\)</span> of the variance is unexplained. A higher <span class="math inline">\(R^2\)</span> value means there is less uncertainty.</p>
+<p><strong>Question</strong>:</p>
+<ul>
+<li>What is the value of <span class="math inline">\(R^2\)</span> using your own experimental data?</li>
+<li>How could you obtain a higher <span class="math inline">\(R^2\)</span>?</li>
+</ul>
+</div>
+<div id="prediction-interval" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Prediction interval</h3>
+<p>Where would you expect 95% of the future observations of <span class="math inline">\(\text{A}_{595}\)</span> to be? That is the question a 95% prediction interval answers. Though its calculation is beyond the scope of this chapter, generating such an interval along the BSA curve in R can be done in a few lines of code:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="bsa-curve.html#cb9-1"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF)</span>
+<span id="cb9-2"><a href="bsa-curve.html#cb9-2"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span>
+<span id="cb9-3"><a href="bsa-curve.html#cb9-3"></a></span>
+<span id="cb9-4"><a href="bsa-curve.html#cb9-4"></a>newX  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">BSA =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="fl">0.1</span>)) <span class="co"># 0.0, 0.1, ..., 4.9, 5.0</span></span>
+<span id="cb9-5"><a href="bsa-curve.html#cb9-5"></a>newY  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">predict</span>(model, newX, <span class="dt">interval =</span> <span class="st">&quot;predict&quot;</span>))</span>
+<span id="cb9-6"><a href="bsa-curve.html#cb9-6"></a>newDF &lt;-<span class="st"> </span><span class="kw">cbind</span>(newX, newY)</span>
+<span id="cb9-7"><a href="bsa-curve.html#cb9-7"></a></span>
+<span id="cb9-8"><a href="bsa-curve.html#cb9-8"></a><span class="kw">lines</span>(lwr <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> newDF) <span class="co"># lower bound of the interval</span></span>
+<span id="cb9-9"><a href="bsa-curve.html#cb9-9"></a><span class="kw">lines</span>(upr <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> newDF) <span class="co"># upper bound of the interval</span></span></code></pre></div>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><strong>Question</strong>:</p>
+<ul>
+<li>Produce a prediction interval for your own BSA curve? Try it by copying the code above and <a href="bsa-curve.html#improveyourfigure">adjusting it</a> if you like.</li>
+<li>Figure <a href="#estimateBSA"><strong>??</strong></a> showed how to estimate the protein concentration of a sample of interest. Now that you have a prediction interval around the line, within which values do you expect the protein concentration to be?</li>
+</ul>
+</div>
+</div>
+<div id="improveyourfigure" class="section level2">
+<h2><span class="header-section-number">4.5</span> Improving your figure (*)</h2>
+<p>In the examples so far, I tried to keep the coding part simple. Here I will show how to reproduce the figure by expanding the code a bit. You can use whichever parts you like and change it. Using a hashtag (<code>#</code>), I will provide comments after each line to explain what it’s for.</p>
+<div id="improving-the-main-plot" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> Improving the main plot</h3>
+<p>Using some tricks described in the help page of <code>plotmath</code>, you can add proper annotation to your axes:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="bsa-curve.html#cb10-1"></a><span class="kw">plot</span>(</span>
+<span id="cb10-2"><a href="bsa-curve.html#cb10-2"></a>  A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF,           <span class="co"># A595 vs BSA, from data set DF</span></span>
+<span id="cb10-3"><a href="bsa-curve.html#cb10-3"></a>  <span class="dt">main =</span> <span class="st">&quot;BSA Curve&quot;</span>,              <span class="co"># Title</span></span>
+<span id="cb10-4"><a href="bsa-curve.html#cb10-4"></a>  <span class="dt">xlab =</span> <span class="kw">bquote</span>(<span class="st">&quot;BSA&quot;</span> <span class="op">~</span><span class="st"> </span>(mu <span class="op">*</span><span class="st"> </span>g)), <span class="co"># X-axis annotation</span></span>
+<span id="cb10-5"><a href="bsa-curve.html#cb10-5"></a>  <span class="dt">ylab =</span> <span class="kw">bquote</span>(A[<span class="dv">595</span>]),           <span class="co"># Y-axis annotation</span></span>
+<span id="cb10-6"><a href="bsa-curve.html#cb10-6"></a>  <span class="dt">pch  =</span> <span class="dv">19</span>,                       <span class="co"># Solid point character (see ?pch)</span></span>
+<span id="cb10-7"><a href="bsa-curve.html#cb10-7"></a>  <span class="dt">las  =</span> <span class="dv">1</span>                         <span class="co"># Set label style to horizontal</span></span>
+<span id="cb10-8"><a href="bsa-curve.html#cb10-8"></a>)</span></code></pre></div>
+</div>
+<div id="highlighting-the-line" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> Highlighting the line</h3>
+<p>For emphasis, I changed the width and color of the line:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="bsa-curve.html#cb11-1"></a><span class="co"># Add this *after* your call to the plot function. Then run both.</span></span>
+<span id="cb11-2"><a href="bsa-curve.html#cb11-2"></a><span class="kw">abline</span>(</span>
+<span id="cb11-3"><a href="bsa-curve.html#cb11-3"></a>  <span class="kw">coef</span>(model),      <span class="co"># Coefficients from the object &#39;model&#39;</span></span>
+<span id="cb11-4"><a href="bsa-curve.html#cb11-4"></a>  <span class="dt">lwd =</span> <span class="dv">2</span>,          <span class="co"># Increase line width to 2 (default 1)</span></span>
+<span id="cb11-5"><a href="bsa-curve.html#cb11-5"></a>  <span class="dt">col =</span> <span class="st">&quot;steelblue&quot;</span> <span class="co"># Change the color of the line</span></span>
+<span id="cb11-6"><a href="bsa-curve.html#cb11-6"></a>)</span></code></pre></div>
+</div>
+<div id="adding-a-grid" class="section level3">
+<h3><span class="header-section-number">4.5.3</span> Adding a grid</h3>
+<p>You can add a grid if you like. If you do add a grid, keep three things in mind:</p>
+<ol style="list-style-type: decimal">
+<li>Don’t use <code>grid</code>. This function is so dumb that even its help page admits you’re better off using <code>abline</code>:</li>
+</ol>
+<div class="figure"><span id="fig:unnamed-chunk-13"></span>
+<img src="Biostatistics_files/figure-html/unnamed-chunk-13-1.png" alt="Look closely at how the grid meets the axes on the left..." width="672" />
+<p class="caption">
+Figure 4.3: Look closely at how the grid meets the axes on the left…
+</p>
+</div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="bsa-curve.html#cb12-1"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF, <span class="dt">main =</span> <span class="st">&quot;wow great job, grid...&quot;</span>)</span>
+<span id="cb12-2"><a href="bsa-curve.html#cb12-2"></a><span class="kw">grid</span>(<span class="dt">nx =</span> <span class="dv">5</span>, <span class="dt">ny =</span> <span class="dv">5</span>)</span>
+<span id="cb12-3"><a href="bsa-curve.html#cb12-3"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span>
+<span id="cb12-4"><a href="bsa-curve.html#cb12-4"></a></span>
+<span id="cb12-5"><a href="bsa-curve.html#cb12-5"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF, <span class="dt">main =</span> <span class="st">&quot;abline to the rescue&quot;</span>)</span>
+<span id="cb12-6"><a href="bsa-curve.html#cb12-6"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>), <span class="dt">v =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb12-7"><a href="bsa-curve.html#cb12-7"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Some prefer light on dark, others dark on light. I don’t mind either way. But avoid using a high contrast for your grid. It is not the main subject being plotted and thus should fall into the background:</li>
+</ol>
+<div class="figure"><span id="fig:unnamed-chunk-15"></span>
+<img src="Biostatistics_files/figure-html/unnamed-chunk-15-1.png" alt="A grid should have low contrast to avoid crowding the plot." width="672" />
+<p class="caption">
+Figure 4.4: A grid should have low contrast to avoid crowding the plot.
+</p>
+</div>
+<p style="margin-left: 32px">
+To add a colored background to your plot, insert the following line after the call to <code>plot</code>:
+</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="bsa-curve.html#cb13-1"></a><span class="co"># Add this *after* your call to the plot function.</span></span>
+<span id="cb13-2"><a href="bsa-curve.html#cb13-2"></a><span class="kw">rect</span>(<span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">1</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">3</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">2</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">4</span>], <span class="dt">col =</span> <span class="st">&quot;grey90&quot;</span>)</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>When adding anything to a base R plot, R draws on top of the existing plot. That means it looks more professional if you redraw the points on top of the grid:</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="bsa-curve.html#cb14-1"></a><span class="co"># to be included</span></span>
+<span id="cb14-2"><a href="bsa-curve.html#cb14-2"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF)</span>
+<span id="cb14-3"><a href="bsa-curve.html#cb14-3"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span></code></pre></div>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 
 </div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="3">
-<li id="fn3"><p><small>Bradford, Marion (1976): “A Rapid and Sensitive Method for the Quantification of Microgram Quantities of Protein Utilizing the Principle of Protein-Dye Binding”. <em>Analytical Biochemistry</em>. <strong>72</strong> (1–2): 248–254. <a href="doi:%5B10.1006/abio.1976.9999" class="uri">doi:[10.1006/abio.1976.9999</a>](<a href="https://doi.org/10.1006%2Fabio.1976.9999" class="uri">https://doi.org/10.1006%2Fabio.1976.9999</a>). PMID <a href="https://pubmed.ncbi.nlm.nih.gov/942051/">942051</a></small><a href="bsa-curve.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<ol start="1">
+<li id="fn1"><p><small>Bradford, Marion (1976): “A Rapid and Sensitive Method for the Quantification of Microgram Quantities of Protein Utilizing the Principle of Protein-Dye Binding”. <em>Analytical Biochemistry</em>. <strong>72</strong> (1–2): 248–254. <a href="https://doi.org/10.1006%2Fabio.1976.9999">doi:10.1006/abio.1976.9999</a>. PMID <a href="https://pubmed.ncbi.nlm.nih.gov/942051/">942051</a></small><a href="bsa-curve.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><small>The reason the line does not go <em>exactly</em> through zero is because it is only fitted to these 5 observations, which have <a href="bsa-curve.html#howprecise">uncertainty</a>. You could force the line to go through zero, but that would worsen the estimate of the slope.</small><a href="bsa-curve.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p><small>Shown on the left are the distances to the mean value of <span class="math inline">\(\text{A}_{595}\)</span>.</small><a href="bsa-curve.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

@@ -161,15 +161,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="bsa-curve.html"><a href="bsa-curve.html"><i class="fa fa-check"></i><b>4</b> BSA Curve</a><ul>
-<li class="chapter" data-level="4.1" data-path="bsa-curve.html"><a href="bsa-curve.html#what-is-a-bsa-curve"><i class="fa fa-check"></i><b>4.1</b> What Is a BSA Curve?</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="bsa-curve.html"><a href="bsa-curve.html#what-is-bsa"><i class="fa fa-check"></i><b>4.1.1</b> What Is BSA?</a></li>
+<li class="chapter" data-level="4.1" data-path="bsa-curve.html"><a href="bsa-curve.html#what-is-a-bsa-curve"><i class="fa fa-check"></i><b>4.1</b> What Is a BSA Curve?</a></li>
+<li class="chapter" data-level="4.2" data-path="bsa-curve.html"><a href="bsa-curve.html#how-to-contruct-a-bsa-curve-in-r"><i class="fa fa-check"></i><b>4.2</b> How to Contruct a BSA-Curve in R</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="bsa-curve.html"><a href="bsa-curve.html#enter-your-data"><i class="fa fa-check"></i><b>4.2.1</b> Enter your data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="bsa-curve.html"><a href="bsa-curve.html#fit-a-simple-linear-model"><i class="fa fa-check"></i><b>4.2.2</b> Fit a Simple Linear Model</a></li>
+<li class="chapter" data-level="4.2.3" data-path="bsa-curve.html"><a href="bsa-curve.html#plot-your-data-draw-a-line"><i class="fa fa-check"></i><b>4.2.3</b> Plot your data &amp; draw a line</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="bsa-curve.html"><a href="bsa-curve.html#how-to-contruct-a-bsa-curve"><i class="fa fa-check"></i><b>4.2</b> How to Contruct a BSA-Curve</a></li>
-<li class="chapter" data-level="4.3" data-path="bsa-curve.html"><a href="bsa-curve.html#how-precise-is-the-amount-of-protein"><i class="fa fa-check"></i><b>4.3</b> How Precise Is the Amount of Protein?</a></li>
-<li class="chapter" data-level="4.4" data-path="bsa-curve.html"><a href="bsa-curve.html#extra"><i class="fa fa-check"></i><b>4.4</b> Extra (*)</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="bsa-curve.html"><a href="bsa-curve.html#improving-your-figure"><i class="fa fa-check"></i><b>4.4.1</b> Improving your figure</a></li>
-<li class="chapter" data-level="4.4.2" data-path="bsa-curve.html"><a href="bsa-curve.html#biological-limitations-of-bsa-curves"><i class="fa fa-check"></i><b>4.4.2</b> Biological limitations of BSA-curves</a></li>
-<li class="chapter" data-level="4.4.3" data-path="bsa-curve.html"><a href="bsa-curve.html#statistical-limitations-of-bsa-curves"><i class="fa fa-check"></i><b>4.4.3</b> Statistical limitations of BSA-curves</a></li>
+<li class="chapter" data-level="4.3" data-path="bsa-curve.html"><a href="bsa-curve.html#using-a-bsa-curve-for-estimation"><i class="fa fa-check"></i><b>4.3</b> Using a BSA Curve for Estimation</a></li>
+<li class="chapter" data-level="4.4" data-path="bsa-curve.html"><a href="bsa-curve.html#howprecise"><i class="fa fa-check"></i><b>4.4</b> How Precise Is the Estimate?</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="bsa-curve.html"><a href="bsa-curve.html#r-squared"><i class="fa fa-check"></i><b>4.4.1</b> R-squared</a></li>
+<li class="chapter" data-level="4.4.2" data-path="bsa-curve.html"><a href="bsa-curve.html#prediction-interval"><i class="fa fa-check"></i><b>4.4.2</b> Prediction interval</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="bsa-curve.html"><a href="bsa-curve.html#improveyourfigure"><i class="fa fa-check"></i><b>4.5</b> Improving your figure (*)</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="bsa-curve.html"><a href="bsa-curve.html#improving-the-main-plot"><i class="fa fa-check"></i><b>4.5.1</b> Improving the main plot</a></li>
+<li class="chapter" data-level="4.5.2" data-path="bsa-curve.html"><a href="bsa-curve.html#highlighting-the-line"><i class="fa fa-check"></i><b>4.5.2</b> Highlighting the line</a></li>
+<li class="chapter" data-level="4.5.3" data-path="bsa-curve.html"><a href="bsa-curve.html#adding-a-grid"><i class="fa fa-check"></i><b>4.5.3</b> Adding a grid</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html"><i class="fa fa-check"></i><b>5</b> Adding Figures in R Markdown</a><ul>
@@ -255,7 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="study-design" class="section level2">
 <h2><span class="header-section-number">8.2</span> Study Design</h2>
 <p>In the microbiology assignment, you will design your own experiment, perform an analysis, draw conclusions and report your findings. That is a lot of work, so start planning in time!</p>
-<p>Designing a study requires consideration of both biology and statistics: What question is the study supposed to answer? What kind of test or model is able to do so? What are the independent experimental units?<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> How large should your sample size be?</p>
+<p>Designing a study requires consideration of both biology and statistics: What question is the study supposed to answer? What kind of test or model is able to do so? What are the independent experimental units?<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> How large should your sample size be?</p>
 <p>To make it all feasible within the context of your microbiology course, let’s restrict ourselves to one particular kind of comparison: Differences in counts among groups. The first experiment is the same for all students:</p>
 <ul>
 <li>Is there a difference in the number of bacterial colonies counted on agar plates exposed to the air for an hour in the kitchen and the living room?</li>
@@ -287,16 +293,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This statement of no difference is called the null-hypothesis (<span class="math inline">\(H_0\)</span>). If there is sufficient evidence against it, the null-hypothesis is rejected. What consitutes ‘enough’ evidence depends on what is considered an acceptable chance of a false positive (<span class="math inline">\(\alpha\)</span>):</p>
 <ul>
 <li><strong>Null-hypothesis (<span class="math inline">\(H_0\)</span>)</strong>: A statement of no difference;</li>
-<li><strong>Level of significance (<span class="math inline">\(\alpha\)</span>)</strong>: What is an acceptable chance of a false positive?<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></li>
+<li><strong>Level of significance (<span class="math inline">\(\alpha\)</span>)</strong>: What is an acceptable chance of a false positive?<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></li>
 </ul>
 <p>When counting bacterial colonies on plates from two plates, the null-hypothesis would be:</p>
 <ul>
 <li><span class="math inline">\(H_0:\)</span> There is no difference in the number of bacterial colonies on either plate.</li>
 </ul>
-<p>A false positive would mean that you conclude a significant difference, even though the null-hypothesis is true. This can always happen, because a sample is just a random draw from the population,<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> and can coincidentally be different from its population.</p>
+<p>A false positive would mean that you conclude a significant difference, even though the null-hypothesis is true. This can always happen, because a sample is just a random draw from the population,<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> and can coincidentally be different from its population.</p>
 <p>So which value should you choose for the level of significance (<span class="math inline">\(\alpha\)</span>)? That depends on your research:</p>
 <ul>
-<li>If we’re developing a diagnostic test for cancer, then a false positive could mean a a very serious operation for the patient. This means we have to be very strict about false positives. Even <span class="math inline">\(\alpha = 0.01\)</span> would mean <span class="math inline">\(\frac{1}{100}\)</span> healthy individuals would wrongly undergo treatment;<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></li>
+<li>If we’re developing a diagnostic test for cancer, then a false positive could mean a a very serious operation for the patient. This means we have to be very strict about false positives. Even <span class="math inline">\(\alpha = 0.01\)</span> would mean <span class="math inline">\(\frac{1}{100}\)</span> healthy individuals would wrongly undergo treatment;<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></li>
 <li>If we’re just counting bacteria in kitchens and living rooms, a false positive is not that consequential, and we can be less strict about what is significant.</li>
 </ul>
 <p>Specifically, that means you could choose whatever value for <span class="math inline">\(\alpha\)</span> you want. However, in biological journals, it is convention to go no higher than <span class="math inline">\(\alpha = 0.05\)</span>. That implies a chance of <span class="math inline">\(5\%\)</span>, or <span class="math inline">\(\frac{1}{20}\)</span>, of a false positive. Therefore, for this experiment, let’s use:</p>
@@ -336,10 +342,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(\chi^2 = \displaystyle\sum_{i = 1}^k \frac{(\text{obs.} - \text{exp.})^2}{\text{exp.}} = \frac{(\text{21} - \text{18})^2}{\text{18}} + \frac{(\text{15} - \text{18})^2}{\text{18}} = \frac{1}{2} + \frac{1}{2} = 1\)</span></li>
 </ul>
 <p>You don’t have to know how to estimate a <span class="math inline">\(p\)</span>-value from that number, but I can easily show it in a figure:</p>
-<p><img src="Biostatistics_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 <p>That is the chi-squared distribution with one degree of freedom (because we have two groups and calculated one value). This figure shows the distribution of values of <span class="math inline">\(\chi^2\)</span> that you would expect to find if the null-hypothesis were true. De largest chance is a value of <span class="math inline">\(\chi^2 = 0\)</span>, and after that, the probability density decreases. <strong>The <span class="math inline">\(p\)</span>-value answers the question: If the null-hypothesis is true, what is the chance of our <span class="math inline">\(\chi^2 = 1\)</span> or higher?</strong>.</p>
 <p>The <span class="math inline">\(p\)</span>-value for <span class="math inline">\(\chi^2=1\)</span> is the surface area under the probability distribution from <span class="math inline">\(1\)</span> on:</p>
-<p><img src="Biostatistics_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 <p>That is <span class="math inline">\(31.7\%\)</span>, almost one third of the entire surface area, so we don’t have very convincing evidence against the null-hypothesis:</p>
 <ul>
 <li>If there is no difference in the population, the chance of <span class="math inline">\(\chi^2 \geq 1\)</span> is <span class="math inline">\(p = 0.317\)</span>.</li>
@@ -347,7 +353,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this example, <span class="math inline">\(p &gt; \alpha\)</span>, so we don’t reject <span class="math inline">\(H_0\)</span>. In the report we would write that there is insufficient evidence to conclude a difference in bacteria in the kitchen and living room from this experiment.</p>
 <p>To calculate this value yourself, you would have to evaluate the integral of the chi-squared distribution from <span class="math inline">\(1\)</span> to <span class="math inline">\(\infty\)</span>. <a href="https://en.wikipedia.org/wiki/Chi-square_distribution#Cumulative_distribution_function">I don’t recommend trying it by hand</a>. Fortunately, we have R:</p>
 <p><small></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="microbiology-experiment.html#cb19-1"></a><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pchisq</span>(<span class="dv">1</span>, <span class="dt">df =</span> <span class="dv">2</span> <span class="op">-</span><span class="st"> </span><span class="dv">1</span>) <span class="co"># df: two groups, one value estimated, so 2 - 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="microbiology-experiment.html#cb31-1"></a><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pchisq</span>(<span class="dv">1</span>, <span class="dt">df =</span> <span class="dv">2</span> <span class="op">-</span><span class="st"> </span><span class="dv">1</span>) <span class="co"># df: two groups, one value estimated, so 2 - 1</span></span></code></pre></div>
 <pre><code>## [1] 0.3173105</code></pre>
 <p></small></p>
 <p>This says: <span class="math inline">\(1\)</span> minus the chance of any value up till <span class="math inline">\(\chi^2=1\)</span>. And that is how we get <span class="math inline">\(0.317\)</span>.</p>
@@ -356,8 +362,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">8.5.2</span> Chi-Squared Test in R</h3>
 <p>If you think the explanation so far is a lot, I don’t blame you. It takes quite a lot of background knowledge to understand a simple test. The explanation of how the chi-squared test works will not be part of the microbiology exam. Nevertheless, I wanted to include it here, so that you can read what is going on when you use this test. Namely, it can all be done in a few seconds in R:</p>
 <p><small></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="microbiology-experiment.html#cb21-1"></a>example &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">15</span>)</span>
-<span id="cb21-2"><a href="microbiology-experiment.html#cb21-2"></a><span class="kw">chisq.test</span>(example)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="microbiology-experiment.html#cb33-1"></a>example &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">15</span>)</span>
+<span id="cb33-2"><a href="microbiology-experiment.html#cb33-2"></a><span class="kw">chisq.test</span>(example)</span></code></pre></div>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
@@ -390,7 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><small></p>
 <table style="width:50%; margin-left: auto; margin-right: auto;" class="table">
 <caption>
-<span id="tab:unnamed-chunk-27">Table 8.1: </span><span class="math inline">\(2 \times 2\)</span> contingency table of student 1 &amp; 2.
+<span id="tab:unnamed-chunk-39">Table 8.1: </span><span class="math inline">\(2 \times 2\)</span> contingency table of student 1 &amp; 2.
 </caption>
 <thead>
 <tr>
@@ -433,18 +439,18 @@ Student 2
 <p>All a <span class="math inline">\(\chi^2\)</span>-test does is compare observed to expected counts. You can apply this to contingency tables too. The test then determines the difference in the proportion of colonies in the kitchen and living room for student 1 and 2. You don’t have to calculate the expected counts by hand, but an explanation is given below for those interested.<span class="math inline">\(^\dagger\)</span></p>
 <p>In R, all you have to do is put the data in a <span class="math inline">\(2 \times 2\)</span> matrix, for example using <code>rbind</code> (row bind):</p>
 <p><small></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="microbiology-experiment.html#cb23-1"></a>Student1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">15</span>) </span>
-<span id="cb23-2"><a href="microbiology-experiment.html#cb23-2"></a>Student2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">36</span>, <span class="dv">21</span>)</span>
-<span id="cb23-3"><a href="microbiology-experiment.html#cb23-3"></a>ContingencyTable &lt;-<span class="st"> </span><span class="kw">rbind</span>(Student1, Student2)             <span class="co"># Create a 2x2 matrix</span></span>
-<span id="cb23-4"><a href="microbiology-experiment.html#cb23-4"></a><span class="kw">colnames</span>(ContingencyTable) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Kitchen&quot;</span>, <span class="st">&quot;Living Room&quot;</span>) <span class="co"># Add column names</span></span>
-<span id="cb23-5"><a href="microbiology-experiment.html#cb23-5"></a>ContingencyTable                                          <span class="co"># Print the result</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="microbiology-experiment.html#cb35-1"></a>Student1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">15</span>) </span>
+<span id="cb35-2"><a href="microbiology-experiment.html#cb35-2"></a>Student2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">36</span>, <span class="dv">21</span>)</span>
+<span id="cb35-3"><a href="microbiology-experiment.html#cb35-3"></a>ContingencyTable &lt;-<span class="st"> </span><span class="kw">rbind</span>(Student1, Student2)             <span class="co"># Create a 2x2 matrix</span></span>
+<span id="cb35-4"><a href="microbiology-experiment.html#cb35-4"></a><span class="kw">colnames</span>(ContingencyTable) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Kitchen&quot;</span>, <span class="st">&quot;Living Room&quot;</span>) <span class="co"># Add column names</span></span>
+<span id="cb35-5"><a href="microbiology-experiment.html#cb35-5"></a>ContingencyTable                                          <span class="co"># Print the result</span></span></code></pre></div>
 <pre><code>##          Kitchen Living Room
 ## Student1      21          15
 ## Student2      36          21</code></pre>
 <p></small></p>
 <p>Then, simply use <code>chisq.test()</code> on the contingency table:</p>
 <p><small></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="microbiology-experiment.html#cb25-1"></a><span class="kw">chisq.test</span>(ContingencyTable)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="microbiology-experiment.html#cb37-1"></a><span class="kw">chisq.test</span>(ContingencyTable)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
 ## 
@@ -460,7 +466,7 @@ Student 2
 <p><span class="math inline">\(^\dagger:\)</span> <small>For a contingency table, the expected counts are what you would expect if the relative counts of student 1 did not differ from student 2, proportional to their total counts:</p>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-30">Table 8.2: </span>Observed and expected frequencies for a <span class="math inline">\(2 \times 2\)</span> contingency table.
+<span id="tab:unnamed-chunk-42">Table 8.2: </span>Observed and expected frequencies for a <span class="math inline">\(2 \times 2\)</span> contingency table.
 </caption>
 <thead>
 <tr>
@@ -550,11 +556,11 @@ Student 2
 </div>
 <div class="footnotes">
 <hr />
-<ol start="4">
-<li id="fn4"><p><small>An experimental unit is the smallest division of the sample that is still an independent part. Some example: In clinical trials, patients are experimental units; In a study on fertilizer effectiveness, plants are experimental units; In an experiment on antibiotic effectiveness, a single agar plate is an experimental unit.</small><a href="microbiology-experiment.html#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p><small>A false positive occurs when you conclude a significant difference, even though there is no real difference in the underlying population from which the sample came. <strong>Example 1</strong>: If we conclude a medicine works significantly better than a placebo in the <em>sample</em>, but it does not actually work on average in the population, then we have a false positive for the effect of the medicine. <strong>Example 2</strong>: Say we estimate the ratio of black to white sheep in a large farm by drawing a random sample. A false postive would occur if in the sample, the ratio differed significantly from <span class="math inline">\(1 : 1\)</span>, even though it does not in the whole farm. False positives are also called type I errors.</small><a href="microbiology-experiment.html#fnref5" class="footnote-back">↩︎</a></p></li>
-<li id="fn6"><p><small>The population here consists of all possible samples of air from your kitchen and living room.</small><a href="microbiology-experiment.html#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p><small>Of course, in reality a diagnostic test for cancer is followed by further diagnosis to minimize the probability of this scenario.</small><a href="microbiology-experiment.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<ol start="6">
+<li id="fn6"><p><small>An experimental unit is the smallest division of the sample that is still an independent part. Some example: In clinical trials, patients are experimental units; In a study on fertilizer effectiveness, plants are experimental units; In an experiment on antibiotic effectiveness, a single agar plate is an experimental unit.</small><a href="microbiology-experiment.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p><small>A false positive occurs when you conclude a significant difference, even though there is no real difference in the underlying population from which the sample came. <strong>Example 1</strong>: If we conclude a medicine works significantly better than a placebo in the <em>sample</em>, but it does not actually work on average in the population, then we have a false positive for the effect of the medicine. <strong>Example 2</strong>: Say we estimate the ratio of black to white sheep in a large farm by drawing a random sample. A false postive would occur if in the sample, the ratio differed significantly from <span class="math inline">\(1 : 1\)</span>, even though it does not in the whole farm. False positives are also called type I errors.</small><a href="microbiology-experiment.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p><small>The population here consists of all possible samples of air from your kitchen and living room.</small><a href="microbiology-experiment.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p><small>Of course, in reality a diagnostic test for cancer is followed by further diagnosis to minimize the probability of this scenario.</small><a href="microbiology-experiment.html#fnref9" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
