@@ -13,9 +13,9 @@ fig:linearRelationship
 fig:xlimylim
 fig:coolPlot
 fig:sixPlotsActual
-tab:unnamed-chunk-30
-tab:unnamed-chunk-39
-tab:unnamed-chunk-42
+tab:unnamed-chunk-31
+tab:unnamed-chunk-40
+tab:unnamed-chunk-43
 installation
 installation-guide
 the-rstudio-interface
@@ -29,7 +29,7 @@ bsa-curve
 what-is-a-bsa-curve
 how-to-contruct-a-bsa-curve-in-r
 enter-your-data
-fit-a-simple-linear-model
+fitBSA
 plot-your-data-draw-a-line
 using-a-bsa-curve-for-estimation
 howprecise
@@ -39,6 +39,7 @@ improveyourfigure
 improving-the-main-plot
 highlighting-the-line
 adding-a-grid
+alternative-method
 adding-figures-in-r-markdown
 image-from-a-file-simple
 image-from-a-file-advanced
@@ -68,5 +69,3 @@ getting-started
 plotting-the-data
 creating-a-subset
 grasshoppertest
-fig:unnamed-chunk-13
-fig:unnamed-chunk-15

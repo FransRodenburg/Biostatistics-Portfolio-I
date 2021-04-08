@@ -164,7 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="bsa-curve.html"><a href="bsa-curve.html#what-is-a-bsa-curve"><i class="fa fa-check"></i><b>4.1</b> What Is a BSA Curve?</a></li>
 <li class="chapter" data-level="4.2" data-path="bsa-curve.html"><a href="bsa-curve.html#how-to-contruct-a-bsa-curve-in-r"><i class="fa fa-check"></i><b>4.2</b> How to Contruct a BSA-Curve in R</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="bsa-curve.html"><a href="bsa-curve.html#enter-your-data"><i class="fa fa-check"></i><b>4.2.1</b> Enter your data</a></li>
-<li class="chapter" data-level="4.2.2" data-path="bsa-curve.html"><a href="bsa-curve.html#fit-a-simple-linear-model"><i class="fa fa-check"></i><b>4.2.2</b> Fit a Simple Linear Model</a></li>
+<li class="chapter" data-level="4.2.2" data-path="bsa-curve.html"><a href="bsa-curve.html#fitBSA"><i class="fa fa-check"></i><b>4.2.2</b> Fit a Simple Linear Model</a></li>
 <li class="chapter" data-level="4.2.3" data-path="bsa-curve.html"><a href="bsa-curve.html#plot-your-data-draw-a-line"><i class="fa fa-check"></i><b>4.2.3</b> Plot your data &amp; draw a line</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="bsa-curve.html"><a href="bsa-curve.html#using-a-bsa-curve-for-estimation"><i class="fa fa-check"></i><b>4.3</b> Using a BSA Curve for Estimation</a></li>
@@ -177,6 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5.2" data-path="bsa-curve.html"><a href="bsa-curve.html#highlighting-the-line"><i class="fa fa-check"></i><b>4.5.2</b> Highlighting the line</a></li>
 <li class="chapter" data-level="4.5.3" data-path="bsa-curve.html"><a href="bsa-curve.html#adding-a-grid"><i class="fa fa-check"></i><b>4.5.3</b> Adding a grid</a></li>
 </ul></li>
+<li class="chapter" data-level="4.6" data-path="bsa-curve.html"><a href="bsa-curve.html#alternative-method"><i class="fa fa-check"></i><b>4.6</b> Alternative Method (*)</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html"><i class="fa fa-check"></i><b>5</b> Adding Figures in R Markdown</a><ul>
 <li class="chapter" data-level="5.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-simple"><i class="fa fa-check"></i><b>5.1</b> Image from a File (simple)</a><ul>
@@ -266,16 +267,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Go to <strong>Session</strong> &gt; <strong>Set Working Directory</strong> &gt; <strong>To Source File Location</strong>. R now knows where to look for your data;</li>
 <li><a href="https://youtu.be/AHAR7j-IUOw?t=357">Create a new code chunk</a> and run the following code:</li>
 </ol>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="grasshoppers.html#cb39-1"></a>grasshopper &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;grasshoppers.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="grasshoppers.html#cb40-1"></a>grasshopper &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;grasshoppers.csv&quot;</span>)</span></code></pre></div>
 <p>From here on out, just read the text, run the code in R, adjust the R code if needed, and answer the questions.</p>
 <p><font color = "red"><b>Note</b></font>: For the sake of privacy, this page uses a version of your data with scrambled names. I have also not linked the actual data. Please ask an assistant if you can’t find it.</p>
 <hr />
 <p>If the code ran successfully, you will have an object called <code>grasshoppers</code> in your workspace. You can view it by clicking it, or by running:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="grasshoppers.html#cb40-1"></a><span class="kw">View</span>(grasshopper)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="grasshoppers.html#cb41-1"></a><span class="kw">View</span>(grasshopper)</span></code></pre></div>
 <p>You probably have better things to do today than type long names, so let’s make the variable names a bit shorter:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="grasshoppers.html#cb41-1"></a><span class="kw">colnames</span>(grasshopper) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Affix&quot;</span>, <span class="st">&quot;Surname&quot;</span>, <span class="st">&quot;Group&quot;</span>, <span class="st">&quot;Thorax&quot;</span>, <span class="st">&quot;Wingspan&quot;</span>, <span class="st">&quot;Sex&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="grasshoppers.html#cb42-1"></a><span class="kw">colnames</span>(grasshopper) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Affix&quot;</span>, <span class="st">&quot;Surname&quot;</span>, <span class="st">&quot;Group&quot;</span>, <span class="st">&quot;Thorax&quot;</span>, <span class="st">&quot;Wingspan&quot;</span>, <span class="st">&quot;Sex&quot;</span>)</span></code></pre></div>
 <p>Does R understand which variables are numbers and which are something else? Let’s check:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="grasshoppers.html#cb42-1"></a><span class="kw">str</span>(grasshopper)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="grasshoppers.html#cb43-1"></a><span class="kw">str</span>(grasshopper)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    200 obs. of  7 variables:
 ##  $ Name    : chr  &quot;naFan&quot; &quot;llEl&quot; &quot;MeMe&quot; &quot;eueort&quot; ...
 ##  $ Affix   : chr  &quot;van&quot; &quot;&quot; &quot;&quot; &quot;de&quot; ...
@@ -293,13 +294,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="plotting-the-data" class="section level2">
 <h2><span class="header-section-number">9.2</span> Plotting the Data</h2>
 <p>Just looking at code and numbers is a bit stale. So let’s start off by making some relevant plots:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="grasshoppers.html#cb44-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># Plot in a 2x2 grid</span></span>
-<span id="cb44-2"><a href="grasshoppers.html#cb44-2"></a><span class="kw">hist</span>(grasshopper<span class="op">$</span>Thorax, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
-<span id="cb44-3"><a href="grasshoppers.html#cb44-3"></a><span class="kw">hist</span>(grasshopper<span class="op">$</span>Wingspan, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
-<span id="cb44-4"><a href="grasshoppers.html#cb44-4"></a><span class="kw">plot</span>(Thorax <span class="op">~</span><span class="st"> </span>Wingspan, <span class="dt">data =</span> grasshopper, <span class="dt">col =</span> <span class="kw">factor</span>(Sex))</span>
-<span id="cb44-5"><a href="grasshoppers.html#cb44-5"></a><span class="kw">boxplot</span>(Wingspan <span class="op">~</span><span class="st"> </span>Sex, <span class="dt">data =</span> grasshopper, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
-<span id="cb44-6"><a href="grasshoppers.html#cb44-6"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default</span></span></code></pre></div>
-<p><img src="Biostatistics_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="grasshoppers.html#cb45-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># Plot in a 2x2 grid</span></span>
+<span id="cb45-2"><a href="grasshoppers.html#cb45-2"></a><span class="kw">hist</span>(grasshopper<span class="op">$</span>Thorax, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb45-3"><a href="grasshoppers.html#cb45-3"></a><span class="kw">hist</span>(grasshopper<span class="op">$</span>Wingspan, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb45-4"><a href="grasshoppers.html#cb45-4"></a><span class="kw">plot</span>(Thorax <span class="op">~</span><span class="st"> </span>Wingspan, <span class="dt">data =</span> grasshopper, <span class="dt">col =</span> <span class="kw">factor</span>(Sex))</span>
+<span id="cb45-5"><a href="grasshoppers.html#cb45-5"></a><span class="kw">boxplot</span>(Wingspan <span class="op">~</span><span class="st"> </span>Sex, <span class="dt">data =</span> grasshopper, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
+<span id="cb45-6"><a href="grasshoppers.html#cb45-6"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default</span></span></code></pre></div>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 <p><strong>Question</strong>:</p>
 <ul>
 <li>What does each plot show?</li>
@@ -309,7 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="creating-a-subset" class="section level2">
 <h2><span class="header-section-number">9.3</span> Creating a Subset</h2>
 <p>We just read the whole data set. It contains the data from all groups Let’s make a <em>subset</em> of the measurements performed by group A:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="grasshoppers.html#cb45-1"></a>Subset &lt;-<span class="st"> </span>grasshopper[grasshopper<span class="op">$</span>Group <span class="op">==</span><span class="st"> &quot;A&quot;</span>, ]</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="grasshoppers.html#cb46-1"></a>Subset &lt;-<span class="st"> </span>grasshopper[grasshopper<span class="op">$</span>Group <span class="op">==</span><span class="st"> &quot;A&quot;</span>, ]</span></code></pre></div>
 <p>What does this code do?</p>
 <ul>
 <li><code>Subset &lt;-</code>: Create a variable named <code>Subset</code>;</li>
@@ -326,7 +327,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="grasshoppertest" class="section level2">
 <h2><span class="header-section-number">9.4</span> Comparing Means with a <span class="math inline">\(T\)</span>-Test</h2>
 <p>Below is an example of a <span class="math inline">\(t\)</span>-test, using some standard data in R:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="grasshoppers.html#cb46-1"></a><span class="kw">t.test</span>(extra <span class="op">~</span><span class="st"> </span>group, <span class="dt">data =</span> sleep, <span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="dt">var.equal =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="grasshoppers.html#cb47-1"></a><span class="kw">t.test</span>(extra <span class="op">~</span><span class="st"> </span>group, <span class="dt">data =</span> sleep, <span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="dt">var.equal =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
