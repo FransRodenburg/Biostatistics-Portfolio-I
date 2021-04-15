@@ -179,9 +179,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="bsa-curve.html"><a href="bsa-curve.html#alternative-method"><i class="fa fa-check"></i><b>4.6</b> Alternative Method (*)</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="make-your-own-experiment.html"><a href="make-your-own-experiment.html"><i class="fa fa-check"></i><b>5</b> Make Your Own Experiment</a><ul>
-<li class="chapter" data-level="5.1" data-path="make-your-own-experiment.html"><a href="make-your-own-experiment.html#placeholder"><i class="fa fa-check"></i><b>5.1</b> Placeholder</a></li>
-<li class="chapter" data-level="5.2" data-path="make-your-own-experiment.html"><a href="make-your-own-experiment.html#placeholder-1"><i class="fa fa-check"></i><b>5.2</b> Placeholder</a></li>
+<li class="chapter" data-level="5" data-path="your-own-experiment.html"><a href="your-own-experiment.html"><i class="fa fa-check"></i><b>5</b> Your Own Experiment</a><ul>
+<li class="chapter" data-level="5.1" data-path="your-own-experiment.html"><a href="your-own-experiment.html#proof-vs-evidence"><i class="fa fa-check"></i><b>5.1</b> Proof vs Evidence</a></li>
+<li class="chapter" data-level="5.2" data-path="your-own-experiment.html"><a href="your-own-experiment.html#formulating-a-research-question"><i class="fa fa-check"></i><b>5.2</b> Formulating a Research Question</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="your-own-experiment.html"><a href="your-own-experiment.html#types-of-research-questions"><i class="fa fa-check"></i><b>5.2.1</b> Types of research questions</a></li>
+<li class="chapter" data-level="5.2.2" data-path="your-own-experiment.html"><a href="your-own-experiment.html#keep-it-simple"><i class="fa fa-check"></i><b>5.2.2</b> Keep it simple</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="your-own-experiment.html"><a href="your-own-experiment.html#sources-of-uncertainty"><i class="fa fa-check"></i><b>5.3</b> Sources of Uncertainty</a></li>
+<li class="chapter" data-level="5.4" data-path="your-own-experiment.html"><a href="your-own-experiment.html#the-ideal-study"><i class="fa fa-check"></i><b>5.4</b> The Ideal Study</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="your-own-experiment.html"><a href="your-own-experiment.html#replication"><i class="fa fa-check"></i><b>5.4.1</b> Replication</a></li>
+<li class="chapter" data-level="5.4.2" data-path="your-own-experiment.html"><a href="your-own-experiment.html#representative-sampling"><i class="fa fa-check"></i><b>5.4.2</b> Representative sampling</a></li>
+<li class="chapter" data-level="5.4.3" data-path="your-own-experiment.html"><a href="your-own-experiment.html#randomized-treatment-allocation"><i class="fa fa-check"></i><b>5.4.3</b> Randomized treatment allocation</a></li>
+<li class="chapter" data-level="5.4.4" data-path="your-own-experiment.html"><a href="your-own-experiment.html#balance"><i class="fa fa-check"></i><b>5.4.4</b> Balance</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html"><i class="fa fa-check"></i><b>6</b> Adding Figures in R Markdown</a><ul>
 <li class="chapter" data-level="6.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-simple"><i class="fa fa-check"></i><b>6.1</b> Image from a File (simple)</a><ul>
@@ -350,7 +360,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this example, <span class="math inline">\(p &gt; \alpha\)</span>, so we don’t reject <span class="math inline">\(H_0\)</span>. In the report we would write that there is insufficient evidence to conclude a difference in bacteria in the kitchen and living room from this experiment.</p>
 <p>To calculate this value yourself, you would have to evaluate the integral of the chi-squared distribution from <span class="math inline">\(1\)</span> to <span class="math inline">\(\infty\)</span>. <a href="https://en.wikipedia.org/wiki/Chi-square_distribution#Cumulative_distribution_function">I don’t recommend trying it by hand</a>. Fortunately, we have R:</p>
 <p><small></p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="microbiology-experiment.html#cb32-1"></a><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pchisq</span>(<span class="dv">1</span>, <span class="dt">df =</span> <span class="dv">2</span> <span class="op">-</span><span class="st"> </span><span class="dv">1</span>) <span class="co"># df: two groups, one value estimated, so 2 - 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="microbiology-experiment.html#cb31-1"></a><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pchisq</span>(<span class="dv">1</span>, <span class="dt">df =</span> <span class="dv">2</span> <span class="op">-</span><span class="st"> </span><span class="dv">1</span>) <span class="co"># df: two groups, one value estimated, so 2 - 1</span></span></code></pre></div>
 <pre><code>## [1] 0.3173105</code></pre>
 <p></small></p>
 <p>This says: <span class="math inline">\(1\)</span> minus the chance of any value up till <span class="math inline">\(\chi^2=1\)</span>. And that is how we get <span class="math inline">\(0.317\)</span>.</p>
@@ -359,8 +369,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">8.5.2</span> Chi-Squared Test in R</h3>
 <p>If you think the explanation so far is a lot, I don’t blame you. It takes quite a lot of background knowledge to understand a simple test. The explanation of how the chi-squared test works will not be part of the microbiology exam. Nevertheless, I wanted to include it here, so that you can read what is going on when you use this test. Namely, it can all be done in a few seconds in R:</p>
 <p><small></p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="microbiology-experiment.html#cb34-1"></a>example &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">15</span>)</span>
-<span id="cb34-2"><a href="microbiology-experiment.html#cb34-2"></a><span class="kw">chisq.test</span>(example)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="microbiology-experiment.html#cb33-1"></a>example &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">15</span>)</span>
+<span id="cb33-2"><a href="microbiology-experiment.html#cb33-2"></a><span class="kw">chisq.test</span>(example)</span></code></pre></div>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
@@ -436,18 +446,18 @@ Student 2
 <p>All a <span class="math inline">\(\chi^2\)</span>-test does is compare observed to expected counts. You can apply this to contingency tables too. The test then determines the difference in the proportion of colonies in the kitchen and living room for student 1 and 2. You don’t have to calculate the expected counts by hand, but an explanation is given below for those interested.<span class="math inline">\(^\dagger\)</span></p>
 <p>In R, all you have to do is put the data in a <span class="math inline">\(2 \times 2\)</span> matrix, for example using <code>rbind</code> (row bind):</p>
 <p><small></p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="microbiology-experiment.html#cb36-1"></a>Student1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">15</span>) </span>
-<span id="cb36-2"><a href="microbiology-experiment.html#cb36-2"></a>Student2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">36</span>, <span class="dv">21</span>)</span>
-<span id="cb36-3"><a href="microbiology-experiment.html#cb36-3"></a>ContingencyTable &lt;-<span class="st"> </span><span class="kw">rbind</span>(Student1, Student2)             <span class="co"># Create a 2x2 matrix</span></span>
-<span id="cb36-4"><a href="microbiology-experiment.html#cb36-4"></a><span class="kw">colnames</span>(ContingencyTable) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Kitchen&quot;</span>, <span class="st">&quot;Living Room&quot;</span>) <span class="co"># Add column names</span></span>
-<span id="cb36-5"><a href="microbiology-experiment.html#cb36-5"></a>ContingencyTable                                          <span class="co"># Print the result</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="microbiology-experiment.html#cb35-1"></a>Student1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">15</span>) </span>
+<span id="cb35-2"><a href="microbiology-experiment.html#cb35-2"></a>Student2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">36</span>, <span class="dv">21</span>)</span>
+<span id="cb35-3"><a href="microbiology-experiment.html#cb35-3"></a>ContingencyTable &lt;-<span class="st"> </span><span class="kw">rbind</span>(Student1, Student2)             <span class="co"># Create a 2x2 matrix</span></span>
+<span id="cb35-4"><a href="microbiology-experiment.html#cb35-4"></a><span class="kw">colnames</span>(ContingencyTable) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Kitchen&quot;</span>, <span class="st">&quot;Living Room&quot;</span>) <span class="co"># Add column names</span></span>
+<span id="cb35-5"><a href="microbiology-experiment.html#cb35-5"></a>ContingencyTable                                          <span class="co"># Print the result</span></span></code></pre></div>
 <pre><code>##          Kitchen Living Room
 ## Student1      21          15
 ## Student2      36          21</code></pre>
 <p></small></p>
 <p>Then, simply use <code>chisq.test()</code> on the contingency table:</p>
 <p><small></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="microbiology-experiment.html#cb38-1"></a><span class="kw">chisq.test</span>(ContingencyTable)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="microbiology-experiment.html#cb37-1"></a><span class="kw">chisq.test</span>(ContingencyTable)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
 ## 

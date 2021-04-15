@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="mendelian-genetics.html"/>
-<link rel="next" href="make-your-own-experiment.html"/>
+<link rel="next" href="your-own-experiment.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -179,9 +179,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="bsa-curve.html"><a href="bsa-curve.html#alternative-method"><i class="fa fa-check"></i><b>4.6</b> Alternative Method (*)</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="make-your-own-experiment.html"><a href="make-your-own-experiment.html"><i class="fa fa-check"></i><b>5</b> Make Your Own Experiment</a><ul>
-<li class="chapter" data-level="5.1" data-path="make-your-own-experiment.html"><a href="make-your-own-experiment.html#placeholder"><i class="fa fa-check"></i><b>5.1</b> Placeholder</a></li>
-<li class="chapter" data-level="5.2" data-path="make-your-own-experiment.html"><a href="make-your-own-experiment.html#placeholder-1"><i class="fa fa-check"></i><b>5.2</b> Placeholder</a></li>
+<li class="chapter" data-level="5" data-path="your-own-experiment.html"><a href="your-own-experiment.html"><i class="fa fa-check"></i><b>5</b> Your Own Experiment</a><ul>
+<li class="chapter" data-level="5.1" data-path="your-own-experiment.html"><a href="your-own-experiment.html#proof-vs-evidence"><i class="fa fa-check"></i><b>5.1</b> Proof vs Evidence</a></li>
+<li class="chapter" data-level="5.2" data-path="your-own-experiment.html"><a href="your-own-experiment.html#formulating-a-research-question"><i class="fa fa-check"></i><b>5.2</b> Formulating a Research Question</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="your-own-experiment.html"><a href="your-own-experiment.html#types-of-research-questions"><i class="fa fa-check"></i><b>5.2.1</b> Types of research questions</a></li>
+<li class="chapter" data-level="5.2.2" data-path="your-own-experiment.html"><a href="your-own-experiment.html#keep-it-simple"><i class="fa fa-check"></i><b>5.2.2</b> Keep it simple</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="your-own-experiment.html"><a href="your-own-experiment.html#sources-of-uncertainty"><i class="fa fa-check"></i><b>5.3</b> Sources of Uncertainty</a></li>
+<li class="chapter" data-level="5.4" data-path="your-own-experiment.html"><a href="your-own-experiment.html#the-ideal-study"><i class="fa fa-check"></i><b>5.4</b> The Ideal Study</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="your-own-experiment.html"><a href="your-own-experiment.html#replication"><i class="fa fa-check"></i><b>5.4.1</b> Replication</a></li>
+<li class="chapter" data-level="5.4.2" data-path="your-own-experiment.html"><a href="your-own-experiment.html#representative-sampling"><i class="fa fa-check"></i><b>5.4.2</b> Representative sampling</a></li>
+<li class="chapter" data-level="5.4.3" data-path="your-own-experiment.html"><a href="your-own-experiment.html#randomized-treatment-allocation"><i class="fa fa-check"></i><b>5.4.3</b> Randomized treatment allocation</a></li>
+<li class="chapter" data-level="5.4.4" data-path="your-own-experiment.html"><a href="your-own-experiment.html#balance"><i class="fa fa-check"></i><b>5.4.4</b> Balance</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html"><i class="fa fa-check"></i><b>6</b> Adding Figures in R Markdown</a><ul>
 <li class="chapter" data-level="6.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-simple"><i class="fa fa-check"></i><b>6.1</b> Image from a File (simple)</a><ul>
@@ -251,7 +261,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><small><b><i>Skills learned in this chapter:</b> Estimation, Prediction</i></small></p>
 <hr />
 <p>In this chapter you will learn how to construct a BSA-curve for estimating the amount of protein present in a sample.</p>
-<pre><code>## Here will be a video on BSA curves</code></pre>
 <div id="what-is-a-bsa-curve" class="section level2">
 <h2><span class="header-section-number">4.1</span> What Is a BSA Curve?</h2>
 <p>In the basic practicals you will use a spectrophotometer to measure light passing through a sample with a known protein concentration. By doing so for various concentrations of protein, you can construct a curve for the amount of protein present in a sample, given the amount of light passing through. This is a basic tool in biological experimentation. The protein used as a reference to construct the curve is called Bovine Serum Albumin (BSA).<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> Hence the name: <em>BSA curve</em>.</p>
@@ -272,7 +281,7 @@ Absorption <span class="math inline">\((\text{A}_{595})\)</span>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center;font-weight: bold;">
+<td style="text-align:center;">
 0
 </td>
 <td style="text-align:center;">
@@ -280,7 +289,7 @@ Absorption <span class="math inline">\((\text{A}_{595})\)</span>
 </td>
 </tr>
 <tr>
-<td style="text-align:center;font-weight: bold;">
+<td style="text-align:center;">
 1
 </td>
 <td style="text-align:center;">
@@ -288,7 +297,7 @@ Absorption <span class="math inline">\((\text{A}_{595})\)</span>
 </td>
 </tr>
 <tr>
-<td style="text-align:center;font-weight: bold;">
+<td style="text-align:center;">
 2
 </td>
 <td style="text-align:center;">
@@ -296,7 +305,7 @@ Absorption <span class="math inline">\((\text{A}_{595})\)</span>
 </td>
 </tr>
 <tr>
-<td style="text-align:center;font-weight: bold;">
+<td style="text-align:center;">
 3
 </td>
 <td style="text-align:center;">
@@ -304,7 +313,7 @@ Absorption <span class="math inline">\((\text{A}_{595})\)</span>
 </td>
 </tr>
 <tr>
-<td style="text-align:center;font-weight: bold;">
+<td style="text-align:center;">
 4
 </td>
 <td style="text-align:center;">
@@ -312,7 +321,7 @@ Absorption <span class="math inline">\((\text{A}_{595})\)</span>
 </td>
 </tr>
 <tr>
-<td style="text-align:center;font-weight: bold;">
+<td style="text-align:center;">
 5
 </td>
 <td style="text-align:center;">
@@ -336,9 +345,9 @@ Figure 4.1: A typical BSA curve, constructed from the data in table <a href="bsa
 <div id="enter-your-data" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Enter your data</h3>
 <p>First we create a data frame containing the BSA amounts and the observed <span class="math inline">\(\text{A}_{595}\)</span> values.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="bsa-curve.html#cb4-1"></a>BSA  &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">5</span></span>
-<span id="cb4-2"><a href="bsa-curve.html#cb4-2"></a>A595 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.135</span>, <span class="fl">0.235</span>, <span class="fl">0.328</span>, <span class="fl">0.409</span>, <span class="fl">0.495</span>)</span>
-<span id="cb4-3"><a href="bsa-curve.html#cb4-3"></a>DF   &lt;-<span class="st"> </span><span class="kw">data.frame</span>(BSA, A595)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="bsa-curve.html#cb3-1"></a>BSA  &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">5</span></span>
+<span id="cb3-2"><a href="bsa-curve.html#cb3-2"></a>A595 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.135</span>, <span class="fl">0.235</span>, <span class="fl">0.328</span>, <span class="fl">0.409</span>, <span class="fl">0.495</span>)</span>
+<span id="cb3-3"><a href="bsa-curve.html#cb3-3"></a>DF   &lt;-<span class="st"> </span><span class="kw">data.frame</span>(BSA, A595)</span></code></pre></div>
 <p>This will create an object <code>DF</code> in the object space. You can view it by clicking on it in the environment tab of the upper-right pane in RStudio.</p>
 </div>
 <div id="fitBSA" class="section level3">
@@ -349,9 +358,9 @@ Figure 4.1: A typical BSA curve, constructed from the data in table <a href="bsa
 <li>Intercept &amp; slope.</li>
 </ul>
 <p>In R, you can estimate the intercept and slope as follows:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="bsa-curve.html#cb5-1"></a>model &lt;-<span class="st"> </span><span class="kw">lm</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="bsa-curve.html#cb4-1"></a>model &lt;-<span class="st"> </span><span class="kw">lm</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF)</span></code></pre></div>
 <p>How that works will be explained in the statistics course. For now, let’s extract the intercept and slope from this model:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="bsa-curve.html#cb6-1"></a><span class="kw">coef</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="bsa-curve.html#cb5-1"></a><span class="kw">coef</span>(model)</span></code></pre></div>
 <pre><code>## (Intercept)         BSA 
 ##  0.02485714  0.09685714</code></pre>
 <p>The estimated line pretty much goes through the origin,<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> with an intercept of about 0.02. We can also see that there is a positive linear relationship between the amount of BSA and the absorbance: For every microgram of BSA added, the absorbance increases by about 0.1.</p>
@@ -359,9 +368,9 @@ Figure 4.1: A typical BSA curve, constructed from the data in table <a href="bsa
 <div id="plot-your-data-draw-a-line" class="section level3">
 <h3><span class="header-section-number">4.2.3</span> Plot your data &amp; draw a line</h3>
 <p>Finally we create a plot and add a line as follows:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="bsa-curve.html#cb8-1"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF)</span>
-<span id="cb8-2"><a href="bsa-curve.html#cb8-2"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span></code></pre></div>
-<p><img src="Biostatistics_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="bsa-curve.html#cb7-1"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF)</span>
+<span id="cb7-2"><a href="bsa-curve.html#cb7-2"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span></code></pre></div>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>It looks a bit basic, but this is all you need to produce a BSA curve. Of course you can <a href="bsa-curve.html#improveyourfigure">improve your figure</a> if you want, by using more advanced plotting routines.</p>
 </div>
 </div>
@@ -413,11 +422,11 @@ Figure 4.2: To estimate the amount of protein, look at the <span class="math inl
 <div id="r-squared" class="section level3">
 <h3><span class="header-section-number">4.4.1</span> R-squared</h3>
 <p><span class="math inline">\(R^2\)</span> is the amount of variance explained by the model. In other words: How much of the total variance in <span class="math inline">\(\text{A}_{595}\)</span> can be explained by the line?</p>
-<p><img src="Biostatistics_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>The red segments on the right represent the original spread in <span class="math inline">\(\text{A}_{595}\)</span>,<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> and on the right we see the spread that is left after accounting for our model. You can clearly see that the distances on the right are <em>much</em> smaller than on the left. If you square these segments and sum them, that is called the <em>variance</em>. <span class="math inline">\(R^2\)</span> is then calculated as:</p>
 <p><span class="math display">\[R^2 = 1 - \frac{\text{remaining variance}}{\text{total variance}}\]</span></p>
 <p>R includes this value in the <code>summary</code> of a linear model by default. You can obtain it as follows:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="bsa-curve.html#cb9-1"></a><span class="kw">summary</span>(model)<span class="op">$</span>r.squared</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="bsa-curve.html#cb8-1"></a><span class="kw">summary</span>(model)<span class="op">$</span>r.squared</span></code></pre></div>
 <pre><code>## [1] 0.9913461</code></pre>
 <p>Apparently the BSA curve explains around <span class="math inline">\(99.1\%\)</span> of the total variance in absorbance. This is quite a large amount: Only <span class="math inline">\(0.9\%\)</span> of the variance is unexplained. A higher <span class="math inline">\(R^2\)</span> value means there is less uncertainty.</p>
 <p><strong>Question</strong>:</p>
@@ -429,16 +438,16 @@ Figure 4.2: To estimate the amount of protein, look at the <span class="math inl
 <div id="prediction-interval" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Prediction interval</h3>
 <p>Where would you expect 95% of the future observations of <span class="math inline">\(\text{A}_{595}\)</span> to be? That is the question a 95% prediction interval answers. Though its calculation is beyond the scope of this chapter, generating such an interval along the BSA curve in R can be done in a few lines of code:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="bsa-curve.html#cb11-1"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF)</span>
-<span id="cb11-2"><a href="bsa-curve.html#cb11-2"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span>
-<span id="cb11-3"><a href="bsa-curve.html#cb11-3"></a></span>
-<span id="cb11-4"><a href="bsa-curve.html#cb11-4"></a>newX  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">BSA =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="fl">0.1</span>)) <span class="co"># 0.0, 0.1, ..., 4.9, 5.0</span></span>
-<span id="cb11-5"><a href="bsa-curve.html#cb11-5"></a>newY  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">predict</span>(model, newX, <span class="dt">interval =</span> <span class="st">&quot;predict&quot;</span>))</span>
-<span id="cb11-6"><a href="bsa-curve.html#cb11-6"></a>newDF &lt;-<span class="st"> </span><span class="kw">cbind</span>(newX, newY)</span>
-<span id="cb11-7"><a href="bsa-curve.html#cb11-7"></a></span>
-<span id="cb11-8"><a href="bsa-curve.html#cb11-8"></a><span class="kw">lines</span>(lwr <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> newDF) <span class="co"># lower bound of the interval</span></span>
-<span id="cb11-9"><a href="bsa-curve.html#cb11-9"></a><span class="kw">lines</span>(upr <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> newDF) <span class="co"># upper bound of the interval</span></span></code></pre></div>
-<p><img src="Biostatistics_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="bsa-curve.html#cb10-1"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF)</span>
+<span id="cb10-2"><a href="bsa-curve.html#cb10-2"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span>
+<span id="cb10-3"><a href="bsa-curve.html#cb10-3"></a></span>
+<span id="cb10-4"><a href="bsa-curve.html#cb10-4"></a>newX  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">BSA =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="fl">0.1</span>)) <span class="co"># 0.0, 0.1, ..., 4.9, 5.0</span></span>
+<span id="cb10-5"><a href="bsa-curve.html#cb10-5"></a>newY  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">predict</span>(model, newX, <span class="dt">interval =</span> <span class="st">&quot;predict&quot;</span>))</span>
+<span id="cb10-6"><a href="bsa-curve.html#cb10-6"></a>newDF &lt;-<span class="st"> </span><span class="kw">cbind</span>(newX, newY)</span>
+<span id="cb10-7"><a href="bsa-curve.html#cb10-7"></a></span>
+<span id="cb10-8"><a href="bsa-curve.html#cb10-8"></a><span class="kw">lines</span>(lwr <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> newDF) <span class="co"># lower bound of the interval</span></span>
+<span id="cb10-9"><a href="bsa-curve.html#cb10-9"></a><span class="kw">lines</span>(upr <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> newDF) <span class="co"># upper bound of the interval</span></span></code></pre></div>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p><strong>Question</strong>:</p>
 <ul>
 <li>Produce a prediction interval for your own BSA curve? Try it by copying the code above and <a href="bsa-curve.html#improveyourfigure">adjusting it</a> if you like.</li>
@@ -453,26 +462,26 @@ Figure 4.2: To estimate the amount of protein, look at the <span class="math inl
 <h3><span class="header-section-number">4.5.1</span> Improving the main plot</h3>
 <p>Using some tricks described in the help page of <code>plotmath</code>, you can add proper annotation to your axes:</p>
 <p><small></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="bsa-curve.html#cb12-1"></a><span class="kw">plot</span>(</span>
-<span id="cb12-2"><a href="bsa-curve.html#cb12-2"></a>  A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF,           <span class="co"># A595 vs BSA, from data set DF</span></span>
-<span id="cb12-3"><a href="bsa-curve.html#cb12-3"></a>  <span class="dt">main =</span> <span class="st">&quot;BSA Curve&quot;</span>,              <span class="co"># Title</span></span>
-<span id="cb12-4"><a href="bsa-curve.html#cb12-4"></a>  <span class="dt">xlab =</span> <span class="kw">bquote</span>(<span class="st">&quot;BSA&quot;</span> <span class="op">~</span><span class="st"> </span>(mu <span class="op">*</span><span class="st"> </span>g)), <span class="co"># X-axis annotation</span></span>
-<span id="cb12-5"><a href="bsa-curve.html#cb12-5"></a>  <span class="dt">ylab =</span> <span class="kw">bquote</span>(A[<span class="dv">595</span>]),           <span class="co"># Y-axis annotation</span></span>
-<span id="cb12-6"><a href="bsa-curve.html#cb12-6"></a>  <span class="dt">pch  =</span> <span class="dv">19</span>,                       <span class="co"># Solid point character (see ?pch)</span></span>
-<span id="cb12-7"><a href="bsa-curve.html#cb12-7"></a>  <span class="dt">las  =</span> <span class="dv">1</span>                         <span class="co"># Set label style to horizontal</span></span>
-<span id="cb12-8"><a href="bsa-curve.html#cb12-8"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="bsa-curve.html#cb11-1"></a><span class="kw">plot</span>(</span>
+<span id="cb11-2"><a href="bsa-curve.html#cb11-2"></a>  A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF,           <span class="co"># A595 vs BSA, from data set DF</span></span>
+<span id="cb11-3"><a href="bsa-curve.html#cb11-3"></a>  <span class="dt">main =</span> <span class="st">&quot;BSA Curve&quot;</span>,              <span class="co"># Title</span></span>
+<span id="cb11-4"><a href="bsa-curve.html#cb11-4"></a>  <span class="dt">xlab =</span> <span class="st">&quot;Protein (μg/ml)&quot;</span>,        <span class="co"># X-axis annotation</span></span>
+<span id="cb11-5"><a href="bsa-curve.html#cb11-5"></a>  <span class="dt">ylab =</span> <span class="kw">bquote</span>(A[<span class="dv">595</span>]),           <span class="co"># Y-axis annotation</span></span>
+<span id="cb11-6"><a href="bsa-curve.html#cb11-6"></a>  <span class="dt">pch  =</span> <span class="dv">19</span>,                       <span class="co"># Solid point character (see ?pch)</span></span>
+<span id="cb11-7"><a href="bsa-curve.html#cb11-7"></a>  <span class="dt">las  =</span> <span class="dv">1</span>                         <span class="co"># Set label style to horizontal</span></span>
+<span id="cb11-8"><a href="bsa-curve.html#cb11-8"></a>)</span></code></pre></div>
 <p></small></p>
 </div>
 <div id="highlighting-the-line" class="section level3">
 <h3><span class="header-section-number">4.5.2</span> Highlighting the line</h3>
 <p>For emphasis, I changed the width and color of the line:</p>
 <p><small></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="bsa-curve.html#cb13-1"></a><span class="co"># Add this *after* your call to the plot function. Then run both.</span></span>
-<span id="cb13-2"><a href="bsa-curve.html#cb13-2"></a><span class="kw">abline</span>(</span>
-<span id="cb13-3"><a href="bsa-curve.html#cb13-3"></a>  <span class="kw">coef</span>(model),      <span class="co"># Coefficients from the object &#39;model&#39;</span></span>
-<span id="cb13-4"><a href="bsa-curve.html#cb13-4"></a>  <span class="dt">lwd =</span> <span class="dv">2</span>,          <span class="co"># Increase line width to 2 (default 1)</span></span>
-<span id="cb13-5"><a href="bsa-curve.html#cb13-5"></a>  <span class="dt">col =</span> <span class="st">&quot;steelblue&quot;</span> <span class="co"># Change the color of the line</span></span>
-<span id="cb13-6"><a href="bsa-curve.html#cb13-6"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="bsa-curve.html#cb12-1"></a><span class="co"># Add this *after* your call to the plot function. Then run both.</span></span>
+<span id="cb12-2"><a href="bsa-curve.html#cb12-2"></a><span class="kw">abline</span>(</span>
+<span id="cb12-3"><a href="bsa-curve.html#cb12-3"></a>  <span class="kw">coef</span>(model),      <span class="co"># Coefficients from the object &#39;model&#39;</span></span>
+<span id="cb12-4"><a href="bsa-curve.html#cb12-4"></a>  <span class="dt">lwd =</span> <span class="dv">2</span>,          <span class="co"># Increase line width to 2 (default 1)</span></span>
+<span id="cb12-5"><a href="bsa-curve.html#cb12-5"></a>  <span class="dt">col =</span> <span class="st">&quot;steelblue&quot;</span> <span class="co"># Change the color of the line</span></span>
+<span id="cb12-6"><a href="bsa-curve.html#cb12-6"></a>)</span></code></pre></div>
 <p></small></p>
 </div>
 <div id="adding-a-grid" class="section level3">
@@ -481,28 +490,28 @@ Figure 4.2: To estimate the amount of protein, look at the <span class="math inl
 <ol style="list-style-type: decimal">
 <li><strong>Don’t use <code>grid</code></strong>. This function is so dumb even its help page admits you’re better off using <code>abline(h = ..., v = ...)</code>:</li>
 </ol>
-<div class="figure"><span id="fig:unnamed-chunk-20"></span>
-<img src="Biostatistics_files/figure-html/unnamed-chunk-20-1.png" alt="Look closely at how the grid meets the axes on the left..." width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-19"></span>
+<img src="Biostatistics_files/figure-html/unnamed-chunk-19-1.png" alt="Look closely at how the grid meets the axes on the left..." width="672" />
 <p class="caption">
 Figure 4.3: Look closely at how the grid meets the axes on the left…
 </p>
 </div>
 <p><small></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="bsa-curve.html#cb14-1"></a><span class="co"># Bad example:</span></span>
-<span id="cb14-2"><a href="bsa-curve.html#cb14-2"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF, <span class="dt">main =</span> <span class="st">&quot;wow great job, grid...&quot;</span>)</span>
-<span id="cb14-3"><a href="bsa-curve.html#cb14-3"></a><span class="kw">grid</span>(<span class="dt">nx =</span> <span class="dv">5</span>, <span class="dt">ny =</span> <span class="dv">5</span>)</span>
-<span id="cb14-4"><a href="bsa-curve.html#cb14-4"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span>
-<span id="cb14-5"><a href="bsa-curve.html#cb14-5"></a></span>
-<span id="cb14-6"><a href="bsa-curve.html#cb14-6"></a><span class="co"># Good example:</span></span>
-<span id="cb14-7"><a href="bsa-curve.html#cb14-7"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF, <span class="dt">main =</span> <span class="st">&quot;abline to the rescue&quot;</span>)</span>
-<span id="cb14-8"><a href="bsa-curve.html#cb14-8"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>), <span class="dt">v =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
-<span id="cb14-9"><a href="bsa-curve.html#cb14-9"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="bsa-curve.html#cb13-1"></a><span class="co"># Bad example:</span></span>
+<span id="cb13-2"><a href="bsa-curve.html#cb13-2"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF, <span class="dt">main =</span> <span class="st">&quot;wow great job, grid...&quot;</span>)</span>
+<span id="cb13-3"><a href="bsa-curve.html#cb13-3"></a><span class="kw">grid</span>(<span class="dt">nx =</span> <span class="dv">5</span>, <span class="dt">ny =</span> <span class="dv">5</span>)</span>
+<span id="cb13-4"><a href="bsa-curve.html#cb13-4"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span>
+<span id="cb13-5"><a href="bsa-curve.html#cb13-5"></a></span>
+<span id="cb13-6"><a href="bsa-curve.html#cb13-6"></a><span class="co"># Good example:</span></span>
+<span id="cb13-7"><a href="bsa-curve.html#cb13-7"></a><span class="kw">plot</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF, <span class="dt">main =</span> <span class="st">&quot;abline to the rescue&quot;</span>)</span>
+<span id="cb13-8"><a href="bsa-curve.html#cb13-8"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>), <span class="dt">v =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb13-9"><a href="bsa-curve.html#cb13-9"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model))</span></code></pre></div>
 <p></small></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Some prefer light on dark, others dark on light. I don’t mind either way. But <strong>avoid using a high contrast</strong> for your grid. It is not the main subject being plotted and should fall into the background:</li>
 </ol>
-<div class="figure"><span id="fig:unnamed-chunk-22"></span>
-<img src="Biostatistics_files/figure-html/unnamed-chunk-22-1.png" alt="A grid should have low contrast to avoid crowding the plot." width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-21"></span>
+<img src="Biostatistics_files/figure-html/unnamed-chunk-21-1.png" alt="A grid should have low contrast to avoid crowding the plot." width="672" />
 <p class="caption">
 Figure 4.4: A grid should have low contrast to avoid crowding the plot.
 </p>
@@ -511,41 +520,41 @@ Figure 4.4: A grid should have low contrast to avoid crowding the plot.
 To add a colored background to your plot, insert the following line after the call to <code>plot</code>:
 </p>
 <p><small></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="bsa-curve.html#cb15-1"></a><span class="co"># Add this *after* your call to the plot function.</span></span>
-<span id="cb15-2"><a href="bsa-curve.html#cb15-2"></a><span class="kw">rect</span>(<span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">1</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">3</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">2</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">4</span>], <span class="dt">col =</span> <span class="st">&quot;grey90&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="bsa-curve.html#cb14-1"></a><span class="co"># Add this *after* your call to the plot function.</span></span>
+<span id="cb14-2"><a href="bsa-curve.html#cb14-2"></a><span class="kw">rect</span>(<span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">1</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">3</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">2</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">4</span>], <span class="dt">col =</span> <span class="st">&quot;grey90&quot;</span>)</span></code></pre></div>
 <p></small></p>
 <p style="margin-left: 32px">
 Then draw your grid in white:
 </p>
 <p><small></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="bsa-curve.html#cb16-1"></a><span class="co"># Add this *after* your call to the rect function.</span></span>
-<span id="cb16-2"><a href="bsa-curve.html#cb16-2"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>), <span class="dt">v =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="bsa-curve.html#cb15-1"></a><span class="co"># Add this *after* your call to the rect function.</span></span>
+<span id="cb15-2"><a href="bsa-curve.html#cb15-2"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>), <span class="dt">v =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p></small></p>
 <ol start="3" style="list-style-type: decimal">
 <li>When adding anything to a base R plot, R draws on top of the existing plot. That means it looks more professional if you <strong>redraw the points on top of the rest</strong>. Your full code for the plot then looks something like this:</li>
 </ol>
 <p><small></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="bsa-curve.html#cb17-1"></a><span class="co"># Coordinate system:</span></span>
-<span id="cb17-2"><a href="bsa-curve.html#cb17-2"></a><span class="kw">plot</span>(</span>
-<span id="cb17-3"><a href="bsa-curve.html#cb17-3"></a>  A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF, </span>
-<span id="cb17-4"><a href="bsa-curve.html#cb17-4"></a>  <span class="dt">main =</span> <span class="st">&quot;BSA Curve&quot;</span>,</span>
-<span id="cb17-5"><a href="bsa-curve.html#cb17-5"></a>  <span class="dt">xlab =</span> <span class="kw">bquote</span>(<span class="st">&quot;BSA&quot;</span> <span class="op">~</span><span class="st"> </span>(mu <span class="op">*</span><span class="st"> </span>g)),</span>
-<span id="cb17-6"><a href="bsa-curve.html#cb17-6"></a>  <span class="dt">ylab =</span> <span class="kw">bquote</span>(A[<span class="dv">595</span>]),</span>
-<span id="cb17-7"><a href="bsa-curve.html#cb17-7"></a>  <span class="dt">las  =</span> <span class="dv">1</span></span>
-<span id="cb17-8"><a href="bsa-curve.html#cb17-8"></a>)</span>
-<span id="cb17-9"><a href="bsa-curve.html#cb17-9"></a></span>
-<span id="cb17-10"><a href="bsa-curve.html#cb17-10"></a><span class="co"># Background:</span></span>
-<span id="cb17-11"><a href="bsa-curve.html#cb17-11"></a><span class="kw">rect</span>(<span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">1</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">3</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">2</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">4</span>], <span class="dt">col =</span> <span class="st">&quot;grey90&quot;</span>)</span>
-<span id="cb17-12"><a href="bsa-curve.html#cb17-12"></a></span>
-<span id="cb17-13"><a href="bsa-curve.html#cb17-13"></a><span class="co"># Grid:</span></span>
-<span id="cb17-14"><a href="bsa-curve.html#cb17-14"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>), <span class="dt">v =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col =</span> <span class="st">&quot;white&quot;</span>)</span>
-<span id="cb17-15"><a href="bsa-curve.html#cb17-15"></a></span>
-<span id="cb17-16"><a href="bsa-curve.html#cb17-16"></a><span class="co"># BSA curve:</span></span>
-<span id="cb17-17"><a href="bsa-curve.html#cb17-17"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model), <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;steelblue&quot;</span>)</span>
-<span id="cb17-18"><a href="bsa-curve.html#cb17-18"></a></span>
-<span id="cb17-19"><a href="bsa-curve.html#cb17-19"></a><span class="co"># Observations redrawn:</span></span>
-<span id="cb17-20"><a href="bsa-curve.html#cb17-20"></a><span class="kw">points</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF, <span class="dt">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
-<p><img src="Biostatistics_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="bsa-curve.html#cb16-1"></a><span class="co"># Coordinate system:</span></span>
+<span id="cb16-2"><a href="bsa-curve.html#cb16-2"></a><span class="kw">plot</span>(</span>
+<span id="cb16-3"><a href="bsa-curve.html#cb16-3"></a>  A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF, </span>
+<span id="cb16-4"><a href="bsa-curve.html#cb16-4"></a>  <span class="dt">main =</span> <span class="st">&quot;BSA Curve&quot;</span>,</span>
+<span id="cb16-5"><a href="bsa-curve.html#cb16-5"></a>  <span class="dt">xlab =</span> <span class="st">&quot;Protein (μg/ml)&quot;</span>,</span>
+<span id="cb16-6"><a href="bsa-curve.html#cb16-6"></a>  <span class="dt">ylab =</span> <span class="kw">bquote</span>(A[<span class="dv">595</span>]),</span>
+<span id="cb16-7"><a href="bsa-curve.html#cb16-7"></a>  <span class="dt">las  =</span> <span class="dv">1</span></span>
+<span id="cb16-8"><a href="bsa-curve.html#cb16-8"></a>)</span>
+<span id="cb16-9"><a href="bsa-curve.html#cb16-9"></a></span>
+<span id="cb16-10"><a href="bsa-curve.html#cb16-10"></a><span class="co"># Background:</span></span>
+<span id="cb16-11"><a href="bsa-curve.html#cb16-11"></a><span class="kw">rect</span>(<span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">1</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">3</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">2</span>], <span class="kw">par</span>(<span class="st">&quot;usr&quot;</span>)[<span class="dv">4</span>], <span class="dt">col =</span> <span class="st">&quot;grey90&quot;</span>)</span>
+<span id="cb16-12"><a href="bsa-curve.html#cb16-12"></a></span>
+<span id="cb16-13"><a href="bsa-curve.html#cb16-13"></a><span class="co"># Grid:</span></span>
+<span id="cb16-14"><a href="bsa-curve.html#cb16-14"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>), <span class="dt">v =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col =</span> <span class="st">&quot;white&quot;</span>)</span>
+<span id="cb16-15"><a href="bsa-curve.html#cb16-15"></a></span>
+<span id="cb16-16"><a href="bsa-curve.html#cb16-16"></a><span class="co"># BSA curve:</span></span>
+<span id="cb16-17"><a href="bsa-curve.html#cb16-17"></a><span class="kw">abline</span>(<span class="kw">coef</span>(model), <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;steelblue&quot;</span>)</span>
+<span id="cb16-18"><a href="bsa-curve.html#cb16-18"></a></span>
+<span id="cb16-19"><a href="bsa-curve.html#cb16-19"></a><span class="co"># Observations redrawn:</span></span>
+<span id="cb16-20"><a href="bsa-curve.html#cb16-20"></a><span class="kw">points</span>(A595 <span class="op">~</span><span class="st"> </span>BSA, <span class="dt">data =</span> DF, <span class="dt">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p></small></p>
 </div>
 </div>
@@ -575,7 +584,7 @@ Then draw your grid in white:
         </div>
       </div>
 <a href="mendelian-genetics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="make-your-own-experiment.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="your-own-experiment.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
