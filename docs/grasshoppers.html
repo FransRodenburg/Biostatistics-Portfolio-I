@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Grasshoppers | Biostatistics Portfolio I</title>
-  <meta name="description" content="Chapter 9 Grasshoppers | Biostatistics Portfolio I" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <title>Chapter 6 Grasshoppers | Biostatistics Portfolio I</title>
+  <meta name="description" content="Chapter 6 Grasshoppers | Biostatistics Portfolio I" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Grasshoppers | Biostatistics Portfolio I" />
+  <meta property="og:title" content="Chapter 6 Grasshoppers | Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Grasshoppers | Biostatistics Portfolio I" />
+  <meta name="twitter:title" content="Chapter 6 Grasshoppers | Biostatistics Portfolio I" />
   
   
   
@@ -30,8 +30,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="microbiology-experiment.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="your-own-experiment-i.html"/>
+<link rel="next" href="your-own-experiment-ii.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,7 +50,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
@@ -57,18 +59,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -88,7 +90,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -121,6 +123,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -138,105 +141,113 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>1</b> Installation</a><ul>
-<li class="chapter" data-level="1.1" data-path="installation.html"><a href="installation.html#installation-guide"><i class="fa fa-check"></i><b>1.1</b> Installation Guide</a><ul>
+<li class="chapter" data-level="1" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>1</b> Installation</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="installation.html"><a href="installation.html#installation-guide"><i class="fa fa-check"></i><b>1.1</b> Installation Guide</a>
+<ul>
 <li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#note-about-tinytex"><i class="fa fa-check"></i>Note about TinyTeX</a></li>
 <li class="chapter" data-level="" data-path="installation.html"><a href="installation.html#note-about-installation-problems"><i class="fa fa-check"></i>Note about installation problems</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="installation.html"><a href="installation.html#the-rstudio-interface"><i class="fa fa-check"></i><b>1.2</b> The RStudio interface</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html"><i class="fa fa-check"></i><b>2</b> Learning the Basics of R</a><ul>
-<li class="chapter" data-level="2.1" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html#swirl"><i class="fa fa-check"></i><b>2.1</b> <code>swirl</code></a></li>
-<li class="chapter" data-level="2.2" data-path="learning-the-basics-of-r.html"><a href="learning-the-basics-of-r.html#learnr"><i class="fa fa-check"></i><b>2.2</b> <code>learnr</code> (*)</a></li>
+<li class="chapter" data-level="2" data-path="basic-programming-tutorials.html"><a href="basic-programming-tutorials.html"><i class="fa fa-check"></i><b>2</b> Basic Programming Tutorials</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basic-programming-tutorials.html"><a href="basic-programming-tutorials.html#swirl"><i class="fa fa-check"></i><b>2.1</b> <code>swirl</code></a></li>
+<li class="chapter" data-level="2.2" data-path="basic-programming-tutorials.html"><a href="basic-programming-tutorials.html#learnr"><i class="fa fa-check"></i><b>2.2</b> <code>learnr</code> (*)</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html"><i class="fa fa-check"></i><b>3</b> Mendelian Genetics</a><ul>
-<li class="chapter" data-level="3.1" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#corn-example"><i class="fa fa-check"></i><b>3.1</b> Corn Example</a><ul>
+<li class="chapter" data-level="3" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html"><i class="fa fa-check"></i><b>3</b> Mendelian Genetics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#corn-example"><i class="fa fa-check"></i><b>3.1</b> Corn Example</a>
+<ul>
 <li class="chapter" data-level="" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#cornex1"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#cornchisq"><i class="fa fa-check"></i><b>3.2</b> Chi-Squared Test</a><ul>
+<li class="chapter" data-level="3.2" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#cornchisq"><i class="fa fa-check"></i><b>3.2</b> Chi-Squared Test</a>
+<ul>
 <li class="chapter" data-level="" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#exercise-3"><i class="fa fa-check"></i>Exercise 3</a></li>
 <li class="chapter" data-level="" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#exercise-4"><i class="fa fa-check"></i>Exercise 4</a></li>
 <li class="chapter" data-level="" data-path="mendelian-genetics.html"><a href="mendelian-genetics.html#exercise-5-optional"><i class="fa fa-check"></i>Exercise 5 (optional)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="bsa-curve.html"><a href="bsa-curve.html"><i class="fa fa-check"></i><b>4</b> BSA Curve</a><ul>
-<li class="chapter" data-level="4.1" data-path="bsa-curve.html"><a href="bsa-curve.html#what-is-a-bsa-curve"><i class="fa fa-check"></i><b>4.1</b> What Is a BSA Curve?</a></li>
-<li class="chapter" data-level="4.2" data-path="bsa-curve.html"><a href="bsa-curve.html#how-to-contruct-a-bsa-curve-in-r"><i class="fa fa-check"></i><b>4.2</b> How to Contruct a BSA-Curve in R</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="bsa-curve.html"><a href="bsa-curve.html#enter-your-data"><i class="fa fa-check"></i><b>4.2.1</b> Enter your data</a></li>
-<li class="chapter" data-level="4.2.2" data-path="bsa-curve.html"><a href="bsa-curve.html#fitBSA"><i class="fa fa-check"></i><b>4.2.2</b> Fit a Simple Linear Model</a></li>
-<li class="chapter" data-level="4.2.3" data-path="bsa-curve.html"><a href="bsa-curve.html#plot-your-data-draw-a-line"><i class="fa fa-check"></i><b>4.2.3</b> Plot your data &amp; draw a line</a></li>
+<li class="chapter" data-level="4" data-path="bradford-assay.html"><a href="bradford-assay.html"><i class="fa fa-check"></i><b>4</b> Bradford Assay</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="bradford-assay.html"><a href="bradford-assay.html#what-is-a-bradford-assay"><i class="fa fa-check"></i><b>4.1</b> What Is a Bradford Assay?</a></li>
+<li class="chapter" data-level="4.2" data-path="bradford-assay.html"><a href="bradford-assay.html#how-to-contruct-a-bsa-curve-in-r"><i class="fa fa-check"></i><b>4.2</b> How to Contruct a BSA-Curve in R</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="bradford-assay.html"><a href="bradford-assay.html#enterdata"><i class="fa fa-check"></i><b>4.2.1</b> Enter your data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="bradford-assay.html"><a href="bradford-assay.html#fitBSA"><i class="fa fa-check"></i><b>4.2.2</b> Fit a Simple Linear Model</a></li>
+<li class="chapter" data-level="4.2.3" data-path="bradford-assay.html"><a href="bradford-assay.html#plot-your-data-draw-a-line"><i class="fa fa-check"></i><b>4.2.3</b> Plot your data &amp; draw a line</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="bsa-curve.html"><a href="bsa-curve.html#using-a-bsa-curve-for-estimation"><i class="fa fa-check"></i><b>4.3</b> Using a BSA Curve for Estimation</a></li>
-<li class="chapter" data-level="4.4" data-path="bsa-curve.html"><a href="bsa-curve.html#howprecise"><i class="fa fa-check"></i><b>4.4</b> How Precise Is the Estimate?</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="bsa-curve.html"><a href="bsa-curve.html#r-squared"><i class="fa fa-check"></i><b>4.4.1</b> R-squared</a></li>
-<li class="chapter" data-level="4.4.2" data-path="bsa-curve.html"><a href="bsa-curve.html#prediction-interval"><i class="fa fa-check"></i><b>4.4.2</b> Prediction interval</a></li>
+<li class="chapter" data-level="4.3" data-path="bradford-assay.html"><a href="bradford-assay.html#using-a-bradford-assay-for-estimation"><i class="fa fa-check"></i><b>4.3</b> Using a Bradford Assay for Estimation</a></li>
+<li class="chapter" data-level="4.4" data-path="bradford-assay.html"><a href="bradford-assay.html#howprecise"><i class="fa fa-check"></i><b>4.4</b> How Precise Is the Estimate?</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="bradford-assay.html"><a href="bradford-assay.html#r-squared"><i class="fa fa-check"></i><b>4.4.1</b> R-squared</a></li>
+<li class="chapter" data-level="4.4.2" data-path="bradford-assay.html"><a href="bradford-assay.html#prediction-interval"><i class="fa fa-check"></i><b>4.4.2</b> Prediction interval</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="bsa-curve.html"><a href="bsa-curve.html#improveyourfigure"><i class="fa fa-check"></i><b>4.5</b> Improving your figure (*)</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="bsa-curve.html"><a href="bsa-curve.html#improving-the-main-plot"><i class="fa fa-check"></i><b>4.5.1</b> Improving the main plot</a></li>
-<li class="chapter" data-level="4.5.2" data-path="bsa-curve.html"><a href="bsa-curve.html#highlighting-the-line"><i class="fa fa-check"></i><b>4.5.2</b> Highlighting the line</a></li>
-<li class="chapter" data-level="4.5.3" data-path="bsa-curve.html"><a href="bsa-curve.html#adding-a-grid"><i class="fa fa-check"></i><b>4.5.3</b> Adding a grid</a></li>
+<li class="chapter" data-level="4.5" data-path="bradford-assay.html"><a href="bradford-assay.html#improveyourfigure"><i class="fa fa-check"></i><b>4.5</b> Improving Your Figure (*)</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="bradford-assay.html"><a href="bradford-assay.html#improving-the-main-plot"><i class="fa fa-check"></i><b>4.5.1</b> Improving the main plot</a></li>
+<li class="chapter" data-level="4.5.2" data-path="bradford-assay.html"><a href="bradford-assay.html#highlighting-the-line"><i class="fa fa-check"></i><b>4.5.2</b> Highlighting the line</a></li>
+<li class="chapter" data-level="4.5.3" data-path="bradford-assay.html"><a href="bradford-assay.html#adding-a-grid"><i class="fa fa-check"></i><b>4.5.3</b> Adding a grid</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="bsa-curve.html"><a href="bsa-curve.html#alternative-method"><i class="fa fa-check"></i><b>4.6</b> Alternative Method (*)</a></li>
+<li class="chapter" data-level="4.6" data-path="bradford-assay.html"><a href="bradford-assay.html#alternative-method"><i class="fa fa-check"></i><b>4.6</b> Alternative Method (*)</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="your-own-experiment.html"><a href="your-own-experiment.html"><i class="fa fa-check"></i><b>5</b> Your Own Experiment</a><ul>
-<li class="chapter" data-level="5.1" data-path="your-own-experiment.html"><a href="your-own-experiment.html#proof-vs-evidence"><i class="fa fa-check"></i><b>5.1</b> Proof vs Evidence</a></li>
-<li class="chapter" data-level="5.2" data-path="your-own-experiment.html"><a href="your-own-experiment.html#formulating-a-research-question"><i class="fa fa-check"></i><b>5.2</b> Formulating a Research Question</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="your-own-experiment.html"><a href="your-own-experiment.html#types-of-research-questions"><i class="fa fa-check"></i><b>5.2.1</b> Types of research questions</a></li>
-<li class="chapter" data-level="5.2.2" data-path="your-own-experiment.html"><a href="your-own-experiment.html#keep-it-simple"><i class="fa fa-check"></i><b>5.2.2</b> Keep it simple</a></li>
+<li class="chapter" data-level="5" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html"><i class="fa fa-check"></i><b>5</b> Your Own Experiment I</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#study-design"><i class="fa fa-check"></i><b>5.2</b> Study Design</a></li>
+<li class="chapter" data-level="5.3" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#why-use-a-statistical-test"><i class="fa fa-check"></i><b>5.3</b> Why Use a Statistical Test?</a></li>
+<li class="chapter" data-level="5.4" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#how-do-statistical-tests-work"><i class="fa fa-check"></i><b>5.4</b> How Do Statistical Tests Work?</a></li>
+<li class="chapter" data-level="5.5" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#chi-squared"><i class="fa fa-check"></i><b>5.5</b> The Chi-Squared Test</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#how-does-the-chi-squared-test-work"><i class="fa fa-check"></i><b>5.5.1</b> How Does the Chi-Squared Test Work?</a></li>
+<li class="chapter" data-level="5.5.2" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#chisq"><i class="fa fa-check"></i><b>5.5.2</b> Chi-Squared Test in R</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="your-own-experiment.html"><a href="your-own-experiment.html#sources-of-uncertainty"><i class="fa fa-check"></i><b>5.3</b> Sources of Uncertainty</a></li>
-<li class="chapter" data-level="5.4" data-path="your-own-experiment.html"><a href="your-own-experiment.html#the-ideal-study"><i class="fa fa-check"></i><b>5.4</b> The Ideal Study</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="your-own-experiment.html"><a href="your-own-experiment.html#replication"><i class="fa fa-check"></i><b>5.4.1</b> Replication</a></li>
-<li class="chapter" data-level="5.4.2" data-path="your-own-experiment.html"><a href="your-own-experiment.html#representative-sampling"><i class="fa fa-check"></i><b>5.4.2</b> Representative sampling</a></li>
-<li class="chapter" data-level="5.4.3" data-path="your-own-experiment.html"><a href="your-own-experiment.html#randomized-treatment-allocation"><i class="fa fa-check"></i><b>5.4.3</b> Randomized treatment allocation</a></li>
-<li class="chapter" data-level="5.4.4" data-path="your-own-experiment.html"><a href="your-own-experiment.html#balance"><i class="fa fa-check"></i><b>5.4.4</b> Balance</a></li>
+<li class="chapter" data-level="5.6" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#microbiologyex"><i class="fa fa-check"></i><b>5.6</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#performing-a-chi-squared-test"><i class="fa fa-check"></i><b>5.6.1</b> Performing a Chi-Squared Test</a></li>
+<li class="chapter" data-level="5.6.2" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#compare2"><i class="fa fa-check"></i><b>5.6.2</b> Comparing Two Students</a></li>
+<li class="chapter" data-level="5.6.3" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#comparing-two-other-students"><i class="fa fa-check"></i><b>5.6.3</b> Comparing Two Other Students</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html"><i class="fa fa-check"></i><b>6</b> Adding Figures in R Markdown</a><ul>
-<li class="chapter" data-level="6.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-simple"><i class="fa fa-check"></i><b>6.1</b> Image from a File (simple)</a><ul>
+<li class="chapter" data-level="6" data-path="grasshoppers.html"><a href="grasshoppers.html"><i class="fa fa-check"></i><b>6</b> Grasshoppers</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="grasshoppers.html"><a href="grasshoppers.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
+<li class="chapter" data-level="6.2" data-path="grasshoppers.html"><a href="grasshoppers.html#plotting-the-data"><i class="fa fa-check"></i><b>6.2</b> Plotting the Data</a></li>
+<li class="chapter" data-level="6.3" data-path="grasshoppers.html"><a href="grasshoppers.html#creating-a-subset"><i class="fa fa-check"></i><b>6.3</b> Creating a Subset</a></li>
+<li class="chapter" data-level="6.4" data-path="grasshoppers.html"><a href="grasshoppers.html#grasshoppertest"><i class="fa fa-check"></i><b>6.4</b> Comparing Means with a <span class="math inline">\(T\)</span>-Test</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="your-own-experiment-ii.html"><a href="your-own-experiment-ii.html"><i class="fa fa-check"></i><b>7</b> Your Own Experiment II</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html"><i class="fa fa-check"></i>Adding Figures in R Markdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-simple"><i class="fa fa-check"></i>Image from a File (simple)</a>
+<ul>
 <li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-advanced"><i class="fa fa-check"></i><b>6.2</b> Image from a File (advanced)</a><ul>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#image-from-a-file-advanced"><i class="fa fa-check"></i>Image from a File (advanced)</a>
+<ul>
 <li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-2-1"><i class="fa fa-check"></i>Exercise 2</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#plots-drawn-in-r"><i class="fa fa-check"></i><b>6.3</b> Plots Drawn in R</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#simple-example-linear-relationship"><i class="fa fa-check"></i><b>6.3.1</b> Simple Example (Linear Relationship)</a></li>
-<li class="chapter" data-level="6.3.2" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#multplot"><i class="fa fa-check"></i><b>6.3.2</b> Multiple Plots in One Area</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#plots-drawn-in-r"><i class="fa fa-check"></i>Plots Drawn in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#simple-example-linear-relationship"><i class="fa fa-check"></i>Simple Example (Linear Relationship)</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#multplot"><i class="fa fa-check"></i>Multiple Plots in One Area</a></li>
 <li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-3-1"><i class="fa fa-check"></i>Exercise 3</a></li>
-<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-4-optional"><i class="fa fa-check"></i>Exercise 4 (optional)</a></li>
-<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-5-optional-1"><i class="fa fa-check"></i>Exercise 5 (optional)</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-4-1"><i class="fa fa-check"></i>Exercise 4 (*)</a></li>
+<li class="chapter" data-level="" data-path="adding-figures-in-r-markdown.html"><a href="adding-figures-in-r-markdown.html#exercise-5"><i class="fa fa-check"></i>Exercise 5 (*)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html"><i class="fa fa-check"></i><b>7</b> Adding Tables in R Markdown</a><ul>
-<li class="chapter" data-level="7.1" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#the-user-friendly-way-kable"><i class="fa fa-check"></i><b>7.1</b> The User-Friendly Way: <code>kable</code></a><ul>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html"><i class="fa fa-check"></i>Adding Tables in R Markdown</a>
+<ul>
+<li><a href="adding-tables-in-r-markdown.html#the-user-friendly-way-kable">The User-Friendly Way: <code>kable</code></a>
+<ul>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-1-1"><i class="fa fa-check"></i>Exercise 1</a></li>
-<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#ex4.2"><i class="fa fa-check"></i>Exercise 2 (optional)</a></li>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exT.2"><i class="fa fa-check"></i>Exercise 2 (*)</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#advanced-xtable-optional"><i class="fa fa-check"></i><b>7.2</b> Advanced: <code>xtable</code> (optional)</a><ul>
-<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-3-optional"><i class="fa fa-check"></i>Exercise 3 (optional)</a></li>
+<li><a href="adding-tables-in-r-markdown.html#advanced-xtable">Advanced: <code>xtable</code> (*)</a>
+<ul>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-3-2"><i class="fa fa-check"></i>Exercise 3 (*)</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html"><i class="fa fa-check"></i><b>8</b> Microbiology Experiment</a><ul>
-<li class="chapter" data-level="8.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#introduction"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
-<li class="chapter" data-level="8.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#study-design"><i class="fa fa-check"></i><b>8.2</b> Study Design</a></li>
-<li class="chapter" data-level="8.3" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#why-use-a-statistical-test"><i class="fa fa-check"></i><b>8.3</b> Why Use a Statistical Test?</a></li>
-<li class="chapter" data-level="8.4" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#how-do-statistical-tests-work"><i class="fa fa-check"></i><b>8.4</b> How Do Statistical Tests Work?</a></li>
-<li class="chapter" data-level="8.5" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#chi-squared"><i class="fa fa-check"></i><b>8.5</b> The Chi-Squared Test</a><ul>
-<li class="chapter" data-level="8.5.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#how-does-the-chi-squared-test-work"><i class="fa fa-check"></i><b>8.5.1</b> How Does the Chi-Squared Test Work?</a></li>
-<li class="chapter" data-level="8.5.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#chisq"><i class="fa fa-check"></i><b>8.5.2</b> Chi-Squared Test in R</a></li>
-</ul></li>
-<li class="chapter" data-level="8.6" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#microbiologyex"><i class="fa fa-check"></i><b>8.6</b> Exercises</a><ul>
-<li class="chapter" data-level="8.6.1" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#performing-a-chi-squared-test"><i class="fa fa-check"></i><b>8.6.1</b> Performing a Chi-Squared Test</a></li>
-<li class="chapter" data-level="8.6.2" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#compare2"><i class="fa fa-check"></i><b>8.6.2</b> Comparing Two Students</a></li>
-<li class="chapter" data-level="8.6.3" data-path="microbiology-experiment.html"><a href="microbiology-experiment.html#comparing-two-other-students"><i class="fa fa-check"></i><b>8.6.3</b> Comparing Two Other Students</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="grasshoppers.html"><a href="grasshoppers.html"><i class="fa fa-check"></i><b>9</b> Grasshoppers</a><ul>
-<li class="chapter" data-level="9.1" data-path="grasshoppers.html"><a href="grasshoppers.html#getting-started"><i class="fa fa-check"></i><b>9.1</b> Getting Started</a></li>
-<li class="chapter" data-level="9.2" data-path="grasshoppers.html"><a href="grasshoppers.html#plotting-the-data"><i class="fa fa-check"></i><b>9.2</b> Plotting the Data</a></li>
-<li class="chapter" data-level="9.3" data-path="grasshoppers.html"><a href="grasshoppers.html#creating-a-subset"><i class="fa fa-check"></i><b>9.3</b> Creating a Subset</a></li>
-<li class="chapter" data-level="9.4" data-path="grasshoppers.html"><a href="grasshoppers.html#grasshoppertest"><i class="fa fa-check"></i><b>9.4</b> Comparing Means with a <span class="math inline">\(T\)</span>-Test</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -256,33 +267,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="grasshoppers" class="section level1">
-<h1><span class="header-section-number">Chapter 9</span> Grasshoppers</h1>
-<p><small><i>In this chapter you will <b>compare two means using a <span class="math inline">\(t\)</span>-test</b>.</i></small></p>
+<div id="grasshoppers" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Grasshoppers</h1>
+<p><small><b><i>Date:</b> TBA (late March, Animal Biodiversity course)</p>
+<p><b>Topic:</b> Data manipulation, hypothesis testing</p>
+<p><b>Duration:</b> 30–90 minutes</i></small></p>
 <hr />
-<p><img src="figures/grasshopper.png" width="788" /></p>
-<div id="getting-started" class="section level2">
-<h2><span class="header-section-number">9.1</span> Getting Started</h2>
-<p>We are going to compare the mean thorax length and wingspan of male and female grasshoppers.</p>
+<p><img src="figures/grasshopper.png" /><!-- --></p>
+<p>In this chapter, you are going to compare group means using a <span class="math inline">\(t\)</span>-test.</p>
+<div id="getting-started" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Getting Started</h2>
+<p>The first step is to correctly read your data into the software:</p>
 <iframe src="https://www.youtube.com/embed/BGUqZc-Pb8w" width="672" height="400px">
 </iframe>
 <ol style="list-style-type: decimal">
 <li>If you haven’t already, <a href="installation.html#installation">install RStudio</a>;</li>
-<li>Download the data. If it is an Excel (.xlsx) file, open it in Excel and save as comma-separated values (.csv) first;</li>
+<li>Download the data. If it is an Excel (.xlsx) file, open it in Excel and <a href="https://youtu.be/BGUqZc-Pb8w?t=21">save as CSV</a>;</li>
 <li>Open RStudio and <a href="https://youtu.be/2Sovzf6lVRo?t=280">create a new R markdown file</a>. <strong>Save this file to the same folder as the data!</strong></li>
-<li>Go to <strong>Session</strong> &gt; <strong>Set Working Directory</strong> &gt; <strong>To Source File Location</strong>. R now knows where to look for your data;</li>
-<li><a href="https://youtu.be/AHAR7j-IUOw?t=357">Create a new code chunk</a> and run the following code:</li>
+<li>Go to <strong>Session</strong> &gt; <strong>Set Working Directory</strong> &gt; <strong>To Source File Location</strong>. R now knows where to locate your data;</li>
+<li><a href="https://youtu.be/AHAR7j-IUOw?t=357">Create a new code chunk</a> and run the following:</li>
 </ol>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="grasshoppers.html#cb39-1"></a>grasshopper &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;grasshoppers.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="grasshoppers.html#cb25-1" aria-hidden="true" tabindex="-1"></a>grasshoppers <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;grasshoppers.csv&quot;</span>)</span></code></pre></div>
 <p>From here on out, just read the text, run the code in R, adjust the R code if needed, and answer the questions.</p>
-<p><font color = "red"><b>Note</b></font>: For the sake of privacy, this page uses a version of your data with scrambled names. I have also not linked the actual data. Please ask an assistant if you can’t find it.</p>
+<p><font color = "red"><b>Note</b></font>: For the sake of privacy, this page uses an old version of the data with scrambled names. I have also not linked the actual data. Please ask an assistant if you are unable to find it.</p>
 <hr />
 <p>If the code ran successfully, you will have an object called <code>grasshoppers</code> in your workspace. You can view it by clicking it, or by running:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="grasshoppers.html#cb40-1"></a><span class="kw">View</span>(grasshopper)</span></code></pre></div>
-<p>You probably have better things to do today than type long names, so let’s make the variable names a bit shorter:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="grasshoppers.html#cb41-1"></a><span class="kw">colnames</span>(grasshopper) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Affix&quot;</span>, <span class="st">&quot;Surname&quot;</span>, <span class="st">&quot;Group&quot;</span>, <span class="st">&quot;Thorax&quot;</span>, <span class="st">&quot;Wingspan&quot;</span>, <span class="st">&quot;Sex&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="grasshoppers.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(grasshoppers)</span></code></pre></div>
+<p>Rather than type long names throughout the analysis, let’s make the variable names a bit shorter:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="grasshoppers.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(grasshoppers) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Affix&quot;</span>, <span class="st">&quot;Surname&quot;</span>, <span class="st">&quot;Group&quot;</span>, <span class="st">&quot;Thorax&quot;</span>, <span class="st">&quot;Wingspan&quot;</span>, <span class="st">&quot;Sex&quot;</span>)</span></code></pre></div>
 <p>Does R understand which variables are numbers and which are something else? Let’s check:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="grasshoppers.html#cb42-1"></a><span class="kw">str</span>(grasshopper)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="grasshoppers.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(grasshoppers)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    200 obs. of  7 variables:
 ##  $ Name    : chr  &quot;naFan&quot; &quot;llEl&quot; &quot;MeMe&quot; &quot;eueort&quot; ...
 ##  $ Affix   : chr  &quot;van&quot; &quot;&quot; &quot;&quot; &quot;de&quot; ...
@@ -292,54 +306,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  $ Wingspan: int  94 79 78 80 84 68 100 75 87 90 ...
 ##  $ Sex     : chr  &quot;man&quot; &quot;man&quot; &quot;man&quot; &quot;vrouw&quot; ...</code></pre>
 <p><strong>Question</strong>:</p>
-<ul>
-<li>Is the data read correctly into R?</li>
+<ol style="list-style-type: decimal">
+<li>Is the data read correctly into R? How can you tell?</li>
 <li>What do you think <code>chr</code> and <code>int</code> mean?</li>
-</ul>
+</ol>
 </div>
-<div id="plotting-the-data" class="section level2">
-<h2><span class="header-section-number">9.2</span> Plotting the Data</h2>
+<div id="plotting-the-data" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Plotting the Data</h2>
 <p>Just looking at code and numbers is a bit stale. So let’s start off by making some relevant plots:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="grasshoppers.html#cb44-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># Plot in a 2x2 grid</span></span>
-<span id="cb44-2"><a href="grasshoppers.html#cb44-2"></a><span class="kw">hist</span>(grasshopper<span class="op">$</span>Thorax, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
-<span id="cb44-3"><a href="grasshoppers.html#cb44-3"></a><span class="kw">hist</span>(grasshopper<span class="op">$</span>Wingspan, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
-<span id="cb44-4"><a href="grasshoppers.html#cb44-4"></a><span class="kw">plot</span>(Thorax <span class="op">~</span><span class="st"> </span>Wingspan, <span class="dt">data =</span> grasshopper, <span class="dt">col =</span> <span class="kw">factor</span>(Sex))</span>
-<span id="cb44-5"><a href="grasshoppers.html#cb44-5"></a><span class="kw">boxplot</span>(Wingspan <span class="op">~</span><span class="st"> </span>Sex, <span class="dt">data =</span> grasshopper, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
-<span id="cb44-6"><a href="grasshoppers.html#cb44-6"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default</span></span></code></pre></div>
-<p><img src="Biostatistics_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="grasshoppers.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># Plot in a 2x2 grid</span></span>
+<span id="cb30-2"><a href="grasshoppers.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(grasshoppers<span class="sc">$</span>Thorax, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb30-3"><a href="grasshoppers.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(grasshoppers<span class="sc">$</span>Wingspan, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb30-4"><a href="grasshoppers.html#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Thorax <span class="sc">~</span> Wingspan, <span class="at">data =</span> grasshoppers, <span class="at">col =</span> <span class="fu">factor</span>(Sex))</span>
+<span id="cb30-5"><a href="grasshoppers.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Wingspan <span class="sc">~</span> Sex, <span class="at">data =</span> grasshoppers, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
+<span id="cb30-6"><a href="grasshoppers.html#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default</span></span></code></pre></div>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
 <p><strong>Question</strong>:</p>
-<ul>
+<ol start="3" style="list-style-type: decimal">
 <li>What does each plot show?</li>
 <li>Can you change the code to make different plots? <em>(You can try changing the variable names, or change the graphical parameters.)</em></li>
-</ul>
+</ol>
 </div>
-<div id="creating-a-subset" class="section level2">
-<h2><span class="header-section-number">9.3</span> Creating a Subset</h2>
+<div id="creating-a-subset" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Creating a Subset</h2>
 <p>We just read the whole data set. It contains the data from all groups Let’s make a <em>subset</em> of the measurements performed by group A:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="grasshoppers.html#cb45-1"></a>Subset &lt;-<span class="st"> </span>grasshopper[grasshopper<span class="op">$</span>Group <span class="op">==</span><span class="st"> &quot;A&quot;</span>, ]</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="grasshoppers.html#cb31-1" aria-hidden="true" tabindex="-1"></a>Subset <span class="ot">&lt;-</span> grasshoppers[grasshoppers<span class="sc">$</span>Group <span class="sc">==</span> <span class="st">&quot;A&quot;</span>, ]</span></code></pre></div>
 <p>What does this code do?</p>
 <ul>
 <li><code>Subset &lt;-</code>: Create a variable named <code>Subset</code>;</li>
-<li><code>grasshopper[x, y]</code>: From the data set <code>grasshopper</code>, select only rows <code>x</code> and columns <code>y</code>. If <code>y</code> is left blank, it selects all columns;<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></li>
-<li><code>grasshopper$Groep == "A"</code>: From the data set <code>grasshopper</code>, select the variable <code>Group</code> and check if it is equal to the value <code>A</code> (<code>TRUE</code>) or not (<code>FALSE</code>).</li>
+<li><code>grasshoppers[x, y]</code>: From the data set <code>grasshoppers</code>, select only rows <code>x</code> and columns <code>y</code>. If <code>y</code> is left blank, it selects all columns;<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></li>
+<li><code>grasshoppers$Groep == "A"</code>: From the data set <code>grasshoppers</code>, select the variable <code>Group</code> and check if it is equal to the value <code>A</code> (<code>TRUE</code>) or not (<code>FALSE</code>).</li>
 </ul>
 <p><strong>Question</strong>:</p>
-<ul>
+<ol start="5" style="list-style-type: decimal">
 <li>Can you change the code to make a subset of your own group? <em>(Skip this if you happen to be in A.)</em></li>
 <li>Make two more subsets called <code>Male</code> and <code>Female</code>, which contain only the measurements of their respective sex.</li>
 <li>(Optional) Using R code, can you make a subset that contains only the male measurements, and only of your group?</li>
-</ul>
+</ol>
 </div>
-<div id="grasshoppertest" class="section level2">
-<h2><span class="header-section-number">9.4</span> Comparing Means with a <span class="math inline">\(T\)</span>-Test</h2>
+<div id="grasshoppertest" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Comparing Means with a <span class="math inline">\(T\)</span>-Test</h2>
 <p>Below is an example of a <span class="math inline">\(t\)</span>-test, using some standard data in R:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="grasshoppers.html#cb46-1"></a><span class="kw">t.test</span>(extra <span class="op">~</span><span class="st"> </span>group, <span class="dt">data =</span> sleep, <span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="dt">var.equal =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="grasshoppers.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(extra <span class="sc">~</span> group, <span class="at">data =</span> sleep, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
 ## data:  extra by group
 ## t = -1.8608, df = 18, p-value = 0.03959
-## alternative hypothesis: true difference in means is less than 0
+## alternative hypothesis: true difference in means between group 1 and group 2 is less than 0
 ## 95 percent confidence interval:
 ##        -Inf -0.1076222
 ## sample estimates:
@@ -348,7 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This particular <span class="math inline">\(t\)</span>-test is a one-sided <span class="math inline">\(t\)</span>-test for equal variance. The output shows that the mean of group 1 is <span class="math inline">\(0.75\)</span> hours of extra sleep, while the mean of group 2 is <span class="math inline">\(2.33\)</span>. The <span class="math inline">\(p\)</span>-value for this test is <span class="math inline">\(0.0396\)</span>. If we use a level of significance of <span class="math inline">\(\alpha = 0.05\)</span>, then group 2 is has a significantly larger mean than group 1, because <span class="math inline">\(0.0396 &lt; 0.05\)</span>.</p>
 <p><strong>Question</strong>:</p>
 <p>Watch the video below and choose a <span class="math inline">\(t\)</span>-test you deem appropriate for:</p>
-<ol style="list-style-type: decimal">
+<ol start="8" style="list-style-type: decimal">
 <li>Comparing male and female thorax length;</li>
 <li>Comparing male and female wingspan length.</li>
 </ol>
@@ -356,7 +370,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <iframe src="https://www.youtube.com/embed/qJA3CvFt_pc" width="672" height="400px">
 </iframe>
 <p><strong>Question</strong>:</p>
-<ol start="3" style="list-style-type: decimal">
+<ol start="10" style="list-style-type: decimal">
 <li>Perform the tests you chose for (1) and (2) in R and draw a conclusion. Have a look at how <a href="grasshoppers.html#grasshoppertest">the example</a> was coded using the <code>data</code> argument and adjust it to make it work for the data of your group (<code>Subset</code>). You may use the same level of significance <span class="math inline">\(\alpha = 0.05\)</span>.</li>
 <li>Compare your results with at least one other group. If your conclusion differs, can you explain why?</li>
 <li>(Optional) You performed two tests. That means that both can result in a false positive. With <span class="math inline">\(\alpha = 0.05\)</span>, what is the chance of at least one false positive when performing two tests?</li>
@@ -376,8 +390,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="microbiology-experiment.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="your-own-experiment-i.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="your-own-experiment-ii.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -400,6 +414,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
