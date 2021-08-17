@@ -15,7 +15,7 @@ fig:linearRelationship
 fig:xlimylim
 fig:coolPlot
 fig:sixPlotsActual
-tab:unnamed-chunk-51
+tab:unnamed-chunk-53
 installation
 installation-guide
 the-rstudio-interface
@@ -58,3 +58,5 @@ plotting-the-data
 creating-a-subset
 grasshoppertest
 your-own-experiment-ii
+study-design-1
+preparing-your-presentation
