@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Mendelian Genetics | Biostatistics Portfolio I</title>
-  <meta name="description" content="Chapter 3 Mendelian Genetics | Biostatistics Portfolio I" />
+  <title>Chapter 6 Sepia | Biostatistics Portfolio I</title>
+  <meta name="description" content="Chapter 6 Sepia | Biostatistics Portfolio I" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Mendelian Genetics | Biostatistics Portfolio I" />
+  <meta property="og:title" content="Chapter 6 Sepia | Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Mendelian Genetics | Biostatistics Portfolio I" />
+  <meta name="twitter:title" content="Chapter 6 Sepia | Biostatistics Portfolio I" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="basic-programming-tutorials.html"/>
-<link rel="next" href="bradford-assay.html"/>
+<link rel="prev" href="your-own-experiment-i.html"/>
+<link rel="next" href="your-own-experiment-ii.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -275,115 +275,131 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mendelian-genetics" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Mendelian Genetics</h1>
-<p><small><b><i>Date:</b> 21/22 September 2021</p>
-<p><b>Topic:</b> Probability theory, hypothesis testing</p>
-<p><b>Duration:</b> 30–90 min.</i></small></p>
+<div id="sepia" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Sepia</h1>
+<p><small><b><i>Date:</b> 16/17 March 2022 (Animal Biodiversity course)</p>
+<p><b>Topic:</b> Data manipulation, <span class="math inline">\(t\)</span>-test</p>
+<p><b>Duration:</b> 30–90 minutes</i></small></p>
 <hr />
-<p>In this chapter you will learn how to compare observed to expected frequencies using a chi-squared test.</p>
-<iframe src="https://www.youtube.com/embed/PDl7mhpY4PI" width="672" height="400px" data-external="1">
+<p><img src="figures/Sepia.png" width="1000" /></p>
+<p>Does the common cuttlefish (<em>Sepia officinalis</em>) display sexual dimorphism? Are males perhaps taller or wider? In this chapter, you are going to scientifically compare two groups of measurements.</p>
+<div id="getting-started" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Getting Started</h2>
+<p>The first step is to correctly read your data into the software:</p>
+<iframe src="https://www.youtube.com/embed/BGUqZc-Pb8w" width="672" height="400px" data-external="1">
 </iframe>
-<div id="corn-example" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Corn Example</h2>
-<p>In the basic practicals you will count the number of differently colored corn kernels.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
-<img src="figures/cornkernelcount.png" alt="A cob of corn with differently colored kernels." width="100%" />
-<p class="caption">
-Figure 3.1: A cob of corn with differently colored kernels.
-</p>
+<ol style="list-style-type: decimal">
+<li>If you haven’t already, <a href="installation.html#installation">install RStudio</a>;</li>
+<li>Download the data. If it is an Excel (.xlsx) file, open it in Excel and <a href="https://youtu.be/BGUqZc-Pb8w?t=21">save as CSV</a>;</li>
+<li>Open RStudio and <a href="https://youtu.be/2Sovzf6lVRo?t=280">create a new R markdown file</a>. <strong>Save this file to the same folder as the data!</strong></li>
+<li>Go to <strong>Session</strong> &gt; <strong>Set Working Directory</strong> &gt; <strong>To Source File Location</strong>. R now knows where to locate your data;</li>
+<li><a href="https://youtu.be/AHAR7j-IUOw?t=357">Create a new code chunk</a> and run the following:</li>
+</ol>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="sepia.html#cb25-1" aria-hidden="true" tabindex="-1"></a>Sepia <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Sepia.csv&quot;</span>)</span></code></pre></div>
+<p>From here on out, just read the text, run the code in R, adjust the R code if needed, and answer the questions.</p>
+<p><font color = "red"><b>Note</b></font>: For the sake of privacy, this page uses an old version of the data with scrambled names. I have also not linked the actual data. Please ask an assistant if you are unable to find it.</p>
+<hr />
+<p>If the code ran successfully, you will have an object called <code>Sepia</code> in your workspace. You can view it by clicking it, or by running:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="sepia.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(Sepia)</span></code></pre></div>
+<p>Rather than type long names throughout the analysis, let’s make the variable names a bit shorter:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="sepia.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(Sepia) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Affix&quot;</span>, <span class="st">&quot;Surname&quot;</span>, <span class="st">&quot;Group&quot;</span>, <span class="st">&quot;Length&quot;</span>, <span class="st">&quot;Width&quot;</span>, <span class="st">&quot;Sex&quot;</span>)</span></code></pre></div>
+<p>Does R understand which variables are numbers and which are something else? Let’s check:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="sepia.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Sepia)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    200 obs. of  7 variables:
+##  $ Name   : chr  &quot;naFan&quot; &quot;llEl&quot; &quot;MeMe&quot; &quot;eueort&quot; ...
+##  $ Affix  : chr  &quot;van&quot; &quot;&quot; &quot;&quot; &quot;de&quot; ...
+##  $ Surname: chr  &quot;RmesoasR&quot; &quot;aBBa&quot; &quot;Kunenn&quot; &quot;yuyyn&quot; ...
+##  $ Group  : chr  &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; ...
+##  $ Length : int  13 10 13 15 11 13 15 10 12 15 ...
+##  $ Width  : int  94 79 78 80 84 68 100 75 87 90 ...
+##  $ Sex    : chr  &quot;man&quot; &quot;man&quot; &quot;man&quot; &quot;vrouw&quot; ...</code></pre>
+<p><strong>Question</strong>:</p>
+<ol style="list-style-type: decimal">
+<li>Is the data read correctly into R? How can you tell?</li>
+<li>What do you think <code>chr</code> and <code>int</code> mean?</li>
+</ol>
 </div>
-<p>According to Mendelian genetics, if both parents were heterozygous for one color-causing gene, then we would expect a <span class="math inline">\(3 : 1\)</span> ratio of kernels with dominant to recessive trait. For example, consider heterozygous parents for the red color-causing gene <b>R</b>:</p>
-<table style="width:50%;">
-<caption>
-<span id="tab:unnamed-chunk-7">Table 3.1: </span>Crossing of two heterozygous parents.
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:center;">
-R
-</th>
-<th style="text-align:center;">
-r
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;font-weight: bold;">
-R
-</td>
-<td style="text-align:center;">
-RR (red)
-</td>
-<td style="text-align:center;">
-Rr (red)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;font-weight: bold;">
-r
-</td>
-<td style="text-align:center;">
-Rr (red)
-</td>
-<td style="text-align:center;">
-rr (yellow)
-</td>
-</tr>
-</tbody>
-</table>
-<p>If both parents were indeed <b>Rr</b>, then we would expected <span class="math inline">\(\text{red} : \text{yellow} = 3 : 1\)</span> in the offspring.</p>
-<p>A statistical test works by taking on a statement of no difference and then collecting evidence against it. For the chi-squared test, that means that we compare the observed frequencies to the frequencies we would get under a <span class="math inline">\(3:1\)</span> ratio. You can calculate these expected frequencies simply by multiplying the total kernels counted with the expected proportion. <em>(Take care to convert the ratio to a proportion first.)</em></p>
-<div id="cornex1" class="section level3 unnumbered">
-<h3>Exercise 1</h3>
-<p>Suppose you count <span class="math inline">\(361\)</span> red kernels and <span class="math inline">\(139\)</span> yellow ones. What are the expected number of red and yellow kernels under the null-hypothesis of a <span class="math inline">\(3 : 1\)</span> ratio?</p>
+<div id="plotting-the-data" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Plotting the Data</h2>
+<p>Just looking at code and numbers is a bit stale. So let’s start off by making some relevant plots:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="sepia.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># Plot in a 2x2 grid</span></span>
+<span id="cb30-2"><a href="sepia.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Sepia<span class="sc">$</span>Length, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb30-3"><a href="sepia.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Sepia<span class="sc">$</span>Width, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb30-4"><a href="sepia.html#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Length <span class="sc">~</span> Width, <span class="at">data =</span> Sepia, <span class="at">col =</span> <span class="fu">factor</span>(Sex))</span>
+<span id="cb30-5"><a href="sepia.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Width <span class="sc">~</span> Sex, <span class="at">data =</span> Sepia, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
+<span id="cb30-6"><a href="sepia.html#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default</span></span></code></pre></div>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p><strong>Question</strong>:</p>
+<ol start="3" style="list-style-type: decimal">
+<li>What does each plot show?</li>
+<li>Can you change the code to make different plots? <em>(You can try changing the variable names, or change the graphical parameters.)</em></li>
+</ol>
 </div>
-<div id="exercise-2" class="section level3 unnumbered">
-<h3>Exercise 2</h3>
-<p>The chi-squared test is defined as follows:</p>
-<p><span class="math display" id="eq:chisquared">\[\begin{equation}
-\displaystyle\chi^2 = \sum_{i = 1}^k \frac{(\text{observed}_i - \text{expected}_i)^2}{\text{expected}_i}
-\tag{3.1}
-\end{equation}\]</span></p>
-<p>Where <span class="math inline">\(k\)</span> is the number of groups. Since there are only two groups (red, yellow), this becomes:</p>
-<p><span class="math inline">\(\displaystyle\chi^2 = \frac{(\text{observed}_\text{red} - \text{expected}_\text{red})^2}{\text{expected}_\text{red}} + \frac{(\text{observed}_\text{yellow} - \text{expected}_\text{yellow})^2}{\text{expected}_\text{yellow}}\)</span></p>
-<p>Calculate <span class="math inline">\(\chi^2\)</span> using the observed and expected numbers from exercise 1. Show your calculation.</p>
-</div>
-</div>
-<div id="cornchisq" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Chi-Squared Test</h2>
-<p>In R you can compare observed to expected frequencies using <code>chisq.test</code>:</p>
-<p><small></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="mendelian-genetics.html#cb1-1" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">361</span>, <span class="dv">139</span>)</span>
-<span id="cb1-2"><a href="mendelian-genetics.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(example, <span class="at">p =</span> <span class="fu">c</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>)) <span class="co"># Test against a 3:1 ratio</span></span></code></pre></div>
-<pre><code>## 
-##  Chi-squared test for given probabilities
-## 
-## data:  example
-## X-squared = 2.0907, df = 1, p-value = 0.1482</code></pre>
-<p></small></p>
-<p>This test calculates <span class="math inline">\(\chi^2\)</span> and computes a corresponding <span class="math inline">\(p\)</span>-value that has the following meaning:</p>
+<div id="creating-a-subset" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Creating a Subset</h2>
+<p>We just read the whole data set. It contains the data from all groups Let’s make a <em>subset</em> of the measurements performed by group A:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="sepia.html#cb31-1" aria-hidden="true" tabindex="-1"></a>Subset <span class="ot">&lt;-</span> Sepia[Sepia<span class="sc">$</span>Group <span class="sc">==</span> <span class="st">&quot;A&quot;</span>, ]</span></code></pre></div>
+<p>What does this code do?</p>
 <ul>
-<li>If the population has a <span class="math inline">\(3 : 1\)</span> ratio of red to yellow kernels, what is the chance of observing at least this large a deviation?<a href="references.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
+<li><code>Subset &lt;-</code>: Create a variable named <code>Subset</code>;</li>
+<li><code>Sepia[x, y]</code>: From the data set <code>Sepia</code>, select only rows <code>x</code> and columns <code>y</code>. If <code>y</code> is left blank, it selects all columns;<a href="references.html#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></li>
+<li><code>Sepia$Groep == "A"</code>: From the data set <code>Sepia</code>, select the variable <code>Group</code> and check if it is equal to the value <code>A</code> (<code>TRUE</code>) or not (<code>FALSE</code>).</li>
 </ul>
-<p>If this chance is very small, then perhaps the null-hypothesis of a <span class="math inline">\(3 : 1\)</span> ratio is not realistic and we reject it. If it is large, then this corn cob might as well have arisen from parents that yield a <span class="math inline">\(3 : 1\)</span> ratio, and we don’t reject the null-hypothesis.</p>
-<p>So what is small and large? That is a matter of opinion, but in biology a value of <span class="math inline">\(0.05\)</span> is often used as a boundary. That means there is a <span class="math inline">\(\frac{1}{20}\)</span> chance of incorrectly concluding a significant deviation from <span class="math inline">\(3 : 1\)</span>.</p>
-<div id="exercise-3" class="section level3 unnumbered">
-<h3>Exercise 3</h3>
-<p>Look at <a href="mendelian-genetics.html#cornchisq">the output from the chi-squared test</a>. With a threshold of <span class="math inline">\(0.05\)</span>, would you reject the null-hypothesis? What do you conclude?</p>
+<p><strong>Question</strong>:</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Can you change the code to make a subset of your own group? <em>(Skip this if you happen to be in A.)</em></li>
+<li>Make two more subsets called <code>Male</code> and <code>Female</code>, which contain only the measurements of their respective sex.</li>
+<li>(Optional) Using R code, can you make a subset that contains only the male measurements, and only of your group?</li>
+</ol>
 </div>
-<div id="exercise-4" class="section level3 unnumbered">
-<h3>Exercise 4</h3>
-<p>Perform the same <span class="math inline">\(\chi^2\)</span>-test for your own counts of a corn cob and report the conclusion. Use the <a href="mendelian-genetics.html#cornchisq">code from the example</a> and adapt it for your own counts.</p>
+<div id="t-test" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> T-test</h2>
+<p>How do we compare measurements of two groups? One way to do that is through a <span class="math inline">\(t\)</span>-test. To choose the right <span class="math inline">\(t\)</span>-test, you should understand five choices:</p>
+<ul>
+<li>Do you need a one-sample, or two-sample <span class="math inline">\(t\)</span>-test?</li>
+<li>Do you want to test one-sided or two-sided?</li>
+<li>Is it reasonable to assume equal variance?</li>
+<li>Are the measurements independent or paired?</li>
+<li>Is the underlying assumption of normality reasonable?</li>
+</ul>
+<p>Do you remember all of those choices? Is so, impressive! If not, you can <strong>rewatch the video version</strong> of the lecture here:</p>
+<iframe src="https://www.youtube.com/embed/BGUqZc-Pb8w" width="672" height="400px" data-external="1">
+</iframe>
+<div id="sepiatest" class="section level3" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Example</h3>
+<p>Below is an <strong>example</strong> of a <span class="math inline">\(t\)</span>-test, using some standard data in R:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="sepia.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(extra <span class="sc">~</span> group, <span class="at">data =</span> sleep, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Two Sample t-test
+## 
+## data:  extra by group
+## t = -1.8608, df = 18, p-value = 0.03959
+## alternative hypothesis: true difference in means between group 1 and group 2 is less than 0
+## 95 percent confidence interval:
+##        -Inf -0.1076222
+## sample estimates:
+## mean in group 1 mean in group 2 
+##            0.75            2.33</code></pre>
+<p>This particular <span class="math inline">\(t\)</span>-test is a one-sided <span class="math inline">\(t\)</span>-test for equal variance. The output shows that the mean of group 1 is <span class="math inline">\(0.75\)</span> hours of extra sleep, while the mean of group 2 is <span class="math inline">\(2.33\)</span>. The <span class="math inline">\(p\)</span>-value for this test is <span class="math inline">\(0.0396\)</span>. If we use a level of significance of <span class="math inline">\(\alpha = 0.05\)</span>, then group 2 is has a significantly larger mean than group 1, because <span class="math inline">\(0.0396 &lt; 0.05\)</span>.</p>
 </div>
-<div id="exercise-5-optional" class="section level3 unnumbered">
-<h3>Exercise 5 (optional)</h3>
-<p>In the basic practicals, it was explained that all of four different dominant mutations are required for there to be red kernels: <b>C</b>, <b>R</b>, <b>A1</b> and <b>A2</b>.</p>
-<p>Since these are all dominant mutations, let’s assume that each mutant protein has a <span class="math inline">\(\frac{3}{4}\)</span> chance of being present in the offspring (due to a <span class="math inline">\(3 : 1\)</span> ratio). What is then the chance of a red kernel?</p>
-<p><small><em>(For simplicity, ignore the possibility of C-inhibitor.)</em></small></p>
+<div id="exercise" class="section level3" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Exercise</h3>
+<p><strong>Question</strong>:</p>
+<p>Watch the video below and choose a <span class="math inline">\(t\)</span>-test you deem appropriate for:</p>
+<ol start="8" style="list-style-type: decimal">
+<li>Comparing male and female length;</li>
+<li>Comparing male and female width.</li>
+</ol>
+<p><em>(They could be the same, just explain briefly why you chose a certain <span class="math inline">\(t\)</span>-test.)</em></p>
+<iframe src="https://www.youtube.com/embed/qJA3CvFt_pc" width="672" height="400px" data-external="1">
+</iframe>
+<p><strong>Question</strong>:</p>
+<ol start="10" style="list-style-type: decimal">
+<li>Perform the tests you chose for (1) and (2) in R and draw a conclusion. Have a look at how <a href="sepia.html#sepiatest">the example</a> was coded using the <code>data</code> argument and adjust it to make it work for the data of your group (<code>Subset</code>). You may use the same level of significance <span class="math inline">\(\alpha = 0.05\)</span>.</li>
+<li>Compare your results with at least one other group. If your conclusion differs, can you explain why?</li>
+<li>Did we now prove that <em>Sepia</em> males and females differ in physical dimensions? Did we prove they are the same? What is the right way to express the conclusion?</li>
+<li>(Optional) You performed two tests. That means that both can result in a false positive. With <span class="math inline">\(\alpha = 0.05\)</span>, what is the chance of at least one false positive when performing two tests?</li>
+</ol>
 
 </div>
 </div>
@@ -393,8 +409,8 @@ rr (yellow)
           </div>
         </div>
       </div>
-<a href="basic-programming-tutorials.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bradford-assay.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="your-own-experiment-i.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="your-own-experiment-ii.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

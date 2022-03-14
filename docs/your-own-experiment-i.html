@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Your Own Experiment I | Biostatistics Portfolio I</title>
   <meta name="description" content="Chapter 5 Your Own Experiment I | Biostatistics Portfolio I" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Your Own Experiment I | Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
@@ -31,9 +31,10 @@
   
   
 <link rel="prev" href="bradford-assay.html"/>
-<link rel="next" href="grasshoppers.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link rel="next" href="sepia.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -210,12 +210,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.3" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#comparing-two-other-students"><i class="fa fa-check"></i><b>5.6.3</b> Comparing Two Other Students</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="grasshoppers.html"><a href="grasshoppers.html"><i class="fa fa-check"></i><b>6</b> Grasshoppers</a>
+<li class="chapter" data-level="6" data-path="sepia.html"><a href="sepia.html"><i class="fa fa-check"></i><b>6</b> Sepia</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="grasshoppers.html"><a href="grasshoppers.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
-<li class="chapter" data-level="6.2" data-path="grasshoppers.html"><a href="grasshoppers.html#plotting-the-data"><i class="fa fa-check"></i><b>6.2</b> Plotting the Data</a></li>
-<li class="chapter" data-level="6.3" data-path="grasshoppers.html"><a href="grasshoppers.html#creating-a-subset"><i class="fa fa-check"></i><b>6.3</b> Creating a Subset</a></li>
-<li class="chapter" data-level="6.4" data-path="grasshoppers.html"><a href="grasshoppers.html#grasshoppertest"><i class="fa fa-check"></i><b>6.4</b> Comparing Means with a <span class="math inline">\(T\)</span>-Test</a></li>
+<li class="chapter" data-level="6.1" data-path="sepia.html"><a href="sepia.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
+<li class="chapter" data-level="6.2" data-path="sepia.html"><a href="sepia.html#plotting-the-data"><i class="fa fa-check"></i><b>6.2</b> Plotting the Data</a></li>
+<li class="chapter" data-level="6.3" data-path="sepia.html"><a href="sepia.html#creating-a-subset"><i class="fa fa-check"></i><b>6.3</b> Creating a Subset</a></li>
+<li class="chapter" data-level="6.4" data-path="sepia.html"><a href="sepia.html#t-test"><i class="fa fa-check"></i><b>6.4</b> T-test</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="sepia.html"><a href="sepia.html#sepiatest"><i class="fa fa-check"></i><b>6.4.1</b> Example</a></li>
+<li class="chapter" data-level="6.4.2" data-path="sepia.html"><a href="sepia.html#exercise"><i class="fa fa-check"></i><b>6.4.2</b> Exercise</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="your-own-experiment-ii.html"><a href="your-own-experiment-ii.html"><i class="fa fa-check"></i><b>7</b> Your Own Experiment II</a>
 <ul>
@@ -287,7 +291,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="study-design" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Study Design</h2>
 <p>In the microbiology assignment, you will design your own experiment, perform an analysis, draw conclusions and report your findings. That is a lot of work, so start planning in time!</p>
-<p>Designing a study requires consideration of both biology and statistics: What question is the study supposed to answer? What kind of test or model is able to do so? What are the independent experimental units?<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> How large should your sample size be?</p>
+<p>Designing a study requires consideration of both biology and statistics: What question is the study supposed to answer? What kind of test or model is able to do so? What are the independent experimental units?<a href="references.html#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> How large should your sample size be?</p>
 <p>To make it all feasible within the context of your microbiology course, let’s restrict ourselves to one particular kind of comparison: Differences in counts among groups. For example:</p>
 <ul>
 <li>Is there a difference in the number of bacterial colonies counted on agar plates exposed to the air for an hour in the kitchen and the living room?</li>
@@ -319,16 +323,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This statement of no difference is called the null-hypothesis (<span class="math inline">\(H_0\)</span>). If there is sufficient evidence against it, the null-hypothesis is rejected. What consitutes ‘enough’ evidence depends on what is considered an acceptable chance of a false positive (<span class="math inline">\(\alpha\)</span>):</p>
 <ul>
 <li><strong>Null-hypothesis (<span class="math inline">\(H_0\)</span>)</strong>: A statement of no difference;</li>
-<li><strong>Level of significance (<span class="math inline">\(\alpha\)</span>)</strong>: What is an acceptable chance of a false positive?<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></li>
+<li><strong>Level of significance (<span class="math inline">\(\alpha\)</span>)</strong>: What is an acceptable chance of a false positive?<a href="references.html#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></li>
 </ul>
 <p>When counting bacterial colonies on plates from two plates, the null-hypothesis would be:</p>
 <ul>
 <li><span class="math inline">\(H_0:\)</span> There is no difference in the number of bacterial colonies on either plate.</li>
 </ul>
-<p>A false positive would mean that you conclude a significant difference, even though the null-hypothesis is true. This can always happen, because a sample is just a random draw from the population,<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> and can coincidentally be different from its population.</p>
+<p>A false positive would mean that you conclude a significant difference, even though the null-hypothesis is true. This can always happen, because a sample is just a random draw from the population,<a href="references.html#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> and can coincidentally be different from its population.</p>
 <p>So which value should you choose for the level of significance (<span class="math inline">\(\alpha\)</span>)? That depends on your research:</p>
 <ul>
-<li>If we’re developing a diagnostic test for cancer, then a false positive could mean a a very serious operation for the patient. This means we have to be very strict about false positives. Even <span class="math inline">\(\alpha = 0.01\)</span> would mean <span class="math inline">\(\frac{1}{100}\)</span> healthy individuals would wrongly undergo treatment;<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></li>
+<li>If we’re developing a diagnostic test for cancer, then a false positive could mean a a very serious operation for the patient. This means we have to be very strict about false positives. Even <span class="math inline">\(\alpha = 0.01\)</span> would mean <span class="math inline">\(\frac{1}{100}\)</span> healthy individuals would wrongly undergo treatment;<a href="references.html#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></li>
 <li>If we’re just counting bacteria in kitchens and living rooms, a false positive is not that consequential, and we can be less strict about what is significant.</li>
 </ul>
 <p>Specifically, that means you could choose whatever value for <span class="math inline">\(\alpha\)</span> you want. However, in biological journals, it is convention to go no higher than <span class="math inline">\(\alpha = 0.05\)</span>. That implies a chance of <span class="math inline">\(5\%\)</span>, or <span class="math inline">\(\frac{1}{20}\)</span>, of a false positive. Therefore, for this experiment, let’s use:</p>
@@ -580,26 +584,16 @@ Student 2
 </div>
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="6">
-<li id="fn6"><p><small>An experimental unit is the smallest division of the sample that is still an independent part. Some example: In clinical trials, patients are experimental units; In a study on fertilizer effectiveness, plants are experimental units; In an experiment on antibiotic effectiveness, a single agar plate is an experimental unit.</small><a href="your-own-experiment-i.html#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p><small>A false positive occurs when you conclude a significant difference, even though there is no real difference in the underlying population from which the sample came. <strong>Example 1</strong>: If we conclude a medicine works significantly better than a placebo in the <em>sample</em>, but it does not actually work on average in the population, then we have a false positive for the effect of the medicine. <strong>Example 2</strong>: Say we estimate the ratio of black to white sheep in a large farm by drawing a random sample. A false postive would occur if in the sample, the ratio differed significantly from <span class="math inline">\(1 : 1\)</span>, even though it does not in the whole farm. False positives are also called type I errors.</small><a href="your-own-experiment-i.html#fnref7" class="footnote-back">↩︎</a></p></li>
-<li id="fn8"><p><small>The population here consists of all possible samples of air from your kitchen and living room.</small><a href="your-own-experiment-i.html#fnref8" class="footnote-back">↩︎</a></p></li>
-<li id="fn9"><p><small>Of course, in reality a diagnostic test for cancer is followed by further diagnosis to minimize the probability of this scenario.</small><a href="your-own-experiment-i.html#fnref9" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
             </section>
 
           </div>
         </div>
       </div>
 <a href="bradford-assay.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="grasshoppers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sepia.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -639,6 +633,10 @@ gitbook.start({
 "text": null
 },
 "download": ["Biostatistics.pdf", "Biostatistics.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

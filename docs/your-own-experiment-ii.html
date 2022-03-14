@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Your Own Experiment II | Biostatistics Portfolio I</title>
   <meta name="description" content="Chapter 7 Your Own Experiment II | Biostatistics Portfolio I" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Your Own Experiment II | Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
@@ -30,10 +30,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="grasshoppers.html"/>
+<link rel="prev" href="sepia.html"/>
 <link rel="next" href="adding-figures-in-r-markdown.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -210,12 +210,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.3" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#comparing-two-other-students"><i class="fa fa-check"></i><b>5.6.3</b> Comparing Two Other Students</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="grasshoppers.html"><a href="grasshoppers.html"><i class="fa fa-check"></i><b>6</b> Grasshoppers</a>
+<li class="chapter" data-level="6" data-path="sepia.html"><a href="sepia.html"><i class="fa fa-check"></i><b>6</b> Sepia</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="grasshoppers.html"><a href="grasshoppers.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
-<li class="chapter" data-level="6.2" data-path="grasshoppers.html"><a href="grasshoppers.html#plotting-the-data"><i class="fa fa-check"></i><b>6.2</b> Plotting the Data</a></li>
-<li class="chapter" data-level="6.3" data-path="grasshoppers.html"><a href="grasshoppers.html#creating-a-subset"><i class="fa fa-check"></i><b>6.3</b> Creating a Subset</a></li>
-<li class="chapter" data-level="6.4" data-path="grasshoppers.html"><a href="grasshoppers.html#grasshoppertest"><i class="fa fa-check"></i><b>6.4</b> Comparing Means with a <span class="math inline">\(T\)</span>-Test</a></li>
+<li class="chapter" data-level="6.1" data-path="sepia.html"><a href="sepia.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
+<li class="chapter" data-level="6.2" data-path="sepia.html"><a href="sepia.html#plotting-the-data"><i class="fa fa-check"></i><b>6.2</b> Plotting the Data</a></li>
+<li class="chapter" data-level="6.3" data-path="sepia.html"><a href="sepia.html#creating-a-subset"><i class="fa fa-check"></i><b>6.3</b> Creating a Subset</a></li>
+<li class="chapter" data-level="6.4" data-path="sepia.html"><a href="sepia.html#t-test"><i class="fa fa-check"></i><b>6.4</b> T-test</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="sepia.html"><a href="sepia.html#sepiatest"><i class="fa fa-check"></i><b>6.4.1</b> Example</a></li>
+<li class="chapter" data-level="6.4.2" data-path="sepia.html"><a href="sepia.html#exercise"><i class="fa fa-check"></i><b>6.4.2</b> Exercise</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="your-own-experiment-ii.html"><a href="your-own-experiment-ii.html"><i class="fa fa-check"></i><b>7</b> Your Own Experiment II</a>
 <ul>
@@ -277,7 +281,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><b>Topic:</b> Study design, hypothesis testing</p>
 <p><b>Duration:</b> Up to you.</i></small></p>
 <hr />
-<p>If you’ve completed the rest of the portfolio, you have now used a <a href="mendelian-genetics.html#mendelian-genetics"><span class="math inline">\(\chi^2\)</span>-test</a>, a <a href="grasshoppers.html#grasshoppers"><span class="math inline">\(t\)</span>-test</a> and even <a href="bradford-assay.html#bradford-assay">simple linear regression</a> at least once. You should also have had your first statistics course by now.</p>
+<p>If you’ve completed the rest of the portfolio, you have now used a <a href="mendelian-genetics.html#mendelian-genetics"><span class="math inline">\(\chi^2\)</span>-test</a>, a <a href="#grasshoppers"><span class="math inline">\(t\)</span>-test</a> and even <a href="bradford-assay.html#bradford-assay">simple linear regression</a> at least once. You should also have had your first statistics course by now.</p>
 <p>Designing a study is all about performing experiments and collecting their data, such that you can perform an analysis that can satisfactorily answer your research question. Hence, the more you know about statistics, the more complicated questions you are able to tackle.</p>
 <p>For the purpose of this project, I recommend that you design your experiments around a technique you are already familiar with. For instance:</p>
 <ul>
@@ -290,12 +294,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>For the biostatistics portfolio, there are no further exercises in this chapter. There will be a statistician among the jury of the project presentations, who will judge the analysis of your experiments and the interpretation of the results.</p>
 <div id="study-design-1" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Study Design</h2>
-<iframe src="https://www.youtube.com/embed/nGJ1_7wtfo8" width="672" height="400px">
+<iframe src="https://www.youtube.com/embed/nGJ1_7wtfo8" width="672" height="400px" data-external="1">
 </iframe>
 </div>
 <div id="preparing-your-presentation" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Preparing Your Presentation</h2>
-<iframe src="https://www.youtube.com/embed/Md3VLezPoAU" width="672" height="400px">
+<iframe src="https://www.youtube.com/embed/Md3VLezPoAU" width="672" height="400px" data-external="1">
 </iframe>
 
 </div>
@@ -305,12 +309,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="grasshoppers.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sepia.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="adding-figures-in-r-markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -350,6 +353,10 @@ gitbook.start({
 "text": null
 },
 "download": ["Biostatistics.pdf", "Biostatistics.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

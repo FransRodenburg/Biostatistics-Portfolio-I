@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Adding Figures in R Markdown | Biostatistics Portfolio I</title>
   <meta name="description" content="Adding Figures in R Markdown | Biostatistics Portfolio I" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Adding Figures in R Markdown | Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="your-own-experiment-ii.html"/>
 <link rel="next" href="adding-tables-in-r-markdown.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -210,12 +210,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.3" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#comparing-two-other-students"><i class="fa fa-check"></i><b>5.6.3</b> Comparing Two Other Students</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="grasshoppers.html"><a href="grasshoppers.html"><i class="fa fa-check"></i><b>6</b> Grasshoppers</a>
+<li class="chapter" data-level="6" data-path="sepia.html"><a href="sepia.html"><i class="fa fa-check"></i><b>6</b> Sepia</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="grasshoppers.html"><a href="grasshoppers.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
-<li class="chapter" data-level="6.2" data-path="grasshoppers.html"><a href="grasshoppers.html#plotting-the-data"><i class="fa fa-check"></i><b>6.2</b> Plotting the Data</a></li>
-<li class="chapter" data-level="6.3" data-path="grasshoppers.html"><a href="grasshoppers.html#creating-a-subset"><i class="fa fa-check"></i><b>6.3</b> Creating a Subset</a></li>
-<li class="chapter" data-level="6.4" data-path="grasshoppers.html"><a href="grasshoppers.html#grasshoppertest"><i class="fa fa-check"></i><b>6.4</b> Comparing Means with a <span class="math inline">\(T\)</span>-Test</a></li>
+<li class="chapter" data-level="6.1" data-path="sepia.html"><a href="sepia.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
+<li class="chapter" data-level="6.2" data-path="sepia.html"><a href="sepia.html#plotting-the-data"><i class="fa fa-check"></i><b>6.2</b> Plotting the Data</a></li>
+<li class="chapter" data-level="6.3" data-path="sepia.html"><a href="sepia.html#creating-a-subset"><i class="fa fa-check"></i><b>6.3</b> Creating a Subset</a></li>
+<li class="chapter" data-level="6.4" data-path="sepia.html"><a href="sepia.html#t-test"><i class="fa fa-check"></i><b>6.4</b> T-test</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="sepia.html"><a href="sepia.html#sepiatest"><i class="fa fa-check"></i><b>6.4.1</b> Example</a></li>
+<li class="chapter" data-level="6.4.2" data-path="sepia.html"><a href="sepia.html#exercise"><i class="fa fa-check"></i><b>6.4.2</b> Exercise</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="your-own-experiment-ii.html"><a href="your-own-experiment-ii.html"><i class="fa fa-check"></i><b>7</b> Your Own Experiment II</a>
 <ul>
@@ -303,7 +307,7 @@ Writing <code>![Some description](figures/pollenSEM.jpg)</code> will include thi
 <pre><code>```{r  label = pollen, echo = TRUE, fig.cap = &quot;Image of pollen under an SEM. From: https://w.wiki/gv8&quot;, out.width = &#39;20%&#39;}
 knitr::include_graphics(&quot;figures/pollenSEM.jpg&quot;)
 ```</code></pre>
-<div class="figure"><span id="fig:pollen"></span>
+<div class="figure"><span style="display:block;" id="fig:pollen"></span>
 <img src="figures/pollenSEM.jpg" alt="Image of pollen under an SEM. From: https://w.wiki/gv8" width="20%" />
 <p class="caption">
 Figure 7.1: Image of pollen under an SEM. From: <a href="https://w.wiki/gv8" class="uri">https://w.wiki/gv8</a>
@@ -327,7 +331,7 @@ Figure 7.1: Image of pollen under an SEM. From: <a href="https://w.wiki/gv8" cla
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="adding-figures-in-r-markdown.html#cb35-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span></span>
 <span id="cb35-2"><a href="adding-figures-in-r-markdown.html#cb35-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">5</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> x</span>
 <span id="cb35-3"><a href="adding-figures-in-r-markdown.html#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(y <span class="sc">~</span> x, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Linear Relationship&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:linearRelationship"></span>
+<div class="figure"><span style="display:block;" id="fig:linearRelationship"></span>
 <img src="Biostatistics_files/figure-html/linearRelationship-1.png" alt="A linear relationship" width="672" />
 <p class="caption">
 Figure 7.2: A linear relationship
@@ -339,7 +343,7 @@ Figure 7.2: A linear relationship
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="adding-figures-in-r-markdown.html#cb36-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span></span>
 <span id="cb36-2"><a href="adding-figures-in-r-markdown.html#cb36-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">5</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> x</span>
 <span id="cb36-3"><a href="adding-figures-in-r-markdown.html#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(y <span class="sc">~</span> x, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Linear Relationship&quot;</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">7.5</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</span></code></pre></div>
-<div class="figure"><span id="fig:xlimylim"></span>
+<div class="figure"><span style="display:block;" id="fig:xlimylim"></span>
 <img src="Biostatistics_files/figure-html/xlimylim-1.png" alt="A linear relationship" width="672" />
 <p class="caption">
 Figure 7.3: A linear relationship
@@ -367,7 +371,7 @@ Figure 7.3: A linear relationship
 <span id="cb37-18"><a href="adding-figures-in-r-markdown.html#cb37-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.lab  =</span> <span class="st">&quot;gray&quot;</span>,      <span class="co"># Color of the labels</span></span>
 <span id="cb37-19"><a href="adding-figures-in-r-markdown.html#cb37-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.axis =</span> <span class="st">&quot;darkgray&quot;</span>,  <span class="co"># Color of the axes</span></span>
 <span id="cb37-20"><a href="adding-figures-in-r-markdown.html#cb37-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<div class="figure"><span id="fig:coolPlot"></span>
+<div class="figure"><span style="display:block;" id="fig:coolPlot"></span>
 <img src="Biostatistics_files/figure-html/coolPlot-1.png" alt="A linear relationship" width="672" />
 <p class="caption">
 Figure 7.4: A linear relationship
@@ -387,7 +391,7 @@ Figure 7.4: A linear relationship
 <span id="cb38-6"><a href="adding-figures-in-r-markdown.html#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Sepal.Width  <span class="sc">~</span> Petal.Width,  <span class="at">data =</span> iris, <span class="at">main =</span> <span class="st">&quot;Sepal Width vs Petal Width&quot;</span>)</span>
 <span id="cb38-7"><a href="adding-figures-in-r-markdown.html#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Petal.Length <span class="sc">~</span> Petal.Width,  <span class="at">data =</span> iris, <span class="at">main =</span> <span class="st">&quot;Petal Length vs Petal Width&quot;</span>)</span>
 <span id="cb38-8"><a href="adding-figures-in-r-markdown.html#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default (1 plot)</span></span></code></pre></div>
-<div class="figure"><span id="fig:sixPlotsActual"></span>
+<div class="figure"><span style="display:block;" id="fig:sixPlotsActual"></span>
 <img src="Biostatistics_files/figure-html/sixPlotsActual-1.png" alt="Four variables in the iris data set plotted against each other." width="672" />
 <p class="caption">
 Figure 7.5: Four variables in the iris data set plotted against each other.
@@ -436,7 +440,6 @@ Figure 7.5: Four variables in the iris data set plotted against each other.
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -476,6 +479,10 @@ gitbook.start({
 "text": null
 },
 "download": ["Biostatistics.pdf", "Biostatistics.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Biostatistics Portfolio I</title>
   <meta name="description" content="Biostatistics Portfolio I" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 
 <link rel="next" href="installation.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -210,12 +210,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.3" data-path="your-own-experiment-i.html"><a href="your-own-experiment-i.html#comparing-two-other-students"><i class="fa fa-check"></i><b>5.6.3</b> Comparing Two Other Students</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="grasshoppers.html"><a href="grasshoppers.html"><i class="fa fa-check"></i><b>6</b> Grasshoppers</a>
+<li class="chapter" data-level="6" data-path="sepia.html"><a href="sepia.html"><i class="fa fa-check"></i><b>6</b> Sepia</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="grasshoppers.html"><a href="grasshoppers.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
-<li class="chapter" data-level="6.2" data-path="grasshoppers.html"><a href="grasshoppers.html#plotting-the-data"><i class="fa fa-check"></i><b>6.2</b> Plotting the Data</a></li>
-<li class="chapter" data-level="6.3" data-path="grasshoppers.html"><a href="grasshoppers.html#creating-a-subset"><i class="fa fa-check"></i><b>6.3</b> Creating a Subset</a></li>
-<li class="chapter" data-level="6.4" data-path="grasshoppers.html"><a href="grasshoppers.html#grasshoppertest"><i class="fa fa-check"></i><b>6.4</b> Comparing Means with a <span class="math inline">\(T\)</span>-Test</a></li>
+<li class="chapter" data-level="6.1" data-path="sepia.html"><a href="sepia.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
+<li class="chapter" data-level="6.2" data-path="sepia.html"><a href="sepia.html#plotting-the-data"><i class="fa fa-check"></i><b>6.2</b> Plotting the Data</a></li>
+<li class="chapter" data-level="6.3" data-path="sepia.html"><a href="sepia.html#creating-a-subset"><i class="fa fa-check"></i><b>6.3</b> Creating a Subset</a></li>
+<li class="chapter" data-level="6.4" data-path="sepia.html"><a href="sepia.html#t-test"><i class="fa fa-check"></i><b>6.4</b> T-test</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="sepia.html"><a href="sepia.html#sepiatest"><i class="fa fa-check"></i><b>6.4.1</b> Example</a></li>
+<li class="chapter" data-level="6.4.2" data-path="sepia.html"><a href="sepia.html#exercise"><i class="fa fa-check"></i><b>6.4.2</b> Exercise</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="your-own-experiment-ii.html"><a href="your-own-experiment-ii.html"><i class="fa fa-check"></i><b>7</b> Your Own Experiment II</a>
 <ul>
@@ -288,21 +292,15 @@ title.innerHTML = '<img src="figures/logo.png" alt="IBL logo">' + title.innerHTM
 <li>The connection to other courses is not clear enough.</li>
 </ul>
 <p>This is what I aim to address through this portfolio. You should complete the chapters leading up to your first statistics course. Part II will then pick up where your first course (presumably) left off and is meant to bridge the gap between your first statistics course and the next.</p>
-<div class="figure"><span id="fig:learninggoals"></span>
+<div class="figure"><span style="display:block;" id="fig:learninggoals"></span>
 <img src="figures/LearningGoalsTreeRoots.png" alt="The knowledge that is usually either assumed to be known already, or introduced briefly at that start of your first statistics course, will be introduced gradually throughout this portfolio.^[&lt;small&gt;Expert knowledge is what you learn during your other courses. Many choices in statistics are driven by knowledge of the subject area (e.g. biology). This holds especially true for study design and model selection.&lt;/small&gt;]" width="100%" />
 <p class="caption">
-Figure 0.1: The knowledge that is usually either assumed to be known already, or introduced briefly at that start of your first statistics course, will be introduced gradually throughout this portfolio.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+Figure 0.1: The knowledge that is usually either assumed to be known already, or introduced briefly at that start of your first statistics course, will be introduced gradually throughout this portfolio.<a href="references.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
 </p>
 </div>
 <p>Chapters are short, have overlap with each other, and are accompanied with explanatory videos. This is not meant to be a cumbersome addition to your already intensive education, it is merely meant to reduce the difficulty of statistics courses.</p>
 <p>For those seeking an extra challenge, there are optional exercises that go more in-depth.</p>
 
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p><small>Expert knowledge is what you learn during your other courses. Many choices in statistics are driven by knowledge of the subject area (e.g. biology). This holds especially true for study design and model selection.</small><a href="index.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
@@ -314,7 +312,6 @@ Figure 0.1: The knowledge that is usually either assumed to be known already, or
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -354,6 +351,10 @@ gitbook.start({
 "text": null
 },
 "download": ["Biostatistics.pdf", "Biostatistics.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

@@ -15,7 +15,7 @@ fig:linearRelationship
 fig:xlimylim
 fig:coolPlot
 fig:sixPlotsActual
-tab:unnamed-chunk-53
+tab:unnamed-chunk-54
 installation
 installation-guide
 the-rstudio-interface
@@ -52,11 +52,13 @@ microbiologyex
 performing-a-chi-squared-test
 compare2
 comparing-two-other-students
-grasshoppers
+sepia
 getting-started
 plotting-the-data
 creating-a-subset
-grasshoppertest
+t-test
+sepiatest
+exercise
 your-own-experiment-ii
 study-design-1
 preparing-your-presentation
