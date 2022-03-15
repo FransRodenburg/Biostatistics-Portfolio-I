@@ -52,6 +52,10 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -292,17 +296,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Go to <strong>Session</strong> &gt; <strong>Set Working Directory</strong> &gt; <strong>To Source File Location</strong>. R now knows where to locate your data;</li>
 <li><a href="https://youtu.be/AHAR7j-IUOw?t=357">Create a new code chunk</a> and run the following:</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="sepia.html#cb1-1" aria-hidden="true" tabindex="-1"></a>Sepia <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Sepia.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="sepia.html#cb25-1" aria-hidden="true" tabindex="-1"></a>Sepia <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Sepia.csv&quot;</span>)</span></code></pre></div>
 <p>This requires that you named your data “Sepia”.</p>
 <p>From here on out, just read the text, run the code in R, adjust the R code if needed, and answer the questions.</p>
 <p><font color = "red"><b>Note</b></font>: For the sake of privacy, this page uses an old version of the data with scrambled names. I have also not linked the actual data. Please ask an assistant if you are unable to find it. The scrambled version can be downloaded <a href="data/Sepia.csv">here</a>.</p>
 <hr />
 <p>If the code ran successfully, you will have an object called <code>Sepia</code> in your workspace. You can view it by clicking it, or by running:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="sepia.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(Sepia)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="sepia.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(Sepia)</span></code></pre></div>
 <p>Rather than type long names throughout the analysis, let’s make the variable names a bit shorter:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="sepia.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(Sepia) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Affix&quot;</span>, <span class="st">&quot;Surname&quot;</span>, <span class="st">&quot;TableNr&quot;</span>, <span class="st">&quot;Group&quot;</span>, <span class="st">&quot;Length&quot;</span>, <span class="st">&quot;Width&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Type&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="sepia.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(Sepia) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Affix&quot;</span>, <span class="st">&quot;Surname&quot;</span>, <span class="st">&quot;TableNr&quot;</span>, <span class="st">&quot;Group&quot;</span>, <span class="st">&quot;Length&quot;</span>, <span class="st">&quot;Width&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Type&quot;</span>)</span></code></pre></div>
 <p>Does R understand which variables are numbers and which are something else? Let’s check:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="sepia.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Sepia)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="sepia.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Sepia)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    24 obs. of  9 variables:
 ##  $ Name   : chr  &quot;nltCllt&quot; &quot;dilHH&quot; &quot;mEmE&quot; &quot;rrtM&quot; ...
 ##  $ Affix  : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
@@ -322,20 +326,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="data-cleaning" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Data Cleaning</h2>
 <p>Even though length and width are numeric values, R says they are not. This is because there are some non-numeric values filled in in the fields for length and width. Let’s fix that:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="sepia.html#cb6-1" aria-hidden="true" tabindex="-1"></a>Sepia<span class="sc">$</span>Length <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(Sepia<span class="sc">$</span>Length)</span>
-<span id="cb6-2"><a href="sepia.html#cb6-2" aria-hidden="true" tabindex="-1"></a>Sepia<span class="sc">$</span>Width <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(Sepia<span class="sc">$</span>Width)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="sepia.html#cb30-1" aria-hidden="true" tabindex="-1"></a>Sepia<span class="sc">$</span>Length <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(Sepia<span class="sc">$</span>Length)</span>
+<span id="cb30-2"><a href="sepia.html#cb30-2" aria-hidden="true" tabindex="-1"></a>Sepia<span class="sc">$</span>Width <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(Sepia<span class="sc">$</span>Width)</span></code></pre></div>
 <p>This will produce a warning, informing you that some values have been overwritten. Those were actually the values that said “geen schelp”, so this is correct.</p>
 <p>There is another issue we have to fix:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="sepia.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(Sepia<span class="sc">$</span>Sex)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="sepia.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(Sepia<span class="sc">$</span>Sex)</span></code></pre></div>
 <pre><code>## [1] &quot;man&quot;         &quot;vrouwelijk&quot;  &quot;mannelijk&quot;   &quot;&quot;            &quot;vrouwelijk &quot;
 ## [6] &quot;Mannelijk&quot;</code></pre>
 <p>Students were not consistent with the use of wording. But your computer is not very smart, it expects VERY precise input. You could fix this manually, but here is a faster way:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="sepia.html#cb9-1" aria-hidden="true" tabindex="-1"></a>isMale              <span class="ot">&lt;-</span> <span class="fu">grepl</span>(<span class="st">&quot;m&quot;</span>, <span class="fu">tolower</span>(Sepia<span class="sc">$</span>Sex))</span>
-<span id="cb9-2"><a href="sepia.html#cb9-2" aria-hidden="true" tabindex="-1"></a>isFemale            <span class="ot">&lt;-</span> <span class="fu">grepl</span>(<span class="st">&quot;v&quot;</span>, <span class="fu">tolower</span>(Sepia<span class="sc">$</span>Sex))</span>
-<span id="cb9-3"><a href="sepia.html#cb9-3" aria-hidden="true" tabindex="-1"></a>Sepia<span class="sc">$</span>Sex           <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb9-4"><a href="sepia.html#cb9-4" aria-hidden="true" tabindex="-1"></a>Sepia<span class="sc">$</span>Sex[isMale]   <span class="ot">&lt;-</span> <span class="st">&quot;M&quot;</span></span>
-<span id="cb9-5"><a href="sepia.html#cb9-5" aria-hidden="true" tabindex="-1"></a>Sepia<span class="sc">$</span>Sex[isFemale] <span class="ot">&lt;-</span> <span class="st">&quot;F&quot;</span></span>
-<span id="cb9-6"><a href="sepia.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(Sepia<span class="sc">$</span>Sex)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="sepia.html#cb33-1" aria-hidden="true" tabindex="-1"></a>isMale              <span class="ot">&lt;-</span> <span class="fu">grepl</span>(<span class="st">&quot;m&quot;</span>, <span class="fu">tolower</span>(Sepia<span class="sc">$</span>Sex))</span>
+<span id="cb33-2"><a href="sepia.html#cb33-2" aria-hidden="true" tabindex="-1"></a>isFemale            <span class="ot">&lt;-</span> <span class="fu">grepl</span>(<span class="st">&quot;v&quot;</span>, <span class="fu">tolower</span>(Sepia<span class="sc">$</span>Sex))</span>
+<span id="cb33-3"><a href="sepia.html#cb33-3" aria-hidden="true" tabindex="-1"></a>Sepia<span class="sc">$</span>Sex           <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb33-4"><a href="sepia.html#cb33-4" aria-hidden="true" tabindex="-1"></a>Sepia<span class="sc">$</span>Sex[isMale]   <span class="ot">&lt;-</span> <span class="st">&quot;M&quot;</span></span>
+<span id="cb33-5"><a href="sepia.html#cb33-5" aria-hidden="true" tabindex="-1"></a>Sepia<span class="sc">$</span>Sex[isFemale] <span class="ot">&lt;-</span> <span class="st">&quot;F&quot;</span></span>
+<span id="cb33-6"><a href="sepia.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(Sepia<span class="sc">$</span>Sex)</span></code></pre></div>
 <pre><code>## [1] &quot;M&quot; &quot;F&quot; NA</code></pre>
 <p>So… why did that work?</p>
 <ul>
@@ -348,10 +352,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>In the fifth line, I fill in a capital letter “F” where I know the observations are female.</li>
 </ul>
 <p>Other than that, you did a fairly good job. The only extra piece of data cleaning I can think of at this point is the observations with very large table numbers:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="sepia.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(Sepia<span class="sc">$</span>TableNr)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="sepia.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(Sepia<span class="sc">$</span>TableNr)</span></code></pre></div>
 <pre><code>##  [1]  1  1  1  1  2  2  2  3  4  4  6  6  6  6  7  7  7  8  8  8  9  9 54 98</code></pre>
 <p>I don’t think there are 98 tables in the practical room. You can overwrite a particular value like this:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="sepia.html#cb13-1" aria-hidden="true" tabindex="-1"></a>Sepia<span class="sc">$</span>TableNr[Sepia<span class="sc">$</span>TableNr <span class="sc">==</span> <span class="dv">98</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="sepia.html#cb37-1" aria-hidden="true" tabindex="-1"></a>Sepia<span class="sc">$</span>TableNr[Sepia<span class="sc">$</span>TableNr <span class="sc">==</span> <span class="dv">98</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
 <p>Do you know the right table number for this observation? Then you can replace <code>NA</code> by the number you think it should be.</p>
 <ol start="3" style="list-style-type: decimal">
 <li>There is at least one outlier in the data. Can you identify it from the plot? If you believe this value to be really this large, leave it as it (you can ask the students that measured it). If you don’t trust this observation, you can set it to <code>NA</code> as shown above.</li>
@@ -360,13 +364,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="plotting-the-data" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Plotting the Data</h2>
 <p>Just looking at code and numbers is a bit stale. So let’s make some relevant plots:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="sepia.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># Plot in a 2x2 grid</span></span>
-<span id="cb14-2"><a href="sepia.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Sepia<span class="sc">$</span>Length, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
-<span id="cb14-3"><a href="sepia.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Sepia<span class="sc">$</span>Width, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
-<span id="cb14-4"><a href="sepia.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Length <span class="sc">~</span> Width, <span class="at">data =</span> Sepia, <span class="at">col =</span> <span class="fu">factor</span>(Sex))</span>
-<span id="cb14-5"><a href="sepia.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Width <span class="sc">~</span> Sex, <span class="at">data =</span> Sepia, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
-<span id="cb14-6"><a href="sepia.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default</span></span></code></pre></div>
-<p><img src="Biostatistics_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="sepia.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># Plot in a 2x2 grid</span></span>
+<span id="cb38-2"><a href="sepia.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Sepia<span class="sc">$</span>Length, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb38-3"><a href="sepia.html#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Sepia<span class="sc">$</span>Width, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb38-4"><a href="sepia.html#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Length <span class="sc">~</span> Width, <span class="at">data =</span> Sepia, <span class="at">col =</span> <span class="fu">factor</span>(Sex))</span>
+<span id="cb38-5"><a href="sepia.html#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Width <span class="sc">~</span> Sex, <span class="at">data =</span> Sepia, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
+<span id="cb38-6"><a href="sepia.html#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default</span></span></code></pre></div>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
 <p><strong>Question</strong>:</p>
 <ol start="4" style="list-style-type: decimal">
 <li>What does each plot show?</li>
@@ -376,11 +380,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="creating-a-subset" class="section level2" number="6.4">
 <h2><span class="header-section-number">6.4</span> Creating a Subset</h2>
 <p>We just read the whole data set. It contains the data from all groups Let’s make a <em>subset</em> of the measurements performed by table 1, group 1:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="sepia.html#cb15-1" aria-hidden="true" tabindex="-1"></a>Subset <span class="ot">&lt;-</span> Sepia[Sepia<span class="sc">$</span>TableNr <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> Sepia<span class="sc">$</span>Group <span class="sc">==</span> <span class="dv">1</span>, ]</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="sepia.html#cb39-1" aria-hidden="true" tabindex="-1"></a>Subset <span class="ot">&lt;-</span> Sepia[Sepia<span class="sc">$</span>TableNr <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> Sepia<span class="sc">$</span>Group <span class="sc">==</span> <span class="dv">1</span>, ]</span></code></pre></div>
 <p>What does this code do?</p>
 <ul>
 <li><code>Subset &lt;-</code>: Create a variable named <code>Subset</code>;</li>
-<li><code>Sepia[x, y]</code>: From the data set <code>Sepia</code>, select only rows <code>x</code> and columns <code>y</code>. If <code>y</code> is left blank, it selects all columns;<a href="references.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
+<li><code>Sepia[x, y]</code>: From the data set <code>Sepia</code>, select only rows <code>x</code> and columns <code>y</code>. If <code>y</code> is left blank, it selects all columns;<a href="references.html#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></li>
 <li><code>Sepia$Groep == "A"</code>: From the data set <code>Sepia</code>, select the variable <code>Group</code> and check if it is equal to the value <code>A</code> (<code>TRUE</code>) or not (<code>FALSE</code>).</li>
 </ul>
 <p><strong>Question</strong>:</p>
@@ -404,7 +408,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sepiatest" class="section level3" number="6.5.1">
 <h3><span class="header-section-number">6.5.1</span> Example</h3>
 <p>Below is an <strong>example</strong> of a <span class="math inline">\(t\)</span>-test, using some standard data in R:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="sepia.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(extra <span class="sc">~</span> group, <span class="at">data =</span> sleep, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="sepia.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(extra <span class="sc">~</span> group, <span class="at">data =</span> sleep, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
