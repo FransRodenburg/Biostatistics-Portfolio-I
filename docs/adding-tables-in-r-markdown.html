@@ -213,12 +213,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="sepia.html"><a href="sepia.html"><i class="fa fa-check"></i><b>6</b> Sepia</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="sepia.html"><a href="sepia.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
-<li class="chapter" data-level="6.2" data-path="sepia.html"><a href="sepia.html#plotting-the-data"><i class="fa fa-check"></i><b>6.2</b> Plotting the Data</a></li>
-<li class="chapter" data-level="6.3" data-path="sepia.html"><a href="sepia.html#creating-a-subset"><i class="fa fa-check"></i><b>6.3</b> Creating a Subset</a></li>
-<li class="chapter" data-level="6.4" data-path="sepia.html"><a href="sepia.html#t-test"><i class="fa fa-check"></i><b>6.4</b> T-test</a>
+<li class="chapter" data-level="6.2" data-path="sepia.html"><a href="sepia.html#data-cleaning"><i class="fa fa-check"></i><b>6.2</b> Data Cleaning</a></li>
+<li class="chapter" data-level="6.3" data-path="sepia.html"><a href="sepia.html#plotting-the-data"><i class="fa fa-check"></i><b>6.3</b> Plotting the Data</a></li>
+<li class="chapter" data-level="6.4" data-path="sepia.html"><a href="sepia.html#creating-a-subset"><i class="fa fa-check"></i><b>6.4</b> Creating a Subset</a></li>
+<li class="chapter" data-level="6.5" data-path="sepia.html"><a href="sepia.html#t-test"><i class="fa fa-check"></i><b>6.5</b> T-test</a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="sepia.html"><a href="sepia.html#sepiatest"><i class="fa fa-check"></i><b>6.4.1</b> Example</a></li>
-<li class="chapter" data-level="6.4.2" data-path="sepia.html"><a href="sepia.html#exercise"><i class="fa fa-check"></i><b>6.4.2</b> Exercise</a></li>
+<li class="chapter" data-level="6.5.1" data-path="sepia.html"><a href="sepia.html#sepiatest"><i class="fa fa-check"></i><b>6.5.1</b> Example</a></li>
+<li class="chapter" data-level="6.5.2" data-path="sepia.html"><a href="sepia.html#exercise"><i class="fa fa-check"></i><b>6.5.2</b> Exercise</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="your-own-experiment-ii.html"><a href="your-own-experiment-ii.html"><i class="fa fa-check"></i><b>7</b> Your Own Experiment II</a>
@@ -284,7 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>The User-Friendly Way: <code>kable</code></h2>
 <p>Suppose you want to include a correlation matrix of the numeric variables in your data set:</p>
 <p><small></p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="adding-tables-in-r-markdown.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(iris[, <span class="sc">-</span><span class="dv">5</span>]) <span class="co"># Omit the categorical column 5 (Species)</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="adding-tables-in-r-markdown.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(iris[, <span class="sc">-</span><span class="dv">5</span>]) <span class="co"># Omit the categorical column 5 (Species)</span></span></code></pre></div>
 <pre><code>##              Sepal.Length Sepal.Width Petal.Length Petal.Width
 ## Sepal.Length    1.0000000  -0.1175698    0.8717538   0.8179411
 ## Sepal.Width    -0.1175698   1.0000000   -0.4284401  -0.3661259
@@ -294,8 +295,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This is fine if you just want to see the correlation matrix yourself, but in a report you would want to change this into something more presentable.</p>
 <p>A fairly straightforward function for including tables is <code>kable</code>. It is part of the <code>knitr</code> package that you use to knit files. Compare the correlation matrix above with the one below:</p>
 <p><small></p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="adding-tables-in-r-markdown.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;knitr&quot;</span>) <span class="co"># Load the functions in knitr, including kable()</span></span>
-<span id="cb42-2"><a href="adding-tables-in-r-markdown.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">cor</span>(iris[, <span class="sc">-</span><span class="dv">5</span>]))</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="adding-tables-in-r-markdown.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;knitr&quot;</span>) <span class="co"># Load the functions in knitr, including kable()</span></span>
+<span id="cb50-2"><a href="adding-tables-in-r-markdown.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">cor</span>(iris[, <span class="sc">-</span><span class="dv">5</span>]))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -390,8 +391,8 @@ Petal.Width
 <p>That’s it! Just wrap <code>kable()</code> around it and <code>knitr</code> will create a decently formatted table in the output. This works identically for knitting to Word, HTML or PDF.</p>
 <p>We can improve the table. For starters, it is hard to justify 7 decimals, so let’s change that to 2:</p>
 <p><small></p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="adding-tables-in-r-markdown.html#cb43-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">cor</span>(iris[, <span class="sc">-</span><span class="dv">5</span>]) <span class="co"># Store the correlation matrix into an object M</span></span>
-<span id="cb43-2"><a href="adding-tables-in-r-markdown.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">round</span>(M, <span class="dv">2</span>))   <span class="co"># Round to 2 decimals</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="adding-tables-in-r-markdown.html#cb51-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">cor</span>(iris[, <span class="sc">-</span><span class="dv">5</span>]) <span class="co"># Store the correlation matrix into an object M</span></span>
+<span id="cb51-2"><a href="adding-tables-in-r-markdown.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">round</span>(M, <span class="dv">2</span>))   <span class="co"># Round to 2 decimals</span></span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -485,10 +486,10 @@ Petal.Width
 <p></small></p>
 <p>We can also change the periods (<code>.</code>) in the variable names into spaces:</p>
 <p><small></p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="adding-tables-in-r-markdown.html#cb44-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">cor</span>(iris[, <span class="sc">-</span><span class="dv">5</span>])</span>
-<span id="cb44-2"><a href="adding-tables-in-r-markdown.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sepal Length&quot;</span>, <span class="st">&quot;Sepal Width&quot;</span>, <span class="st">&quot;Petal Length&quot;</span>, <span class="st">&quot;Petal Width&quot;</span>)</span>
-<span id="cb44-3"><a href="adding-tables-in-r-markdown.html#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sepal Length&quot;</span>, <span class="st">&quot;Sepal Width&quot;</span>, <span class="st">&quot;Petal Length&quot;</span>, <span class="st">&quot;Petal Width&quot;</span>)</span>
-<span id="cb44-4"><a href="adding-tables-in-r-markdown.html#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">round</span>(M, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="adding-tables-in-r-markdown.html#cb52-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">cor</span>(iris[, <span class="sc">-</span><span class="dv">5</span>])</span>
+<span id="cb52-2"><a href="adding-tables-in-r-markdown.html#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sepal Length&quot;</span>, <span class="st">&quot;Sepal Width&quot;</span>, <span class="st">&quot;Petal Length&quot;</span>, <span class="st">&quot;Petal Width&quot;</span>)</span>
+<span id="cb52-3"><a href="adding-tables-in-r-markdown.html#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sepal Length&quot;</span>, <span class="st">&quot;Sepal Width&quot;</span>, <span class="st">&quot;Petal Length&quot;</span>, <span class="st">&quot;Petal Width&quot;</span>)</span>
+<span id="cb52-4"><a href="adding-tables-in-r-markdown.html#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">round</span>(M, <span class="dv">2</span>))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -582,18 +583,18 @@ Petal Width
 <p></small></p>
 <p>Or we could do it automatically with the function <code>gsub</code> (useful for larger data sets):</p>
 <p><small></p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="adding-tables-in-r-markdown.html#cb45-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">cor</span>(iris[, <span class="sc">-</span><span class="dv">5</span>])</span>
-<span id="cb45-2"><a href="adding-tables-in-r-markdown.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(M) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;[.]&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="fu">rownames</span>(M)) <span class="co"># Exchange the period with a space</span></span>
-<span id="cb45-3"><a href="adding-tables-in-r-markdown.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(M) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;[.]&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="fu">colnames</span>(M)) <span class="co"># Exchange the period with a space</span></span>
-<span id="cb45-4"><a href="adding-tables-in-r-markdown.html#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">round</span>(M, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="adding-tables-in-r-markdown.html#cb53-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">cor</span>(iris[, <span class="sc">-</span><span class="dv">5</span>])</span>
+<span id="cb53-2"><a href="adding-tables-in-r-markdown.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(M) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;[.]&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="fu">rownames</span>(M)) <span class="co"># Exchange the period with a space</span></span>
+<span id="cb53-3"><a href="adding-tables-in-r-markdown.html#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(M) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;[.]&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="fu">colnames</span>(M)) <span class="co"># Exchange the period with a space</span></span>
+<span id="cb53-4"><a href="adding-tables-in-r-markdown.html#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">round</span>(M, <span class="dv">2</span>))</span></code></pre></div>
 <p><em>(Output omitted; Identical to the previous table.)</em></p>
 <p></small></p>
 <p>Finally let’s center the numbers and add a caption:</p>
 <p><small></p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="adding-tables-in-r-markdown.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">round</span>(M, <span class="dv">2</span>), <span class="at">align =</span> <span class="st">&quot;cccc&quot;</span>, <span class="at">caption =</span> <span class="st">&quot;A correlation matrix of the iris data set.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="adding-tables-in-r-markdown.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">round</span>(M, <span class="dv">2</span>), <span class="at">align =</span> <span class="st">&quot;cccc&quot;</span>, <span class="at">caption =</span> <span class="st">&quot;A correlation matrix of the iris data set.&quot;</span>)</span></code></pre></div>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-54">Table 7.1: </span>A correlation matrix of the iris data set.
+<span id="tab:unnamed-chunk-58">Table 7.1: </span>A correlation matrix of the iris data set.
 </caption>
 <thead>
 <tr>
@@ -700,15 +701,15 @@ Petal Width
 <p>The package <code>xtable</code> allows for far more control over the formatting. If you want to write professional looking reports in PDF format using R markdown, I recommend familiarizing yourself with <code>xtable</code>. There are no exercises for this paragraph. You may skip this part entirely if you’re fine with just <code>kable</code>.</p>
 <p>To install and load <code>xtable</code>, run:</p>
 <p><small></p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="adding-tables-in-r-markdown.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;xtable&quot;</span>)</span>
-<span id="cb47-2"><a href="adding-tables-in-r-markdown.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;xtable&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="adding-tables-in-r-markdown.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;xtable&quot;</span>)</span>
+<span id="cb55-2"><a href="adding-tables-in-r-markdown.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;xtable&quot;</span>)</span></code></pre></div>
 <p></small></p>
 <p>Then, it works like this:</p>
 <p><small></p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="adding-tables-in-r-markdown.html#cb48-1" aria-hidden="true" tabindex="-1"></a>Example <span class="ot">&lt;-</span> <span class="fu">cor</span>(iris[, <span class="sc">-</span><span class="dv">5</span>])</span>
-<span id="cb48-2"><a href="adding-tables-in-r-markdown.html#cb48-2" aria-hidden="true" tabindex="-1"></a>Xtable <span class="ot">&lt;-</span> <span class="fu">xtable</span>(Example, <span class="at">caption =</span> <span class="st">&quot;A correlation matrix of the iris data set.&quot;</span>)</span>
-<span id="cb48-3"><a href="adding-tables-in-r-markdown.html#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">align</span>(Xtable) <span class="ot">&lt;-</span> <span class="st">&quot;lcccc&quot;</span></span>
-<span id="cb48-4"><a href="adding-tables-in-r-markdown.html#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Xtable, <span class="at">comment =</span> <span class="cn">FALSE</span>, <span class="at">type =</span> <span class="st">&quot;html&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="adding-tables-in-r-markdown.html#cb56-1" aria-hidden="true" tabindex="-1"></a>Example <span class="ot">&lt;-</span> <span class="fu">cor</span>(iris[, <span class="sc">-</span><span class="dv">5</span>])</span>
+<span id="cb56-2"><a href="adding-tables-in-r-markdown.html#cb56-2" aria-hidden="true" tabindex="-1"></a>Xtable <span class="ot">&lt;-</span> <span class="fu">xtable</span>(Example, <span class="at">caption =</span> <span class="st">&quot;A correlation matrix of the iris data set.&quot;</span>)</span>
+<span id="cb56-3"><a href="adding-tables-in-r-markdown.html#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">align</span>(Xtable) <span class="ot">&lt;-</span> <span class="st">&quot;lcccc&quot;</span></span>
+<span id="cb56-4"><a href="adding-tables-in-r-markdown.html#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Xtable, <span class="at">comment =</span> <span class="cn">FALSE</span>, <span class="at">type =</span> <span class="st">&quot;html&quot;</span>)</span></code></pre></div>
 <table border="1">
 <caption align="bottom">
 A correlation matrix of the iris data set.
