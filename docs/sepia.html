@@ -51,6 +51,10 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -291,16 +295,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Go to <strong>Session</strong> &gt; <strong>Set Working Directory</strong> &gt; <strong>To Source File Location</strong>. R now knows where to locate your data;</li>
 <li><a href="https://youtu.be/AHAR7j-IUOw?t=357">Create a new code chunk</a> and run the following:</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="sepia.html#cb1-1" aria-hidden="true" tabindex="-1"></a>Sepia <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Sepia.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="sepia.html#cb25-1" aria-hidden="true" tabindex="-1"></a>Sepia <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Sepia.csv&quot;</span>)</span></code></pre></div>
 <p><small><em>(This only works for CSV files. If it doesn’t work, you probably have a Dutch version of Excel, in which case <code>read.csv2()</code> should work instead.)</em></small></p>
 <p>This requires that your CSV file is also called “Sepia”.</p>
 <p>From here on out, just read the text, run the code in R, adjust the R code if needed, and answer the questions.</p>
 <p>If you can’t find the data on Brightspace, you can download it <a href="data/Sepia2223.csv">here</a> (make sure to rename it from “Sepia2223.csv” to “Sepia.csv”).</p>
 <hr />
 <p>If the code ran successfully, you will have an object called <code>Sepia</code> in your workspace. You can view it by clicking it, or by running:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="sepia.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(Sepia)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="sepia.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(Sepia)</span></code></pre></div>
 <p>Does R understand which variables are numbers and which are something else? Let’s check:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="sepia.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Sepia)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="sepia.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Sepia)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    174 obs. of  6 variables:
 ##  $ Group  : int  1 1 1 1 1 1 1 1 1 1 ...
 ##  $ Student: int  1 2 3 4 5 6 7 8 9 10 ...
@@ -317,18 +321,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="subset" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Creating a Subset<a href="sepia.html#subset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We just read the whole data set. It contains the data from both groups. Let’s make a <em>subset</em> of the measurements performed by your group:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="sepia.html#cb5-1" aria-hidden="true" tabindex="-1"></a>Subset <span class="ot">&lt;-</span> Sepia[Sepia<span class="sc">$</span>Group <span class="sc">==</span> <span class="dv">1</span>, ]</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="sepia.html#cb29-1" aria-hidden="true" tabindex="-1"></a>Subset <span class="ot">&lt;-</span> Sepia[Sepia<span class="sc">$</span>Group <span class="sc">==</span> <span class="dv">1</span>, ]</span></code></pre></div>
 <p><small><em>(If you are in Group B, change <code>1</code> to <code>2</code>.)</em></small></p>
 <p>What does this code do?</p>
 <ul>
 <li><code>Subset &lt;-</code>: Create a object named <code>Subset</code>;</li>
-<li><code>Sepia[x, y]</code>: From the data set <code>Sepia</code>, select only rows <code>x</code> and columns <code>y</code>. If <code>y</code> is left blank, it selects all columns;<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
+<li><code>Sepia[x, y]</code>: From the data set <code>Sepia</code>, select only rows <code>x</code> and columns <code>y</code>. If <code>y</code> is left blank, it selects all columns;<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></li>
 <li><code>Sepia$Group == 1</code>: From the data set <code>Sepia</code>, select the variable <code>Group</code> and check if it is equal to the value <code>1</code> (<code>TRUE</code>) or not (<code>FALSE</code>).</li>
 </ul>
 <p>Did that work? You can check by comparing the number of rows in both objects:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="sepia.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(Sepia)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="sepia.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(Sepia)</span></code></pre></div>
 <pre><code>## [1] 174</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="sepia.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(Subset)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="sepia.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(Subset)</span></code></pre></div>
 <pre><code>## [1] 94</code></pre>
 <p>That number should match the number of students in your group.</p>
 </div>
@@ -336,7 +340,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.3</span> Data Cleaning<a href="sepia.html#data-cleaning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Usually this is where you would have to spend considerable time fixing small mistakes in the data, like some students typing “male” (lowercase), others “Male” (uppercase), etc. Fortunately for you, in this year’s version the data has already undergone some precleaning.</p>
 <p>There is, however, one suspicious thing still going on in the data. Namely, a lot observations appear duplicated! See for example the following rows:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="sepia.html#cb10-1" aria-hidden="true" tabindex="-1"></a>Sepia[<span class="dv">105</span><span class="sc">:</span><span class="dv">110</span>, ] <span class="co"># Print rows 105 to 115</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="sepia.html#cb34-1" aria-hidden="true" tabindex="-1"></a>Sepia[<span class="dv">105</span><span class="sc">:</span><span class="dv">110</span>, ] <span class="co"># Print rows 105 to 115</span></span></code></pre></div>
 <pre><code>##     Group Student    Sex Length Width Comment
 ## 105     2      11 female   21.0    19        
 ## 106     2      12 female   21.0    19        
@@ -356,62 +360,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <summary>
 Remove all duplicates
 </summary>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="sepia.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove all duplicates (easiest, but not safe):</span></span>
-<span id="cb12-2"><a href="sepia.html#cb12-2" aria-hidden="true" tabindex="-1"></a>Cleaned <span class="ot">&lt;-</span> Subset[<span class="sc">!</span><span class="fu">duplicated</span>(Subset[, <span class="fu">c</span>(<span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Length&quot;</span>, <span class="st">&quot;Width&quot;</span>)]), ]</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="sepia.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove all duplicates (easiest, but not safe):</span></span>
+<span id="cb36-2"><a href="sepia.html#cb36-2" aria-hidden="true" tabindex="-1"></a>Cleaned <span class="ot">&lt;-</span> Subset[<span class="sc">!</span><span class="fu">duplicated</span>(Subset[, <span class="fu">c</span>(<span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Length&quot;</span>, <span class="st">&quot;Width&quot;</span>)]), ]</span></code></pre></div>
 </details>
 <details>
 <summary>
 Select manually
 </summary>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="sepia.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select manually (oh man... good luck)</span></span>
-<span id="cb13-2"><a href="sepia.html#cb13-2" aria-hidden="true" tabindex="-1"></a>keep <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">8</span>) <span class="co"># add as many as you like/trust</span></span>
-<span id="cb13-3"><a href="sepia.html#cb13-3" aria-hidden="true" tabindex="-1"></a>Cleaned <span class="ot">&lt;-</span> Subset[keep, ]</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="sepia.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select manually (oh man... good luck)</span></span>
+<span id="cb37-2"><a href="sepia.html#cb37-2" aria-hidden="true" tabindex="-1"></a>keep <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">8</span>) <span class="co"># add as many as you like/trust</span></span>
+<span id="cb37-3"><a href="sepia.html#cb37-3" aria-hidden="true" tabindex="-1"></a>Cleaned <span class="ot">&lt;-</span> Subset[keep, ]</span></code></pre></div>
 </details>
 <details>
 <summary>
 Average per student pair
 </summary>
 <p><small><em>(This requires some more code.)</em></small></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="sepia.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Use the modulo operator to find odd and even</span></span>
-<span id="cb14-2"><a href="sepia.html#cb14-2" aria-hidden="true" tabindex="-1"></a>odd  <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(Subset) <span class="sc">%%</span> <span class="dv">2</span>) <span class="sc">==</span> <span class="dv">1</span></span>
-<span id="cb14-3"><a href="sepia.html#cb14-3" aria-hidden="true" tabindex="-1"></a>even <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(Subset) <span class="sc">%%</span> <span class="dv">2</span>) <span class="sc">==</span> <span class="dv">0</span></span>
-<span id="cb14-4"><a href="sepia.html#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="sepia.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Create a copy of the data with only the odd rows</span></span>
-<span id="cb14-6"><a href="sepia.html#cb14-6" aria-hidden="true" tabindex="-1"></a>Cleaned <span class="ot">&lt;-</span> Subset[odd, ]</span>
-<span id="cb14-7"><a href="sepia.html#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="sepia.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Fill in empty values for sex with the even ones</span></span>
-<span id="cb14-9"><a href="sepia.html#cb14-9" aria-hidden="true" tabindex="-1"></a>odd_sex <span class="ot">&lt;-</span> Subset<span class="sc">$</span>Sex[even]</span>
-<span id="cb14-10"><a href="sepia.html#cb14-10" aria-hidden="true" tabindex="-1"></a>Cleaned<span class="sc">$</span>Sex[Cleaned<span class="sc">$</span>Sex <span class="sc">==</span> <span class="st">&quot;&quot;</span>] <span class="ot">&lt;-</span> odd_sex[Cleaned<span class="sc">$</span>Sex <span class="sc">==</span> <span class="st">&quot;&quot;</span>]</span>
-<span id="cb14-11"><a href="sepia.html#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-12"><a href="sepia.html#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Create an object with pairs next to each other (column bind)</span></span>
-<span id="cb14-13"><a href="sepia.html#cb14-13" aria-hidden="true" tabindex="-1"></a>paired <span class="ot">&lt;-</span> <span class="fu">cbind</span>(Subset<span class="sc">$</span>Length[odd], Subset<span class="sc">$</span>Length[even])</span>
-<span id="cb14-14"><a href="sepia.html#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-15"><a href="sepia.html#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Average the odd and even lengths (applies the function &#39;mean&#39; to each row)</span></span>
-<span id="cb14-16"><a href="sepia.html#cb14-16" aria-hidden="true" tabindex="-1"></a>Cleaned<span class="sc">$</span>Length <span class="ot">&lt;-</span> <span class="fu">apply</span>(paired, <span class="dv">1</span>, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb14-17"><a href="sepia.html#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-18"><a href="sepia.html#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Do the same for Width</span></span>
-<span id="cb14-19"><a href="sepia.html#cb14-19" aria-hidden="true" tabindex="-1"></a>paired <span class="ot">&lt;-</span> <span class="fu">cbind</span>(Subset<span class="sc">$</span>Width[odd], Subset<span class="sc">$</span>Width[even])</span>
-<span id="cb14-20"><a href="sepia.html#cb14-20" aria-hidden="true" tabindex="-1"></a>Cleaned<span class="sc">$</span>Width <span class="ot">&lt;-</span> <span class="fu">apply</span>(paired, <span class="dv">1</span>, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb14-21"><a href="sepia.html#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-22"><a href="sepia.html#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. NaN (not a number) can give problems later on,</span></span>
-<span id="cb14-23"><a href="sepia.html#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="co">#    let&#39;s convert that to NA (not available) instead</span></span>
-<span id="cb14-24"><a href="sepia.html#cb14-24" aria-hidden="true" tabindex="-1"></a>Cleaned<span class="sc">$</span>Length[<span class="fu">is.nan</span>(Cleaned<span class="sc">$</span>Length)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb14-25"><a href="sepia.html#cb14-25" aria-hidden="true" tabindex="-1"></a>Cleaned<span class="sc">$</span>Width[<span class="fu">is.nan</span>(Cleaned<span class="sc">$</span>Width)]   <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb14-26"><a href="sepia.html#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-27"><a href="sepia.html#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="co"># 8. Remove empty rows (select rows where Sex is not empty)</span></span>
-<span id="cb14-28"><a href="sepia.html#cb14-28" aria-hidden="true" tabindex="-1"></a>Cleaned <span class="ot">&lt;-</span> Cleaned[Cleaned<span class="sc">$</span>Sex <span class="sc">!=</span> <span class="st">&quot;&quot;</span>, ]</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="sepia.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Use the modulo operator to find odd and even</span></span>
+<span id="cb38-2"><a href="sepia.html#cb38-2" aria-hidden="true" tabindex="-1"></a>odd  <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(Subset) <span class="sc">%%</span> <span class="dv">2</span>) <span class="sc">==</span> <span class="dv">1</span></span>
+<span id="cb38-3"><a href="sepia.html#cb38-3" aria-hidden="true" tabindex="-1"></a>even <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(Subset) <span class="sc">%%</span> <span class="dv">2</span>) <span class="sc">==</span> <span class="dv">0</span></span>
+<span id="cb38-4"><a href="sepia.html#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="sepia.html#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Create a copy of the data with only the odd rows</span></span>
+<span id="cb38-6"><a href="sepia.html#cb38-6" aria-hidden="true" tabindex="-1"></a>Cleaned <span class="ot">&lt;-</span> Subset[odd, ]</span>
+<span id="cb38-7"><a href="sepia.html#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-8"><a href="sepia.html#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Fill in empty values for sex with the even ones</span></span>
+<span id="cb38-9"><a href="sepia.html#cb38-9" aria-hidden="true" tabindex="-1"></a>odd_sex <span class="ot">&lt;-</span> Subset<span class="sc">$</span>Sex[even]</span>
+<span id="cb38-10"><a href="sepia.html#cb38-10" aria-hidden="true" tabindex="-1"></a>Cleaned<span class="sc">$</span>Sex[Cleaned<span class="sc">$</span>Sex <span class="sc">==</span> <span class="st">&quot;&quot;</span>] <span class="ot">&lt;-</span> odd_sex[Cleaned<span class="sc">$</span>Sex <span class="sc">==</span> <span class="st">&quot;&quot;</span>]</span>
+<span id="cb38-11"><a href="sepia.html#cb38-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="sepia.html#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Create an object with pairs next to each other (column bind)</span></span>
+<span id="cb38-13"><a href="sepia.html#cb38-13" aria-hidden="true" tabindex="-1"></a>paired <span class="ot">&lt;-</span> <span class="fu">cbind</span>(Subset<span class="sc">$</span>Length[odd], Subset<span class="sc">$</span>Length[even])</span>
+<span id="cb38-14"><a href="sepia.html#cb38-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-15"><a href="sepia.html#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Average the odd and even lengths (applies the function &#39;mean&#39; to each row)</span></span>
+<span id="cb38-16"><a href="sepia.html#cb38-16" aria-hidden="true" tabindex="-1"></a>Cleaned<span class="sc">$</span>Length <span class="ot">&lt;-</span> <span class="fu">apply</span>(paired, <span class="dv">1</span>, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb38-17"><a href="sepia.html#cb38-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-18"><a href="sepia.html#cb38-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Do the same for Width</span></span>
+<span id="cb38-19"><a href="sepia.html#cb38-19" aria-hidden="true" tabindex="-1"></a>paired <span class="ot">&lt;-</span> <span class="fu">cbind</span>(Subset<span class="sc">$</span>Width[odd], Subset<span class="sc">$</span>Width[even])</span>
+<span id="cb38-20"><a href="sepia.html#cb38-20" aria-hidden="true" tabindex="-1"></a>Cleaned<span class="sc">$</span>Width <span class="ot">&lt;-</span> <span class="fu">apply</span>(paired, <span class="dv">1</span>, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb38-21"><a href="sepia.html#cb38-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-22"><a href="sepia.html#cb38-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. NaN (not a number) can give problems later on,</span></span>
+<span id="cb38-23"><a href="sepia.html#cb38-23" aria-hidden="true" tabindex="-1"></a><span class="co">#    let&#39;s convert that to NA (not available) instead</span></span>
+<span id="cb38-24"><a href="sepia.html#cb38-24" aria-hidden="true" tabindex="-1"></a>Cleaned<span class="sc">$</span>Length[<span class="fu">is.nan</span>(Cleaned<span class="sc">$</span>Length)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb38-25"><a href="sepia.html#cb38-25" aria-hidden="true" tabindex="-1"></a>Cleaned<span class="sc">$</span>Width[<span class="fu">is.nan</span>(Cleaned<span class="sc">$</span>Width)]   <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb38-26"><a href="sepia.html#cb38-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-27"><a href="sepia.html#cb38-27" aria-hidden="true" tabindex="-1"></a><span class="co"># 8. Remove empty rows (select rows where Sex is not empty)</span></span>
+<span id="cb38-28"><a href="sepia.html#cb38-28" aria-hidden="true" tabindex="-1"></a>Cleaned <span class="ot">&lt;-</span> Cleaned[Cleaned<span class="sc">$</span>Sex <span class="sc">!=</span> <span class="st">&quot;&quot;</span>, ]</span></code></pre></div>
 </details>
 </div>
 <div id="plotting-the-data" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Plotting the Data<a href="sepia.html#plotting-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Just looking at code and numbers is a bit stale. So let’s make some relevant plots:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="sepia.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># Plot in a 2x2 grid</span></span>
-<span id="cb15-2"><a href="sepia.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Cleaned<span class="sc">$</span>Length, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
-<span id="cb15-3"><a href="sepia.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Cleaned<span class="sc">$</span>Width, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
-<span id="cb15-4"><a href="sepia.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Length <span class="sc">~</span> Width, <span class="at">data =</span> Cleaned, <span class="at">col =</span> <span class="fu">factor</span>(Sex), <span class="at">pch =</span> <span class="dv">1</span>)</span>
-<span id="cb15-5"><a href="sepia.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Width <span class="sc">~</span> Sex, <span class="at">data =</span> Cleaned, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
-<span id="cb15-6"><a href="sepia.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default</span></span></code></pre></div>
-<p><img src="Biostatistics_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="sepia.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># Plot in a 2x2 grid</span></span>
+<span id="cb39-2"><a href="sepia.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Cleaned<span class="sc">$</span>Length, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb39-3"><a href="sepia.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Cleaned<span class="sc">$</span>Width, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb39-4"><a href="sepia.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Length <span class="sc">~</span> Width, <span class="at">data =</span> Cleaned, <span class="at">col =</span> <span class="fu">factor</span>(Sex), <span class="at">pch =</span> <span class="dv">1</span>)</span>
+<span id="cb39-5"><a href="sepia.html#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Width <span class="sc">~</span> Sex, <span class="at">data =</span> Cleaned, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>))</span>
+<span id="cb39-6"><a href="sepia.html#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default</span></span></code></pre></div>
+<p><img src="Biostatistics_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 <p><strong>Question</strong>:</p>
 <ol start="3" style="list-style-type: decimal">
 <li>What does each plot show?</li>
@@ -435,7 +439,7 @@ Average per student pair
 <div id="sepiatest" class="section level3 hasAnchor" number="6.5.1">
 <h3><span class="header-section-number">6.5.1</span> Example<a href="sepia.html#sepiatest" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Below is an <strong>example</strong> of a <span class="math inline">\(t\)</span>-test, using some standard data in R:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="sepia.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(extra <span class="sc">~</span> group, <span class="at">data =</span> sleep, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="sepia.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(extra <span class="sc">~</span> group, <span class="at">data =</span> sleep, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -471,8 +475,8 @@ Average per student pair
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p><small>Whenever you see square brackets in R, just think of them as “where”. A data frame has both rows and columns, so for example <code>X[1, 1]</code> means row 1, column 1. <code>X[1, ]</code> means row 1, all columns, and <code>X[, 1]</code> means all rows, column 1.</small><a href="sepia.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="10">
+<li id="fn10"><p><small>Whenever you see square brackets in R, just think of them as “where”. A data frame has both rows and columns, so for example <code>X[1, 1]</code> means row 1, column 1. <code>X[1, ]</code> means row 1, all columns, and <code>X[, 1]</code> means all rows, column 1.</small><a href="sepia.html#fnref10" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
