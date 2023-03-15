@@ -15,7 +15,7 @@ fig:linearRelationship
 fig:xlimylim
 fig:coolPlot
 fig:sixPlotsActual
-tab:unnamed-chunk-58
+tab:unnamed-chunk-57
 installation
 installation-guide
 the-rstudio-interface
@@ -54,12 +54,13 @@ compare2
 comparing-two-other-students
 sepia
 getting-started
+creating-a-subset
 data-cleaning
 plotting-the-data
-creating-a-subset
 t-test
 sepiatest
 exercise
 your-own-experiment-ii
 study-design-1
 preparing-your-presentation
+subset

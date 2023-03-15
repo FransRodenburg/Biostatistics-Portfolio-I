@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Mendelian Genetics | Biostatistics Portfolio I</title>
   <meta name="description" content="Chapter 3 Mendelian Genetics | Biostatistics Portfolio I" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Mendelian Genetics | Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -21,7 +20,7 @@
   
   
 
-<meta name="author" content="Dr. F.J. Rodenburg   © 2020–2021 Universiteit Leiden" />
+<meta name="author" content="Dr. F.J. Rodenburg   © 2020–2022 Universiteit Leiden" />
 
 
 
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="basic-programming-tutorials.html"/>
 <link rel="next" href="bradford-assay.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
@@ -96,7 +95,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -109,7 +108,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -213,9 +212,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="sepia.html"><a href="sepia.html"><i class="fa fa-check"></i><b>6</b> Sepia</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="sepia.html"><a href="sepia.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
-<li class="chapter" data-level="6.2" data-path="sepia.html"><a href="sepia.html#data-cleaning"><i class="fa fa-check"></i><b>6.2</b> Data Cleaning</a></li>
-<li class="chapter" data-level="6.3" data-path="sepia.html"><a href="sepia.html#plotting-the-data"><i class="fa fa-check"></i><b>6.3</b> Plotting the Data</a></li>
-<li class="chapter" data-level="6.4" data-path="sepia.html"><a href="sepia.html#creating-a-subset"><i class="fa fa-check"></i><b>6.4</b> Creating a Subset</a></li>
+<li class="chapter" data-level="6.2" data-path="sepia.html"><a href="sepia.html#creating-a-subset"><i class="fa fa-check"></i><b>6.2</b> Creating a Subset</a></li>
+<li class="chapter" data-level="6.3" data-path="sepia.html"><a href="sepia.html#data-cleaning"><i class="fa fa-check"></i><b>6.3</b> Data Cleaning</a></li>
+<li class="chapter" data-level="6.4" data-path="sepia.html"><a href="sepia.html#plotting-the-data"><i class="fa fa-check"></i><b>6.4</b> Plotting the Data</a></li>
 <li class="chapter" data-level="6.5" data-path="sepia.html"><a href="sepia.html#t-test"><i class="fa fa-check"></i><b>6.5</b> T-test</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="sepia.html"><a href="sepia.html#sepiatest"><i class="fa fa-check"></i><b>6.5.1</b> Example</a></li>
@@ -248,12 +247,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html"><i class="fa fa-check"></i>Adding Tables in R Markdown</a>
 <ul>
-<li><a href="adding-tables-in-r-markdown.html#the-user-friendly-way-kable">The User-Friendly Way: <code>kable</code></a>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#the-user-friendly-way-kable"><i class="fa fa-check"></i>The User-Friendly Way: <code>kable</code></a>
 <ul>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-1-1"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exT.2"><i class="fa fa-check"></i>Exercise 2 (*)</a></li>
 </ul></li>
-<li><a href="adding-tables-in-r-markdown.html#advanced-xtable">Advanced: <code>xtable</code> (*)</a>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#advanced-xtable"><i class="fa fa-check"></i>Advanced: <code>xtable</code> (*)</a>
 <ul>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-3-2"><i class="fa fa-check"></i>Exercise 3 (*)</a></li>
 </ul></li>
@@ -276,8 +275,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mendelian-genetics" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Mendelian Genetics</h1>
+<div id="mendelian-genetics" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Mendelian Genetics<a href="mendelian-genetics.html#mendelian-genetics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><small><b><i>Date:</b> 21/22 September 2021</p>
 <p><b>Topic:</b> Probability theory, hypothesis testing</p>
 <p><b>Duration:</b> 30–90 min.</i></small></p>
@@ -285,8 +284,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this chapter you will learn how to compare observed to expected frequencies using a chi-squared test.</p>
 <iframe src="https://www.youtube.com/embed/PDl7mhpY4PI" width="672" height="400px" data-external="1">
 </iframe>
-<div id="corn-example" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Corn Example</h2>
+<div id="corn-example" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Corn Example<a href="mendelian-genetics.html#corn-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the basic practicals you will count the number of differently colored corn kernels.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
 <img src="figures/cornkernelcount.png" alt="A cob of corn with differently colored kernels." width="100%" />
@@ -338,12 +337,12 @@ rr (yellow)
 </table>
 <p>If both parents were indeed <b>Rr</b>, then we would expected <span class="math inline">\(\text{red} : \text{yellow} = 3 : 1\)</span> in the offspring.</p>
 <p>A statistical test works by taking on a statement of no difference and then collecting evidence against it. For the chi-squared test, that means that we compare the observed frequencies to the frequencies we would get under a <span class="math inline">\(3:1\)</span> ratio. You can calculate these expected frequencies simply by multiplying the total kernels counted with the expected proportion. <em>(Take care to convert the ratio to a proportion first.)</em></p>
-<div id="cornex1" class="section level3 unnumbered">
-<h3>Exercise 1</h3>
+<div id="cornex1" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 1<a href="mendelian-genetics.html#cornex1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Suppose you count <span class="math inline">\(361\)</span> red kernels and <span class="math inline">\(139\)</span> yellow ones. What are the expected number of red and yellow kernels under the null-hypothesis of a <span class="math inline">\(3 : 1\)</span> ratio?</p>
 </div>
-<div id="exercise-2" class="section level3 unnumbered">
-<h3>Exercise 2</h3>
+<div id="exercise-2" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 2<a href="mendelian-genetics.html#exercise-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The chi-squared test is defined as follows:</p>
 <p><span class="math display" id="eq:chisquared">\[\begin{equation}
 \displaystyle\chi^2 = \sum_{i = 1}^k \frac{(\text{observed}_i - \text{expected}_i)^2}{\text{expected}_i}
@@ -354,8 +353,8 @@ rr (yellow)
 <p>Calculate <span class="math inline">\(\chi^2\)</span> using the observed and expected numbers from exercise 1. Show your calculation.</p>
 </div>
 </div>
-<div id="cornchisq" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Chi-Squared Test</h2>
+<div id="cornchisq" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Chi-Squared Test<a href="mendelian-genetics.html#cornchisq" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In R you can compare observed to expected frequencies using <code>chisq.test</code>:</p>
 <p><small></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="mendelian-genetics.html#cb1-1" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">361</span>, <span class="dv">139</span>)</span>
@@ -368,26 +367,32 @@ rr (yellow)
 <p></small></p>
 <p>This test calculates <span class="math inline">\(\chi^2\)</span> and computes a corresponding <span class="math inline">\(p\)</span>-value that has the following meaning:</p>
 <ul>
-<li>If the population has a <span class="math inline">\(3 : 1\)</span> ratio of red to yellow kernels, what is the chance of observing at least this large a deviation?<a href="references.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
+<li>If the population has a <span class="math inline">\(3 : 1\)</span> ratio of red to yellow kernels, what is the chance of observing at least this large a deviation?<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
 </ul>
 <p>If this chance is very small, then perhaps the null-hypothesis of a <span class="math inline">\(3 : 1\)</span> ratio is not realistic and we reject it. If it is large, then this corn cob might as well have arisen from parents that yield a <span class="math inline">\(3 : 1\)</span> ratio, and we don’t reject the null-hypothesis.</p>
 <p>So what is small and large? That is a matter of opinion, but in biology a value of <span class="math inline">\(0.05\)</span> is often used as a boundary. That means there is a <span class="math inline">\(\frac{1}{20}\)</span> chance of incorrectly concluding a significant deviation from <span class="math inline">\(3 : 1\)</span>.</p>
-<div id="exercise-3" class="section level3 unnumbered">
-<h3>Exercise 3</h3>
+<div id="exercise-3" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 3<a href="mendelian-genetics.html#exercise-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Look at <a href="mendelian-genetics.html#cornchisq">the output from the chi-squared test</a>. With a threshold of <span class="math inline">\(0.05\)</span>, would you reject the null-hypothesis? What do you conclude?</p>
 </div>
-<div id="exercise-4" class="section level3 unnumbered">
-<h3>Exercise 4</h3>
+<div id="exercise-4" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 4<a href="mendelian-genetics.html#exercise-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Perform the same <span class="math inline">\(\chi^2\)</span>-test for your own counts of a corn cob and report the conclusion. Use the <a href="mendelian-genetics.html#cornchisq">code from the example</a> and adapt it for your own counts.</p>
 </div>
-<div id="exercise-5-optional" class="section level3 unnumbered">
-<h3>Exercise 5 (optional)</h3>
+<div id="exercise-5-optional" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 5 (optional)<a href="mendelian-genetics.html#exercise-5-optional" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In the basic practicals, it was explained that all of four different dominant mutations are required for there to be red kernels: <b>C</b>, <b>R</b>, <b>A1</b> and <b>A2</b>.</p>
 <p>Since these are all dominant mutations, let’s assume that each mutant protein has a <span class="math inline">\(\frac{3}{4}\)</span> chance of being present in the offspring (due to a <span class="math inline">\(3 : 1\)</span> ratio). What is then the chance of a red kernel?</p>
 <p><small><em>(For simplicity, ignore the possibility of C-inhibitor.)</em></small></p>
 
 </div>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p><small>Population here does not refer to a biological population, but a statistical population. It is the population of all possible red and yellow corn kernels that could have formed from a <span class="math inline">\(3 : 1\)</span> ratio.</small><a href="mendelian-genetics.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -456,7 +461,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

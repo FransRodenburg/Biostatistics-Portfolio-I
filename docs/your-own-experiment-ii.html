@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Your Own Experiment II | Biostatistics Portfolio I</title>
   <meta name="description" content="Chapter 7 Your Own Experiment II | Biostatistics Portfolio I" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Your Own Experiment II | Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -21,7 +20,7 @@
   
   
 
-<meta name="author" content="Dr. F.J. Rodenburg   © 2020–2021 Universiteit Leiden" />
+<meta name="author" content="Dr. F.J. Rodenburg   © 2020–2022 Universiteit Leiden" />
 
 
 
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="sepia.html"/>
 <link rel="next" href="adding-figures-in-r-markdown.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
@@ -96,7 +95,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -109,7 +108,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -213,9 +212,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="sepia.html"><a href="sepia.html"><i class="fa fa-check"></i><b>6</b> Sepia</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="sepia.html"><a href="sepia.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
-<li class="chapter" data-level="6.2" data-path="sepia.html"><a href="sepia.html#data-cleaning"><i class="fa fa-check"></i><b>6.2</b> Data Cleaning</a></li>
-<li class="chapter" data-level="6.3" data-path="sepia.html"><a href="sepia.html#plotting-the-data"><i class="fa fa-check"></i><b>6.3</b> Plotting the Data</a></li>
-<li class="chapter" data-level="6.4" data-path="sepia.html"><a href="sepia.html#creating-a-subset"><i class="fa fa-check"></i><b>6.4</b> Creating a Subset</a></li>
+<li class="chapter" data-level="6.2" data-path="sepia.html"><a href="sepia.html#creating-a-subset"><i class="fa fa-check"></i><b>6.2</b> Creating a Subset</a></li>
+<li class="chapter" data-level="6.3" data-path="sepia.html"><a href="sepia.html#data-cleaning"><i class="fa fa-check"></i><b>6.3</b> Data Cleaning</a></li>
+<li class="chapter" data-level="6.4" data-path="sepia.html"><a href="sepia.html#plotting-the-data"><i class="fa fa-check"></i><b>6.4</b> Plotting the Data</a></li>
 <li class="chapter" data-level="6.5" data-path="sepia.html"><a href="sepia.html#t-test"><i class="fa fa-check"></i><b>6.5</b> T-test</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="sepia.html"><a href="sepia.html#sepiatest"><i class="fa fa-check"></i><b>6.5.1</b> Example</a></li>
@@ -248,12 +247,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html"><i class="fa fa-check"></i>Adding Tables in R Markdown</a>
 <ul>
-<li><a href="adding-tables-in-r-markdown.html#the-user-friendly-way-kable">The User-Friendly Way: <code>kable</code></a>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#the-user-friendly-way-kable"><i class="fa fa-check"></i>The User-Friendly Way: <code>kable</code></a>
 <ul>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-1-1"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exT.2"><i class="fa fa-check"></i>Exercise 2 (*)</a></li>
 </ul></li>
-<li><a href="adding-tables-in-r-markdown.html#advanced-xtable">Advanced: <code>xtable</code> (*)</a>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#advanced-xtable"><i class="fa fa-check"></i>Advanced: <code>xtable</code> (*)</a>
 <ul>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-3-2"><i class="fa fa-check"></i>Exercise 3 (*)</a></li>
 </ul></li>
@@ -276,8 +275,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="your-own-experiment-ii" class="section level1" number="7">
-<h1><span class="header-section-number">Chapter 7</span> Your Own Experiment II</h1>
+<div id="your-own-experiment-ii" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Your Own Experiment II<a href="your-own-experiment-ii.html#your-own-experiment-ii" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><small><b><i>Date:</b> End of the academic year (late June, EBG course)</p>
 <p><b>Topic:</b> Study design, hypothesis testing</p>
 <p><b>Duration:</b> Up to you.</i></small></p>
@@ -293,14 +292,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>During the EGB project, I will give a lecture about what to do and what avoid when designing your study. There will also be a Q&amp;A about analyzing your data.</p>
 <p>For the biostatistics portfolio, there are no further exercises in this chapter. There will be a statistician among the jury of the project presentations, who will judge the analysis of your experiments and the interpretation of the results.</p>
-<div id="study-design-1" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Study Design</h2>
+<div id="study-design-1" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Study Design<a href="your-own-experiment-ii.html#study-design-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <iframe src="https://www.youtube.com/embed/nGJ1_7wtfo8" width="672" height="400px" data-external="1">
 </iframe>
 <p>Click <a href="https://brightspace.universiteitleiden.nl/d2l/le/lessons/27150/topics/361345">here</a> to be redirected to the E-learning module on study design.</p>
 </div>
-<div id="preparing-your-presentation" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Preparing Your Presentation</h2>
+<div id="preparing-your-presentation" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Preparing Your Presentation<a href="your-own-experiment-ii.html#preparing-your-presentation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <iframe src="https://www.youtube.com/embed/Md3VLezPoAU" width="672" height="400px" data-external="1">
 </iframe>
 <p>Click <a href="https://brightspace.universiteitleiden.nl/d2l/le/lessons/27150/lessons/361205">here</a> to be redirected to the E-learning module on presenting.</p>
@@ -374,7 +373,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

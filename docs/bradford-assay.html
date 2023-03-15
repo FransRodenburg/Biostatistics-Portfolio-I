@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Bradford Assay | Biostatistics Portfolio I</title>
   <meta name="description" content="Chapter 4 Bradford Assay | Biostatistics Portfolio I" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Bradford Assay | Biostatistics Portfolio I" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -21,7 +20,7 @@
   
   
 
-<meta name="author" content="Dr. F.J. Rodenburg   © 2020–2021 Universiteit Leiden" />
+<meta name="author" content="Dr. F.J. Rodenburg   © 2020–2022 Universiteit Leiden" />
 
 
 
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="mendelian-genetics.html"/>
 <link rel="next" href="your-own-experiment-i.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
@@ -96,7 +95,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -109,7 +108,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -213,9 +212,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="sepia.html"><a href="sepia.html"><i class="fa fa-check"></i><b>6</b> Sepia</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="sepia.html"><a href="sepia.html#getting-started"><i class="fa fa-check"></i><b>6.1</b> Getting Started</a></li>
-<li class="chapter" data-level="6.2" data-path="sepia.html"><a href="sepia.html#data-cleaning"><i class="fa fa-check"></i><b>6.2</b> Data Cleaning</a></li>
-<li class="chapter" data-level="6.3" data-path="sepia.html"><a href="sepia.html#plotting-the-data"><i class="fa fa-check"></i><b>6.3</b> Plotting the Data</a></li>
-<li class="chapter" data-level="6.4" data-path="sepia.html"><a href="sepia.html#creating-a-subset"><i class="fa fa-check"></i><b>6.4</b> Creating a Subset</a></li>
+<li class="chapter" data-level="6.2" data-path="sepia.html"><a href="sepia.html#creating-a-subset"><i class="fa fa-check"></i><b>6.2</b> Creating a Subset</a></li>
+<li class="chapter" data-level="6.3" data-path="sepia.html"><a href="sepia.html#data-cleaning"><i class="fa fa-check"></i><b>6.3</b> Data Cleaning</a></li>
+<li class="chapter" data-level="6.4" data-path="sepia.html"><a href="sepia.html#plotting-the-data"><i class="fa fa-check"></i><b>6.4</b> Plotting the Data</a></li>
 <li class="chapter" data-level="6.5" data-path="sepia.html"><a href="sepia.html#t-test"><i class="fa fa-check"></i><b>6.5</b> T-test</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="sepia.html"><a href="sepia.html#sepiatest"><i class="fa fa-check"></i><b>6.5.1</b> Example</a></li>
@@ -248,12 +247,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html"><i class="fa fa-check"></i>Adding Tables in R Markdown</a>
 <ul>
-<li><a href="adding-tables-in-r-markdown.html#the-user-friendly-way-kable">The User-Friendly Way: <code>kable</code></a>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#the-user-friendly-way-kable"><i class="fa fa-check"></i>The User-Friendly Way: <code>kable</code></a>
 <ul>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-1-1"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exT.2"><i class="fa fa-check"></i>Exercise 2 (*)</a></li>
 </ul></li>
-<li><a href="adding-tables-in-r-markdown.html#advanced-xtable">Advanced: <code>xtable</code> (*)</a>
+<li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#advanced-xtable"><i class="fa fa-check"></i>Advanced: <code>xtable</code> (*)</a>
 <ul>
 <li class="chapter" data-level="" data-path="adding-tables-in-r-markdown.html"><a href="adding-tables-in-r-markdown.html#exercise-3-2"><i class="fa fa-check"></i>Exercise 3 (*)</a></li>
 </ul></li>
@@ -276,8 +275,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bradford-assay" class="section level1" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Bradford Assay</h1>
+<div id="bradford-assay" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Bradford Assay<a href="bradford-assay.html#bradford-assay" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><small><b><i>Date:</b> 2/3 November 2021</p>
 <p><b>Topic:</b> Estimation, Prediction</p>
 <p><b>Duration:</b> 30–90 min.</i></small></p>
@@ -285,9 +284,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this chapter you will learn how to conduct a Bradford assay for estimating the amount of protein present in a sample.</p>
 <p><b>From this chapter on, you will collect all your analyses into a portfolio</b>. This is simply an R markdown file that you knit to Word at the end of each chapter. At the start of the statistics course at the end of the academic year, your portfolio should contain all the exercises of chapters 4–6.</p>
 <p>Remember, to make a <a href="https://youtu.be/2Sovzf6lVRo?t=280">new R markdown file</a>, go to <strong>File</strong> &gt; <strong>New File</strong> &gt; <strong>R markdown</strong>. Then select Word and press OK.</p>
-<div id="what-is-a-bradford-assay" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> What Is a Bradford Assay?</h2>
-<p>In the basic practicals you will use a spectrophotometer to measure light passing through a sample with a known protein concentration. By doing so for various concentrations of protein, you can construct a curve for the amount of protein present in a sample, given the amount of light passing through. This is a basic tool in biological experimentation. The protein used as a reference to construct the curve is called Bovine Serum Albumin (BSA).<a href="references.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> Hence the name: <em>BSA curve</em>.</p>
+<div id="what-is-a-bradford-assay" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> What Is a Bradford Assay?<a href="bradford-assay.html#what-is-a-bradford-assay" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the basic practicals you will use a spectrophotometer to measure light passing through a sample with a known protein concentration. By doing so for various concentrations of protein, you can construct a curve for the amount of protein present in a sample, given the amount of light passing through. This is a basic tool in biological experimentation. The protein used as a reference to construct the curve is called Bovine Serum Albumin (BSA).<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> Hence the name: <em>BSA curve</em>.</p>
 <p><small></p>
 <table style="width:50%;">
 <caption>
@@ -363,19 +362,19 @@ Figure 4.1: A typical BSA curve, constructed from the data in table <a href="bra
 </div>
 <p>In the first part of this assignment, you will construct a BSA-curve based on your experimental data. In the second half, we are going to express the uncertainty of the estimation.</p>
 </div>
-<div id="how-to-contruct-a-bsa-curve-in-r" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> How to Contruct a BSA-Curve in R</h2>
+<div id="how-to-contruct-a-bsa-curve-in-r" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> How to Contruct a BSA-Curve in R<a href="bradford-assay.html#how-to-contruct-a-bsa-curve-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As an example, I will show you how to construct a BSA curve from the data shown in table <a href="bradford-assay.html#tab:ExampleBSA">4.1</a>.</p>
-<div id="enterdata" class="section level3" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> Enter your data</h3>
+<div id="enterdata" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Enter your data<a href="bradford-assay.html#enterdata" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>First we create a data frame containing the BSA amounts and the observed <span class="math inline">\(\text{A}_{595}\)</span> values.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="bradford-assay.html#cb3-1" aria-hidden="true" tabindex="-1"></a>BSA  <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span></span>
 <span id="cb3-2"><a href="bradford-assay.html#cb3-2" aria-hidden="true" tabindex="-1"></a>A595 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.135</span>, <span class="fl">0.235</span>, <span class="fl">0.328</span>, <span class="fl">0.409</span>, <span class="fl">0.495</span>)</span>
 <span id="cb3-3"><a href="bradford-assay.html#cb3-3" aria-hidden="true" tabindex="-1"></a>DF   <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(BSA, A595)</span></code></pre></div>
 <p>This will create an object <code>DF</code> in the object space. You can view it by clicking on it in the environment tab of the upper-right pane in RStudio.</p>
 </div>
-<div id="fitBSA" class="section level3" number="4.2.2">
-<h3><span class="header-section-number">4.2.2</span> Fit a Simple Linear Model</h3>
+<div id="fitBSA" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Fit a Simple Linear Model<a href="bradford-assay.html#fitBSA" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Watch the first two minutes of <a href="https://youtu.be/3PAAB3VDmFQ">this video</a> on simple linear regression.</p>
 <p><strong>Question</strong>:</p>
 <ol style="list-style-type: decimal">
@@ -389,14 +388,14 @@ Figure 4.1: A typical BSA curve, constructed from the data in table <a href="bra
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="bradford-assay.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(model)</span></code></pre></div>
 <pre><code>## (Intercept)         BSA 
 ##  0.02485714  0.09685714</code></pre>
-<p>In this example, the estimated line pretty much goes through the origin,<a href="references.html#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> with an intercept of about 0.02. We can also see that there is a positive linear relationship between the amount of BSA and the absorbance: For every microgram of BSA added, the absorbance increases by about 0.1.</p>
+<p>In this example, the estimated line pretty much goes through the origin,<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> with an intercept of about 0.02. We can also see that there is a positive linear relationship between the amount of BSA and the absorbance: For every microgram of BSA added, the absorbance increases by about 0.1.</p>
 <p><strong>Question</strong>:</p>
 <ol start="5" style="list-style-type: decimal">
 <li>What are the intercept and slope of <em>your</em> experimental data?</li>
 </ol>
 </div>
-<div id="plot-your-data-draw-a-line" class="section level3" number="4.2.3">
-<h3><span class="header-section-number">4.2.3</span> Plot your data &amp; draw a line</h3>
+<div id="plot-your-data-draw-a-line" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Plot your data &amp; draw a line<a href="bradford-assay.html#plot-your-data-draw-a-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Finally we create a plot and add a line as follows:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="bradford-assay.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(A595 <span class="sc">~</span> BSA, <span class="at">data =</span> DF)</span>
 <span id="cb7-2"><a href="bradford-assay.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">coef</span>(model))</span></code></pre></div>
@@ -408,8 +407,8 @@ Figure 4.1: A typical BSA curve, constructed from the data in table <a href="bra
 </ol>
 </div>
 </div>
-<div id="using-a-bradford-assay-for-estimation" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Using a Bradford Assay for Estimation</h2>
+<div id="using-a-bradford-assay-for-estimation" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Using a Bradford Assay for Estimation<a href="bradford-assay.html#using-a-bradford-assay-for-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s say you measured the absorbance of the sample of interest and ended up with a value of <span class="math inline">\(\text{A}_{595} = 0.264\)</span>. Using the BSA curve, you can estimate the amount of protein as shown in the figure below:</p>
 <div class="figure"><span style="display:block;" id="fig:estimateBSA"></span>
 <img src="Biostatistics_files/figure-html/estimateBSA-1.png" alt="\label{fig:estimateBSA}To estimate the amount of protein, look at the $\text{A}_{595}$ on the y-axis, then see which position it corresponds to on the x-axis." width="672" />
@@ -442,8 +441,8 @@ Figure 4.2: To estimate the amount of protein, look at the <span class="math inl
 </ul></li>
 </ol>
 </div>
-<div id="howprecise" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> How Precise Is the Estimate?</h2>
+<div id="howprecise" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> How Precise Is the Estimate?<a href="bradford-assay.html#howprecise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>I’m sure you’ve noticed that the observations do not exactly fall on the line. The regression model is but an approximation of the true relationship. This is caused by many things:</p>
 <ul>
 <li>No matter how careful you are, the amount of BSA cannot be weighed <em>exactly</em>;</li>
@@ -453,11 +452,11 @@ Figure 4.2: To estimate the amount of protein, look at the <span class="math inl
 </ul>
 <p>It is more than likely that if you perform the experiment again, you will obtain slightly different values. Even if you take great care, <strong>there is <em>always</em> uncertainty</strong>. At best, you can keep that uncertainty low.</p>
 <p>So how much uncertainty is there? How do we express that? Below I will discuss a simple measure to include in your plot, and a great way to visualize the uncertainty.</p>
-<div id="r-squared" class="section level3" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> R-squared</h3>
+<div id="r-squared" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> R-squared<a href="bradford-assay.html#r-squared" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math inline">\(R^2\)</span> is the amount of variance explained by the model. In other words: How much of the total variance in <span class="math inline">\(\text{A}_{595}\)</span> can be explained by the line?</p>
 <p><img src="Biostatistics_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<p>The red segments on the right represent the original spread in <span class="math inline">\(\text{A}_{595}\)</span>,<a href="references.html#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> and on the right we see the spread that is left after accounting for our model. You can clearly see that the distances on the right are <em>much</em> smaller than on the left. If you square these segments and sum them, that is called the <em>variance</em>. <span class="math inline">\(R^2\)</span> is then calculated as:</p>
+<p>The red segments on the right represent the original spread in <span class="math inline">\(\text{A}_{595}\)</span>,<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> and on the right we see the spread that is left after accounting for our model. You can clearly see that the distances on the right are <em>much</em> smaller than on the left. If you square these segments and sum them, that is called the <em>variance</em>. <span class="math inline">\(R^2\)</span> is then calculated as:</p>
 <p><span class="math display">\[R^2 = 1 - \frac{\text{remaining variance}}{\text{total variance}}\]</span></p>
 <p>R includes this value in the <code>summary</code> of a linear model by default. You can obtain it as follows:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="bradford-assay.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)<span class="sc">$</span>r.squared</span></code></pre></div>
@@ -469,8 +468,8 @@ Figure 4.2: To estimate the amount of protein, look at the <span class="math inl
 <li>How could you obtain a higher <span class="math inline">\(R^2\)</span>?</li>
 </ol>
 </div>
-<div id="prediction-interval" class="section level3" number="4.4.2">
-<h3><span class="header-section-number">4.4.2</span> Prediction interval</h3>
+<div id="prediction-interval" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Prediction interval<a href="bradford-assay.html#prediction-interval" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Where would you expect 95% of the future observations of <span class="math inline">\(\text{A}_{595}\)</span> to be? That is the question a 95% prediction interval answers. Though its calculation is beyond the scope of this chapter, generating such an interval along the BSA curve in R can be done in a few lines of code:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="bradford-assay.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(A595 <span class="sc">~</span> BSA, <span class="at">data =</span> DF)</span>
 <span id="cb10-2"><a href="bradford-assay.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">coef</span>(model))</span>
@@ -489,11 +488,11 @@ Figure 4.2: To estimate the amount of protein, look at the <span class="math inl
 </ol>
 </div>
 </div>
-<div id="improveyourfigure" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> Improving Your Figure (*)</h2>
+<div id="improveyourfigure" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Improving Your Figure (*)<a href="bradford-assay.html#improveyourfigure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the examples so far, I tried to keep the coding part simple. Here I will show how to reproduce the figure by expanding the code a bit. You can use whichever parts you like and change it. Using a hashtag (<code>#</code>), I will provide comments after each line to explain what it’s for. For additional tips on improving figures and adding them to your portfolio, see the chapter on <a href="adding-figures-in-r-markdown.html#adding-figures-in-r-markdown">adding figures</a>.</p>
-<div id="improving-the-main-plot" class="section level3" number="4.5.1">
-<h3><span class="header-section-number">4.5.1</span> Improving the main plot</h3>
+<div id="improving-the-main-plot" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Improving the main plot<a href="bradford-assay.html#improving-the-main-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Using some tricks described in the help page of <code>plotmath</code>, you can add proper annotation to your axes:</p>
 <p><small></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="bradford-assay.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
@@ -506,8 +505,8 @@ Figure 4.2: To estimate the amount of protein, look at the <span class="math inl
 <span id="cb11-8"><a href="bradford-assay.html#cb11-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p></small></p>
 </div>
-<div id="highlighting-the-line" class="section level3" number="4.5.2">
-<h3><span class="header-section-number">4.5.2</span> Highlighting the line</h3>
+<div id="highlighting-the-line" class="section level3 hasAnchor" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Highlighting the line<a href="bradford-assay.html#highlighting-the-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For emphasis, I changed the width and color of the line:</p>
 <p><small></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="bradford-assay.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add this *after* your call to the plot function. Then run both.</span></span>
@@ -518,8 +517,8 @@ Figure 4.2: To estimate the amount of protein, look at the <span class="math inl
 <span id="cb12-6"><a href="bradford-assay.html#cb12-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p></small></p>
 </div>
-<div id="adding-a-grid" class="section level3" number="4.5.3">
-<h3><span class="header-section-number">4.5.3</span> Adding a grid</h3>
+<div id="adding-a-grid" class="section level3 hasAnchor" number="4.5.3">
+<h3><span class="header-section-number">4.5.3</span> Adding a grid<a href="bradford-assay.html#adding-a-grid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can add a grid if you like. If you do, keep these three things in mind:</p>
 <ul>
 <li><strong>Don’t use <code>grid</code></strong>. This function is so dumb even its help page admits you’re better off using <code>abline(h = ..., v = ...)</code>:</li>
@@ -592,8 +591,8 @@ Then draw your grid in white:
 <p></small></p>
 </div>
 </div>
-<div id="alternative-method" class="section level2" number="4.6">
-<h2><span class="header-section-number">4.6</span> Alternative Method (*)</h2>
+<div id="alternative-method" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Alternative Method (*)<a href="bradford-assay.html#alternative-method" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It is a bit awkward to first fit a model that predicts the <span class="math inline">\(\text{A}_{595}\)</span>, and then invert the formula to obtain predictions for the amount of protein, like we did with eq. <a href="bradford-assay.html#eq:BSAlinear">(4.1)</a>. Unfortunately, this is the standard procedure in biology.</p>
 <ol start="13" style="list-style-type: decimal">
 <li>In this optional exercise, you are going to do it the correct way from a statistical point of view:</li>
@@ -605,6 +604,14 @@ Then draw your grid in white:
 </ul>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p><small>Bradford, Marion (1976): “A Rapid and Sensitive Method for the Quantification of Microgram Quantities of Protein Utilizing the Principle of Protein-Dye Binding”. <em>Analytical Biochemistry</em>. <strong>72</strong> (1–2): 248–254. <a href="https://doi.org/10.1006%2Fabio.1976.9999">doi:10.1006/abio.1976.9999</a>. PMID <a href="https://pubmed.ncbi.nlm.nih.gov/942051/">942051</a></small><a href="bradford-assay.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p><small>The reason the line does not go <em>exactly</em> through zero is because it is only fitted to these 5 observations, which have <a href="bradford-assay.html#howprecise">uncertainty</a>. You could force the line to go through zero, but that would worsen the estimate of the slope.</small><a href="bradford-assay.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p><small>Shown on the left are the distances to the mean value of <span class="math inline">\(\text{A}_{595}\)</span>.</small><a href="bradford-assay.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -673,7 +680,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
