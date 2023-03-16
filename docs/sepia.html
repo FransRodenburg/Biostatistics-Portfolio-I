@@ -405,6 +405,9 @@ Average per student pair
 <span id="cb38-27"><a href="sepia.html#cb38-27" aria-hidden="true" tabindex="-1"></a><span class="co"># 8. Remove empty rows (select rows where Sex is not empty)</span></span>
 <span id="cb38-28"><a href="sepia.html#cb38-28" aria-hidden="true" tabindex="-1"></a>Cleaned <span class="ot">&lt;-</span> Cleaned[Cleaned<span class="sc">$</span>Sex <span class="sc">!=</span> <span class="st">&quot;&quot;</span>, ]</span></code></pre></div>
 </details>
+<ol start="3" style="list-style-type: decimal">
+<li>Choose one of the three methods above to create a cleaned version. Describe briefly (1–2 sentences) which method you chose and why.</li>
+</ol>
 </div>
 <div id="plotting-the-data" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Plotting the Data<a href="sepia.html#plotting-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -417,10 +420,9 @@ Average per student pair
 <span id="cb39-6"><a href="sepia.html#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># Restore the default</span></span></code></pre></div>
 <p><img src="Biostatistics_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 <p><strong>Question</strong>:</p>
-<ol start="3" style="list-style-type: decimal">
+<ol start="4" style="list-style-type: decimal">
 <li>What does each plot show?</li>
-<li>There is at least one outlier in the data. Can you identify it from the plot? If you believe this value to be really this large, leave it as it (you can ask the students that measured it). If you don’t trust this observation, you can set it to <code>NA</code> as shown above.</li>
-<li>Can you change the code to alter the figures? <em>(You can try changing the variable names, or change the graphical parameters.)</em></li>
+<li>Can you change the code to alter the figures? <em>(You can try changing the variable names, or change the <a href="adding-figures-in-r-markdown.html#plots-drawn-in-r">graphical parameters</a>.)</em></li>
 </ol>
 </div>
 <div id="t-test" class="section level2 hasAnchor" number="6.5">
