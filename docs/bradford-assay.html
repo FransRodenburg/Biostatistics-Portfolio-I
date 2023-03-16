@@ -286,7 +286,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Remember, to make a <a href="https://youtu.be/2Sovzf6lVRo?t=280">new R markdown file</a>, go to <strong>File</strong> &gt; <strong>New File</strong> &gt; <strong>R markdown</strong>. Then select Word and press OK.</p>
 <div id="what-is-a-bradford-assay" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> What Is a Bradford Assay?<a href="bradford-assay.html#what-is-a-bradford-assay" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In the basic practicals you will use a spectrophotometer to measure light passing through a sample with a known protein concentration. By doing so for various concentrations of protein, you can construct a curve for the amount of protein present in a sample, given the amount of light passing through. This is a basic tool in biological experimentation. The protein used as a reference to construct the curve is called Bovine Serum Albumin (BSA).<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> Hence the name: <em>BSA curve</em>.</p>
+<p>In the basic practicals you will use a spectrophotometer to measure light passing through a sample with a known protein concentration. By doing so for various concentrations of protein, you can construct a curve for the amount of protein present in a sample, given the amount of light passing through. This is a basic tool in biological experimentation. The protein used as a reference to construct the curve is called Bovine Serum Albumin (BSA).<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Hence the name: <em>BSA curve</em>.</p>
 <p><small></p>
 <table style="width:50%;">
 <caption>
@@ -388,7 +388,7 @@ Figure 4.1: A typical BSA curve, constructed from the data in table <a href="bra
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="bradford-assay.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(model)</span></code></pre></div>
 <pre><code>## (Intercept)         BSA 
 ##  0.02485714  0.09685714</code></pre>
-<p>In this example, the estimated line pretty much goes through the origin,<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> with an intercept of about 0.02. We can also see that there is a positive linear relationship between the amount of BSA and the absorbance: For every microgram of BSA added, the absorbance increases by about 0.1.</p>
+<p>In this example, the estimated line pretty much goes through the origin,<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> with an intercept of about 0.02. We can also see that there is a positive linear relationship between the amount of BSA and the absorbance: For every microgram of BSA added, the absorbance increases by about 0.1.</p>
 <p><strong>Question</strong>:</p>
 <ol start="5" style="list-style-type: decimal">
 <li>What are the intercept and slope of <em>your</em> experimental data?</li>
@@ -456,7 +456,7 @@ Figure 4.2: To estimate the amount of protein, look at the <span class="math inl
 <h3><span class="header-section-number">4.4.1</span> R-squared<a href="bradford-assay.html#r-squared" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math inline">\(R^2\)</span> is the amount of variance explained by the model. In other words: How much of the total variance in <span class="math inline">\(\text{A}_{595}\)</span> can be explained by the line?</p>
 <p><img src="Biostatistics_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<p>The red segments on the right represent the original spread in <span class="math inline">\(\text{A}_{595}\)</span>,<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> and on the right we see the spread that is left after accounting for our model. You can clearly see that the distances on the right are <em>much</em> smaller than on the left. If you square these segments and sum them, that is called the <em>variance</em>. <span class="math inline">\(R^2\)</span> is then calculated as:</p>
+<p>The red segments on the right represent the original spread in <span class="math inline">\(\text{A}_{595}\)</span>,<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> and on the right we see the spread that is left after accounting for our model. You can clearly see that the distances on the right are <em>much</em> smaller than on the left. If you square these segments and sum them, that is called the <em>variance</em>. <span class="math inline">\(R^2\)</span> is then calculated as:</p>
 <p><span class="math display">\[R^2 = 1 - \frac{\text{remaining variance}}{\text{total variance}}\]</span></p>
 <p>R includes this value in the <code>summary</code> of a linear model by default. You can obtain it as follows:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="bradford-assay.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)<span class="sc">$</span>r.squared</span></code></pre></div>
@@ -607,10 +607,10 @@ Then draw your grid in white:
 </div>
 <div class="footnotes">
 <hr />
-<ol start="3">
-<li id="fn3"><p><small>Bradford, Marion (1976): “A Rapid and Sensitive Method for the Quantification of Microgram Quantities of Protein Utilizing the Principle of Protein-Dye Binding”. <em>Analytical Biochemistry</em>. <strong>72</strong> (1–2): 248–254. <a href="https://doi.org/10.1006%2Fabio.1976.9999">doi:10.1006/abio.1976.9999</a>. PMID <a href="https://pubmed.ncbi.nlm.nih.gov/942051/">942051</a></small><a href="bradford-assay.html#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p><small>The reason the line does not go <em>exactly</em> through zero is because it is only fitted to these 5 observations, which have <a href="bradford-assay.html#howprecise">uncertainty</a>. You could force the line to go through zero, but that would worsen the estimate of the slope.</small><a href="bradford-assay.html#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p><small>Shown on the left are the distances to the mean value of <span class="math inline">\(\text{A}_{595}\)</span>.</small><a href="bradford-assay.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<ol start="2">
+<li id="fn2"><p><small>Bradford, Marion (1976): “A Rapid and Sensitive Method for the Quantification of Microgram Quantities of Protein Utilizing the Principle of Protein-Dye Binding”. <em>Analytical Biochemistry</em>. <strong>72</strong> (1–2): 248–254. <a href="https://doi.org/10.1006%2Fabio.1976.9999">doi:10.1006/abio.1976.9999</a>. PMID <a href="https://pubmed.ncbi.nlm.nih.gov/942051/">942051</a></small><a href="bradford-assay.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p><small>The reason the line does not go <em>exactly</em> through zero is because it is only fitted to these 5 observations, which have <a href="bradford-assay.html#howprecise">uncertainty</a>. You could force the line to go through zero, but that would worsen the estimate of the slope.</small><a href="bradford-assay.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p><small>Shown on the left are the distances to the mean value of <span class="math inline">\(\text{A}_{595}\)</span>.</small><a href="bradford-assay.html#fnref4" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
